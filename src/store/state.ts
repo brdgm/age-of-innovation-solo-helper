@@ -1,9 +1,6 @@
 import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
-import Expansion from '@/services/enum/Expansion'
 import { defineStore } from 'pinia'
-import toggleArrayItem from '@brdgm/brdgm-commons/src/util/array/toggleArrayItem'
-import FinalScoringTile from '@/services/enum/FinalScoringTile'
 import { name } from '@/../package.json'
 
 export const useStateStore = defineStore(`${name}.store`, {
@@ -13,8 +10,6 @@ export const useStateStore = defineStore(`${name}.store`, {
       baseFontSize: 1.0,
       setup: {
         difficultyLevel: DifficultyLevel.AUTOMALEIN,
-        expansions: [],
-        finalScoringTile: FinalScoringTile.DEFAULT,
         playerSetup: {
           playerCount: 1,
           botCount: 1,
@@ -25,15 +20,6 @@ export const useStateStore = defineStore(`${name}.store`, {
     } as State
   },
   actions: {
-    setupToggleExpansionFireAndIce() {
-      toggleArrayItem(this.setup.expansions, Expansion.FIRE_AND_ICE)
-      if (!this.setup.expansions.includes(Expansion.FIRE_AND_ICE)) {
-        this.setup.finalScoringTile = FinalScoringTile.DEFAULT
-      }
-    },
-    setupToggleExpansionMerchantsOfTheSeas() {
-      toggleArrayItem(this.setup.expansions, Expansion.MERCHANTS_OF_THE_SEAS)
-    },
     roundTurn(roundTurn : RoundTurn) {
       let round = this.rounds[roundTurn.round - 1]
       if (!round) {
@@ -62,8 +48,6 @@ export interface State {
 }
 export interface Setup {
   difficultyLevel: DifficultyLevel
-  expansions: Expansion[]
-  finalScoringTile: FinalScoringTile
   playerSetup: PlayerSetup
 }
 export interface PlayerSetup {

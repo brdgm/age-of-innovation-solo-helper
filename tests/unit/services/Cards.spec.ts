@@ -12,6 +12,6 @@ describe('Cards', () => {
   it('getAll', () => {
     const cards = Cards.getAll()
 
-    expect(cards.length).eq(16)
+    expect(cards.length).eq(13)
   })
 })

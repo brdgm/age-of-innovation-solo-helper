@@ -9,7 +9,6 @@ import TerrainPriority from './enum/TerrainPriority'
 export default interface Card {
   id: string
   starter?: boolean
-  merchantsOfTheSeas?: boolean
   actions: Action[]
   shipLevel?: number
   tradeMinRound?: number

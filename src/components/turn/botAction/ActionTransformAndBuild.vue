@@ -27,8 +27,7 @@
           <template v-else>
             <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority',{terrainPriority:botAction.terrainPriority})"></li>
-            <li v-if="useSpaceFurthestAway" class="fire-ice"><AppIcon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureFurthest')"></span></li>
-            <li v-else v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
+            <li v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
         </ol>
@@ -64,7 +63,6 @@ import Upgrade from './ActionUpgrade.vue'
 import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
 import Action from '@/services/enum/Action'
 import { useStateStore } from '@/store/state'
-import FinalScoringTile from '@/services/enum/FinalScoringTile'
 import NavigationState from '@/util/NavigationState'
 import BotFaction from '@/services/enum/BotFaction'
 import Structure from '@/services/enum/Structure'
@@ -106,10 +104,6 @@ export default defineComponent({
         directionalSelectionCount: this.botAction.directionalSelectionCount
       }
     },
-    useSpaceFurthestAway() : boolean {
-      const finalScoringTile = this.state.setup.finalScoringTile
-      return finalScoringTile == FinalScoringTile.GREATEST_DISTANCE || finalScoringTile == FinalScoringTile.STRONGHOLD_SANCTUARY
-    },
     botFaction() : BotFaction|undefined {
       return this.botAction.botFaction
     },
@@ -139,7 +133,7 @@ export default defineComponent({
 .actionIcon {
   width: 6rem;
 }
-.expansionIcon, .structureIcon, .factionActionIcon {
+.structureIcon, .factionActionIcon {
   height: 1.3rem;
   margin-right: 0.2rem;
 }

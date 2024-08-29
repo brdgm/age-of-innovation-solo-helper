@@ -77,7 +77,7 @@ export default class CardDeck {
   /**
    * Prepare card deck for new round, adding additional card from reserve.
    */
-  public prepareForNextRound(round : number, merchantsOfTheSeas : boolean) : void {
+  public prepareForNextRound() : void {
     // discard all remaining cards
     this._deck.forEach(card => this._discard.push(card))
     this._deck = []
@@ -85,10 +85,6 @@ export default class CardDeck {
     const reserveCard = this._reserve.shift()
     if (reserveCard) {
       this._discard.push(reserveCard)
-    }
-    // add special MotS card for round 3
-    if (round == 3 && merchantsOfTheSeas) {
-      this._discard.push(Cards.get(CardDeck.CARD_MOTS_SPECIAL))
     }
     // shuffle discard as new deck
     this._deck = shuffle(this._discard)
@@ -98,9 +94,8 @@ export default class CardDeck {
   /**
    * Creates a shuffled new card deck with random advanced cards.
    */
-  public static new(difficultyLevel : DifficultyLevel, merchantsOfTheSeas : boolean) : CardDeck {
-    let deck = Cards.getAll().filter(card => card.starter
-        && (card.merchantsOfTheSeas == undefined || card.merchantsOfTheSeas == merchantsOfTheSeas))
+  public static new(difficultyLevel : DifficultyLevel) : CardDeck {
+    let deck = Cards.getAll().filter(card => card.starter)
     let reserve = Cards.getAll().filter(card => !card.starter && card.id!=CardDeck.CARD_MOTS_SPECIAL)
 
     // add additional cards from reserve dock for higher difficulty levels

@@ -4,7 +4,7 @@ import { expect } from 'chai'
 
 describe('CardDeck', () => {
   it('new-level1', () => {
-    const cardDeck = CardDeck.new(DifficultyLevel.AUTOMALEIN, false)
+    const cardDeck = CardDeck.new(DifficultyLevel.AUTOMALEIN)
 
     expect(cardDeck.deck.length, 'deck size').to.eq(4)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(9)
@@ -13,28 +13,10 @@ describe('CardDeck', () => {
     const persistence = cardDeck.toPersistence()
     expect(persistence.deck.includes('*3'), '*3 not in deck').to.false
     expect(persistence.reserve[0], '*3 top of reserve').to.eq('*3')
-
-    expect(cardDeck.deck.filter(card => card.merchantsOfTheSeas).length, 'no MotS cards in deck').to.eq(0)
-    expect(cardDeck.reserve.filter(card => card.merchantsOfTheSeas).length, 'no MotS cards in reserve').to.eq(0)
-  })
-
-  it('new-level1-mots', () => {
-    const cardDeck = CardDeck.new(DifficultyLevel.AUTOMALEIN, true)
-
-    expect(cardDeck.deck.length, 'deck size').to.eq(4)
-    expect(cardDeck.reserve.length, 'reserve size').to.eq(9)
-    expect(cardDeck.discard.length, 'discard size').to.eq(0)
-
-    const persistence = cardDeck.toPersistence()
-    expect(persistence.deck.includes('*3'), '*3 not in deck').to.false
-    expect(persistence.reserve[0], '*3 top of reserve').to.eq('*3')
-
-    expect(cardDeck.deck.filter(card => card.merchantsOfTheSeas).length, 'MotS cards in deck').to.eq(2)
-    expect(cardDeck.reserve.filter(card => card.merchantsOfTheSeas).length, 'no MotS cards in reserve').to.eq(0)
   })
 
   it('new-level2', () => {
-    const cardDeck = CardDeck.new(DifficultyLevel.AUTOMA, false)
+    const cardDeck = CardDeck.new(DifficultyLevel.AUTOMA)
 
     expect(cardDeck.deck.length, 'deck size').to.eq(5)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(8)
@@ -42,7 +24,7 @@ describe('CardDeck', () => {
   })
 
   it('new-level3', () => {
-    const cardDeck = CardDeck.new(DifficultyLevel.AUTOMAECHTIG, false)
+    const cardDeck = CardDeck.new(DifficultyLevel.AUTOMAECHTIG)
 
     expect(cardDeck.deck.length, 'deck size').to.eq(6)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(7)
@@ -50,7 +32,7 @@ describe('CardDeck', () => {
   })
 
   it('new-level4', () => {
-    const cardDeck = CardDeck.new(DifficultyLevel.ULTOMA, false)
+    const cardDeck = CardDeck.new(DifficultyLevel.ULTOMA)
 
     expect(cardDeck.deck.length, 'deck size').to.eq(6)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(7)
@@ -58,7 +40,7 @@ describe('CardDeck', () => {
   })
 
   it('new-level5', () => {
-    const cardDeck = CardDeck.new(DifficultyLevel.ALPTRAUMA, false)
+    const cardDeck = CardDeck.new(DifficultyLevel.ALPTRAUMA)
 
     expect(cardDeck.deck.length, 'deck size').to.eq(7)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(6)
@@ -118,29 +100,12 @@ describe('CardDeck', () => {
       reserve: ['6','7']
     })
 
-    cardDeck.prepareForNextRound(2, false)
+    cardDeck.prepareForNextRound()
     const persistence = cardDeck.toPersistence()
 
     expect(persistence.deck.length, 'deck size').to.eq(5)
     expect(persistence.discard.length, 'deck size').to.eq(0)
     expect(persistence.reserve.length, 'deck size').to.eq(1)
     expect(persistence.deck.includes('6'), 'includes reserve card').to.true
-  })
-
-  it('prepareForNextRound-mots', () => {
-    const cardDeck = CardDeck.fromPersistence({
-      deck: ['*1','*2',],
-      discard: ['*3','*4'],
-      reserve: ['6','7']
-    })
-
-    cardDeck.prepareForNextRound(3, true)
-    const persistence = cardDeck.toPersistence()
-
-    expect(persistence.deck.length, 'deck size').to.eq(6)
-    expect(persistence.discard.length, 'deck size').to.eq(0)
-    expect(persistence.reserve.length, 'deck size').to.eq(1)
-    expect(persistence.deck.includes('6'), 'includes reserve card').to.true
-    expect(persistence.deck.includes('mots-special'), 'includes mots-special card').to.true
   })
 })

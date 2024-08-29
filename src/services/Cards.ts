@@ -30,7 +30,6 @@ const cards = [
   {
     id: '*2',
     starter: true,
-    merchantsOfTheSeas: false,
     actions: [
       Action.BLOCK_POWER_ACTION,
       Action.GAIN_VICTORY_POINTS
@@ -63,7 +62,6 @@ const cards = [
   {
     id: '*4',
     starter: true,
-    merchantsOfTheSeas: false,
     actions: [
       Action.TRANSFORM_AND_BUILD,
       Action.GAIN_VICTORY_POINTS
@@ -227,62 +225,7 @@ const cards = [
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.C,
     pass: true
-  },
-  {
-    id: '*2-mots',
-    starter: true,
-    merchantsOfTheSeas: true,
-    actions: [
-      Action.BLOCK_POWER_ACTION,
-      Action.TRADE
-    ],
-    tradeMinRound: 5,
-    structure: Structure.MARKED,
-    terrainPriority: TerrainPriority.B,
-    directionalSelection: DirectionalSelection.LEFT_UP,
-    directionalSelectionCount: 1,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
-    bonusCardSelection: BonusCardSelection.MIDDLE,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.B
-  },
-  {
-    id: '*4-mots',
-    starter: true,
-    merchantsOfTheSeas: true,
-    actions: [
-      Action.TRANSFORM_AND_BUILD,
-      Action.GAIN_VICTORY_POINTS
-    ],
-    shipLevel: 2,
-    victoryPoints: 1,
-    structure: Structure.UNMARKED,
-    terrainPriority: TerrainPriority.B,
-    directionalSelection: DirectionalSelection.LEFT_UP,
-    directionalSelectionCount: 3,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
-    bonusCardSelection: BonusCardSelection.LEFT,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.F,
-    pass: true
-  },
-  {
-    id: 'mots-special',
-    merchantsOfTheSeas: true,
-    actions: [
-      Action.TRADE
-    ],
-    tradeMinRound: 3,
-    structure: Structure.UNMARKED,
-    terrainPriority: TerrainPriority.B,
-    directionalSelection: DirectionalSelection.RIGHT_DOWN,
-    directionalSelectionCount: 4,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
-    bonusCardSelection: BonusCardSelection.RIGHT,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.E,
-    pass: true
-  },
+  }
 ]
 
 const cardsMap = new Map<string,Card>()

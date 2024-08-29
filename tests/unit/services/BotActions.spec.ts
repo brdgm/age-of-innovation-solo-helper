@@ -44,33 +44,6 @@ describe('BotActions', () => {
     expect(action3.victoryPoints).to.eq(3)
   })
 
-  it('*2-mots/6-level2-round3', () => {
-    const botActions = new BotActions(Cards.get('*2-mots'), Cards.get('6'),
-        3, BotFaction.SIMPLETONS, DifficultyLevel.AUTOMA)
-    expect(botActions.actions.length).to.eq(1)
-
-    const action1 = botActions.actions[0]
-    expect(action1.action).to.eq(Action.BLOCK_POWER_ACTION)
-    expect(action1.directionalSelection).to.eq(DirectionalSelection.RIGHT_DOWN)
-    expect(action1.directionalSelectionCount).to.eq(3)
-  })
-
-  it('*2-mots/6-level2-round5', () => {
-    const botActions = new BotActions(Cards.get('*2-mots'), Cards.get('6'),
-        5, BotFaction.SIMPLETONS, DifficultyLevel.AUTOMA)
-    expect(botActions.actions.length).to.eq(2)
-
-    const action1 = botActions.actions[0]
-    expect(action1.action).to.eq(Action.BLOCK_POWER_ACTION)
-    expect(action1.directionalSelection).to.eq(DirectionalSelection.RIGHT_DOWN)
-    expect(action1.directionalSelectionCount).to.eq(3)
-
-    const action3 = botActions.actions[1]
-    expect(action3.action).to.eq(Action.TRADE)
-    expect(action3.directionalSelection).to.eq(DirectionalSelection.RIGHT_DOWN)
-    expect(action3.directionalSelectionCount).to.eq(3)
-  })
-
   it('*5/*2-simpletons', () => {
     const botActions = new BotActions(Cards.get('*5'), Cards.get('*2'),
         1, BotFaction.SIMPLETONS, DifficultyLevel.AUTOMA)
