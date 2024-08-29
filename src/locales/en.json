@@ -108,7 +108,7 @@
         "highestPowerStructure": "Replace the chosen Structure with the highest Power value Structure it can be legally upgraded to."
       }
     },
-    "blockPowerAction": {
+    "blockPowerBookAction": {
       "gameBoard": "Block one uncovered power action on game board",
       "directionalSelection": "Directional Selection.",
       "gameBoardExecute": "Execute: Place an Action token on the selected Power action. Automa gains no benefit from this."
@@ -134,20 +134,7 @@
         "noPriest": "If Automa has no more available Priests, or if there’s no empty Priest space available below the track, advance Automa‘s Marker by 1 on that track without placing a Priest."
       }
     },
-    "trade": {
-      "selectStructure": {
-        "title": "Select structure adjacent to a river space without one of Automa's Trade tokens:",
-        "highestPower": "Structures with the highest Power value.",
-        "directionalSelection": "Directional Selection."
-      },
-      "execute": {
-        "title": "Execute:",
-        "placeMarker": "Place one of Automa’s Trade markers beneath the selected Structure.",
-        "victoryPoints": "Automa gains Victory points equal to the Power value of the selected Structure.",
-        "gainPower": "You may gain Power for the trade, as normal."
-      }
-    },
-    "takeFavorTile": {
+    "takeInnovation": {
       "selectCultFavorTile": "Take one of the +3 Cult Favor tiles for Cult tracks without a Marker on space 10.",
       "execute": "Execute: Give the chosen tile to Automa and increase her Marker by 3 on the track shown on the tile."
     },

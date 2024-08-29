@@ -11,7 +11,6 @@ import TerrainPriority from './enum/TerrainPriority'
 export default interface BotAction {
   action: Action
   shipLevel?: number
-  tradeMinRound?: number
   victoryPointsDifficultyLevel?: boolean
   victoryPoints?: number
   structure?: Structure

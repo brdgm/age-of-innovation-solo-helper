@@ -7,16 +7,10 @@
   </div>
   <div class="actionCol text-muted small">
     <ol>
-      <li v-html="t('botAction.trade.selectStructure.title')"></li>
+      <li v-html="t('botAction.blockPowerBookAction.gameBoard')"></li>
       <ol type="a">
-        <li v-html="t('botAction.trade.selectStructure.highestPower')"></li>
-        <li v-html="t('botAction.trade.selectStructure.directionalSelection')"></li>
-      </ol>
-      <li v-html="t('botAction.trade.execute.title')"></li>
-      <ol type="a">
-        <li v-html="t('botAction.trade.execute.placeMarker')"></li>
-        <li v-html="t('botAction.trade.execute.victoryPoints')"></li>
-        <li v-html="t('botAction.trade.execute.gainPower')"></li>
+        <li v-html="t('botAction.blockPowerBookAction.directionalSelection')"></li>
+        <li v-html="t('botAction.blockPowerBookAction.gameBoardExecute')"></li>
       </ol>
     </ol>
   </div>
@@ -28,9 +22,10 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
-  name: 'ActionTrade',
+  name: 'ActionBlockPowerBookAction',
   inheritAttrs: false,
   components: {
     AppIcon,
@@ -38,7 +33,8 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     botAction: {

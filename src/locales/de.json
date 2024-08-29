@@ -108,7 +108,7 @@
         "highestPowerStructure": "Ersetze das gewählte Gebäude durch das Gebäude mit der höchsten Machtstufe, auf das Automa regulär aufwerten kann."
       }
     },
-    "blockPowerAction": {
+    "blockPowerBookAction": {
       "gameBoard": "Decke ein offenes Machtfeld auf dem Spielplan ab",
       "directionalSelection": "Richtungsauswahl.",
       "gameBoardExecute": "Ausführung: Decke das gewählte Machtfeld mit einer Aktionsmarke ab. Automa erhält nichts durch diese Aktion."
@@ -134,20 +134,7 @@
         "noPriest": "Hat Automa keinen Priester mehr oder gibt es unter der gewählten Skala kein freies Feld mehr, steigt Automa dort um 1 Stufe auf, ohne einen Priester einzusetzen."
       }
     },
-    "trade": {
-      "selectStructure": {
-        "title": "Wähle Gebäude, direkt benachbart zu einem Flussfeld, unter welchen noch kein Automa-Handelsmarker liegt:",
-        "highestPower": "Gebäude mit der höchsten Machtstufe.",
-        "directionalSelection": "Richtungsauswahl."
-      },
-      "execute": {
-        "title": "Ausführung:",
-        "placeMarker": "Lege einen Automa-Handelsmarker unter das gewählte Gebäude.",
-        "victoryPoints": "Automa erhält die Anzahl an Punkten, die der Machtstufe des gewählten Gebäudes entspricht.",
-        "gainPower": "Du darfst durch Automas Handel regulär Macht erhalten."
-      }
-    },
-    "takeFavorTile": {
+    "takeInnovation": {
       "selectCultFavorTile": "Nimm ein Gunstplättchen, die einen Kult um 3 Stufen erhöhen und auf deren Kultskala sich kein Markierungsstein auf Stufe 10 befindet.",
       "execute": "Ausführung: Automa nimmt das ausgewählte Plättchen und steigt auf der entsprechenden Kultskala um 3 Felder auf."
     },

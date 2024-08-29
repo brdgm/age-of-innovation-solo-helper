@@ -36,7 +36,7 @@ describe('BotActions', () => {
     expect(action1.directionalSelectionCount).to.eq(1)
 
     const action2 = botActions.actions[1]
-    expect(action2.action).to.eq(Action.TAKE_FAVOR_TILE)
+    expect(action2.action).to.eq(Action.TAKE_INNOVATION)
     expect(action2.scienceDisciplineSelection).to.eq(ScienceDisciplineSelection.CATCH_UP)
 
     const action3 = botActions.actions[2]
@@ -96,7 +96,7 @@ describe('BotActions', () => {
     expect(action1.botFaction).to.undefined
 
     const action2 = botActions.actions[1]
-    expect(action2.action).to.eq(Action.ADVANCE_CULT_TRACK)
+    expect(action2.action).to.eq(Action.ADVANCE_SCIENCE_DISCIPLINE)
     expect(action2.scienceDisciplineSelection).to.eq(ScienceDisciplineSelection.CATCH_UP)
     expect(action2.botFaction).to.eq(BotFaction.DRUIDS)
   })
@@ -115,7 +115,7 @@ describe('BotActions', () => {
     expect(action1.botFaction).to.eq(BotFaction.POWERMONGERS)
 
     const action2 = botActions.actions[1]
-    expect(action2.action).to.eq(Action.ADVANCE_CULT_TRACK)
+    expect(action2.action).to.eq(Action.ADVANCE_SCIENCE_DISCIPLINE)
     expect(action2.scienceDisciplineSelection).to.eq(ScienceDisciplineSelection.CATCH_UP)
     expect(action2.botFaction).to.eq(BotFaction.POWERMONGERS)
 
@@ -137,7 +137,7 @@ describe('BotActions', () => {
     expect(action1.botFaction).to.undefined
 
     const action2 = botActions.actions[1]
-    expect(action2.action).to.eq(Action.ADVANCE_CULT_TRACK)
+    expect(action2.action).to.eq(Action.ADVANCE_SCIENCE_DISCIPLINE)
     expect(action2.scienceDisciplineSelection).to.eq(ScienceDisciplineSelection.CATCH_UP)
     expect(action2.botFaction).to.eq(BotFaction.POWERMONGERS)
 

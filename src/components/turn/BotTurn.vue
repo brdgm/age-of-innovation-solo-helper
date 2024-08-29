@@ -30,10 +30,9 @@ import CardDeck from '@/services/CardDeck'
 import BotActions from '@/services/BotActions'
 import BotAction from '@/services/BotAction'
 import ActionAdvanceScienceDiscipline from './botAction/ActionAdvanceScienceDiscipline.vue'
-import ActionBlockPowerAction from './botAction/ActionBlockPowerAction.vue'
+import ActionBlockPowerBookAction from './botAction/ActionBlockPowerBookAction.vue'
 import ActionGainVictoryPoints from './botAction/ActionGainVictoryPoints.vue'
-import ActionTakeFavorTile from './botAction/ActionTakeFavorTile.vue'
-import ActionTrade from './botAction/ActionTrade.vue'
+import ActionTakeInnovation from './botAction/ActionTakeInnovation.vue'
 import ActionTransformAndBuild from './botAction/ActionTransformAndBuild.vue'
 import ActionUpgrade from './botAction/ActionUpgrade.vue'
 import ActionFactionSymbiontsPlaceCube from './botAction/ActionFactionSymbiontsPlaceCube.vue'
@@ -44,10 +43,9 @@ export default defineComponent({
   name: 'BotTurn',
   components: {
     ActionAdvanceScienceDiscipline,
-    ActionBlockPowerAction,
+    ActionBlockPowerBookAction,
     ActionGainVictoryPoints,
-    ActionTakeFavorTile,
-    ActionTrade,
+    ActionTakeInnovation,
     ActionTransformAndBuild,
     ActionUpgrade,
     ActionFactionSymbiontsPlaceCube,

@@ -40,11 +40,11 @@ export default class BotActions {
 
     // ongoing benefit for powermongers
     if (botFaction == BotFaction.POWERMONGERS) {
-      const benefitApplyIndex = result.findIndex(botAction => botAction.action == Action.TRANSFORM_AND_BUILD || botAction.action == Action.UPGRADE || botAction.action == Action.TRADE)
+      const benefitApplyIndex = result.findIndex(botAction => botAction.action == Action.TRANSFORM_AND_BUILD || botAction.action == Action.UPGRADE)
       if (benefitApplyIndex >= 0) {
         result = [
           ...result.slice(0, benefitApplyIndex+1),
-          {action: Action.ADVANCE_CULT_TRACK, botFaction: BotFaction.POWERMONGERS, scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP},
+          {action: Action.ADVANCE_SCIENCE_DISCIPLINE, botFaction: BotFaction.POWERMONGERS, scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP},
           ...result.slice(benefitApplyIndex+1,result.length)
         ] 
       }
@@ -53,7 +53,6 @@ export default class BotActions {
     // apply defaults from support card
     result.forEach(botAction => {
       botAction.shipLevel = botAction.shipLevel ?? actionCard.shipLevel ?? this._dlParams.shipLevel
-      botAction.tradeMinRound = botAction.tradeMinRound ?? actionCard.tradeMinRound
       botAction.victoryPointsDifficultyLevel = botAction.victoryPointsDifficultyLevel ?? actionCard.victoryPointsDifficultyLevel
       botAction.victoryPoints = botAction.victoryPoints ?? actionCard.victoryPoints 
       if (!botAction.victoryPoints && botAction.victoryPointsDifficultyLevel) {
@@ -68,8 +67,7 @@ export default class BotActions {
     })
 
     // filter out actions not relevant for current round
-    return result.filter(botAction => (botAction.action != Action.TAKE_FAVOR_TILE || round >= 5)
-        && (botAction.action != Action.TRADE || round >= (botAction.tradeMinRound ?? 0))
+    return result.filter(botAction => (botAction.action != Action.TAKE_INNOVATION || round >= 5)
         && (botAction.action != Action.GAIN_VICTORY_POINTS || (botAction.victoryPoints && botAction.victoryPoints > 0)))
   }
 
@@ -88,7 +86,7 @@ export default class BotActions {
       case BotFaction.DRUIDS:
         return [
           {action: Action.TRANSFORM_AND_BUILD},
-          {action: Action.ADVANCE_CULT_TRACK, botFaction: BotFaction.DRUIDS, scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP}
+          {action: Action.ADVANCE_SCIENCE_DISCIPLINE, botFaction: BotFaction.DRUIDS, scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP}
         ]
       case BotFaction.RACELINGS:
         return [

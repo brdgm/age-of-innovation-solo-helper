@@ -14,7 +14,7 @@ const cards = [
     starter: true,
     actions: [
       Action.UPGRADE,
-      Action.TAKE_FAVOR_TILE,
+      Action.TAKE_INNOVATION,
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
@@ -31,7 +31,7 @@ const cards = [
     id: '*2',
     starter: true,
     actions: [
-      Action.BLOCK_POWER_ACTION,
+      Action.BLOCK_POWER_BOOK_ACTION,
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
@@ -48,7 +48,7 @@ const cards = [
     id: '*3',
     starter: true,
     actions: [
-      Action.ADVANCE_CULT_TRACK
+      Action.ADVANCE_SCIENCE_DISCIPLINE
     ],
     structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.B,
@@ -95,7 +95,7 @@ const cards = [
   {
     id: '6',
     actions: [
-      Action.BLOCK_POWER_ACTION,
+      Action.BLOCK_POWER_BOOK_ACTION,
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
@@ -127,7 +127,7 @@ const cards = [
   {
     id: '8',
     actions: [
-      Action.ADVANCE_CULT_TRACK,
+      Action.ADVANCE_SCIENCE_DISCIPLINE,
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPoints: 2,
@@ -144,7 +144,7 @@ const cards = [
   {
     id: '9',
     actions: [
-      Action.ADVANCE_CULT_TRACK,
+      Action.ADVANCE_SCIENCE_DISCIPLINE,
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPoints: 2,
@@ -195,7 +195,7 @@ const cards = [
   {
     id: '12',
     actions: [
-      Action.BLOCK_POWER_ACTION,
+      Action.BLOCK_POWER_BOOK_ACTION,
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,

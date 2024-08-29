@@ -7,9 +7,9 @@
   </div>
   <div class="actionCol text-muted small">
     <ol>
-      <li v-html="t('botAction.takeFavorTile.selectCultFavorTile')"></li>
+      <li v-html="t('botAction.takeInnovation.selectCultFavorTile')"></li>
       <AdvanceScienceDisciplineTrackSelection :bot-action="botAction"/>
-      <li v-html="t('botAction.takeFavorTile.execute')"></li>
+      <li v-html="t('botAction.takeInnovation.execute')"></li>
     </ol>
   </div>
 </template>
@@ -23,7 +23,7 @@ import SupportInfo from '../supportInfo/SupportInfo.vue'
 import AdvanceScienceDisciplineTrackSelection from './AdvanceScienceDisciplineTrackSelection.vue'
 
 export default defineComponent({
-  name: 'ActionTakeFavorTile',
+  name: 'ActionTakeInnovation',
   inheritAttrs: false,
   components: {
     AppIcon,

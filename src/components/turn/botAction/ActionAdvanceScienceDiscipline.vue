@@ -1,6 +1,6 @@
 <template>
   <div class="actionCol">
-    <AppIcon v-if="isDruids || isPowerMongers" type="action" name="advance-cult-track-no-priest" class="actionIcon"/>
+    <AppIcon v-if="isDruids || isPowerMongers" type="action" name="advance-science-discipline-no-priest" class="actionIcon"/>
     <AppIcon v-else type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
