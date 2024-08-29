@@ -4,7 +4,7 @@ import { DifficultyLevelParameterRound } from './DifficultyLevelParameter'
 import DifficultyLevelParameters from './DifficultyLevelParameters'
 import Action from './enum/Action'
 import BotFaction from './enum/BotFaction'
-import CultTrackSelection from './enum/CultTrackSelection'
+import ScienceDisciplineSelection from './enum/ScienceDisciplineSelection'
 import DifficultyLevel from './enum/DifficultyLevel'
 
 /**
@@ -44,7 +44,7 @@ export default class BotActions {
       if (benefitApplyIndex >= 0) {
         result = [
           ...result.slice(0, benefitApplyIndex+1),
-          {action: Action.ADVANCE_CULT_TRACK, botFaction: BotFaction.POWERMONGERS, cultTrackSelection: CultTrackSelection.CATCH_UP},
+          {action: Action.ADVANCE_CULT_TRACK, botFaction: BotFaction.POWERMONGERS, scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP},
           ...result.slice(benefitApplyIndex+1,result.length)
         ] 
       }
@@ -64,7 +64,7 @@ export default class BotActions {
       botAction.terrainPriority = botAction.terrainPriority ?? supportCard.terrainPriority
       botAction.directionalSelection = botAction.directionalSelection ?? supportCard.directionalSelection
       botAction.directionalSelectionCount = botAction.directionalSelectionCount ?? supportCard.directionalSelectionCount
-      botAction.cultTrackSelection = botAction.cultTrackSelection ?? supportCard.cultTrackSelection
+      botAction.scienceDisciplineSelection = botAction.scienceDisciplineSelection ?? supportCard.scienceDisciplineSelection
     })
 
     // filter out actions not relevant for current round
@@ -88,7 +88,7 @@ export default class BotActions {
       case BotFaction.DRUIDS:
         return [
           {action: Action.TRANSFORM_AND_BUILD},
-          {action: Action.ADVANCE_CULT_TRACK, botFaction: BotFaction.DRUIDS, cultTrackSelection: CultTrackSelection.CATCH_UP}
+          {action: Action.ADVANCE_CULT_TRACK, botFaction: BotFaction.DRUIDS, scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP}
         ]
       case BotFaction.RACELINGS:
         return [

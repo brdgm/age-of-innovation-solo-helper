@@ -1,6 +1,6 @@
 import Action from './enum/Action'
 import BotFaction from './enum/BotFaction'
-import CultTrackSelection from './enum/CultTrackSelection'
+import ScienceDisciplineSelection from './enum/ScienceDisciplineSelection'
 import DirectionalSelection from './enum/DirectionalSelection'
 import Structure from './enum/Structure'
 import TerrainPriority from './enum/TerrainPriority'
@@ -18,6 +18,6 @@ export default interface BotAction {
   terrainPriority?: TerrainPriority
   directionalSelection?: DirectionalSelection
   directionalSelectionCount?: number
-  cultTrackSelection?: CultTrackSelection
+  scienceDisciplineSelection?: ScienceDisciplineSelection
   botFaction?: BotFaction
 }

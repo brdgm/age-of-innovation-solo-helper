@@ -8,14 +8,14 @@
   </div>
   <div class="actionCol text-muted small">
     <ol>
-      <li v-if="isDruids"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionDruids')"></span></li>
-      <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionPowerMongers')"></span></li>
-      <li v-html="t('botAction.advanceCultTrack.notMarker10')"></li>
-      <AdvanceCultTrackTrackSelection :bot-action="botAction"/>
-      <li v-html="t('botAction.advanceCultTrack.execute.title')"></li>
+      <li v-if="isDruids"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionDruids')"></span></li>
+      <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionPowerMongers')"></span></li>
+      <li v-html="t('botAction.advanceScienceDiscipline.notMarker10')"></li>
+      <AdvanceScienceDisciplineTrackSelection :bot-action="botAction"/>
+      <li v-html="t('botAction.advanceScienceDiscipline.execute.title')"></li>
       <ol type="a">
-        <li v-html="t('botAction.advanceCultTrack.execute.placePriest')"></li>
-        <li v-html="t('botAction.advanceCultTrack.execute.noPriest')"></li>
+        <li v-html="t('botAction.advanceScienceDiscipline.execute.placePriest')"></li>
+        <li v-html="t('botAction.advanceScienceDiscipline.execute.noPriest')"></li>
       </ol>
     </ol>
   </div>
@@ -27,16 +27,16 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
-import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue'
+import AdvanceScienceDisciplineTrackSelection from './AdvanceScienceDisciplineTrackSelection.vue'
 import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
-  name: 'ActionAdvanceCultTrack',
+  name: 'ActionAdvanceScienceDiscipline',
   inheritAttrs: false,
   components: {
     AppIcon,
     SupportInfo,
-    AdvanceCultTrackTrackSelection
+    AdvanceScienceDisciplineTrackSelection
   },
   setup() {
     const { t } = useI18n()

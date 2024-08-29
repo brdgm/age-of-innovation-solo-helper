@@ -22,12 +22,12 @@
           <ul>
             <li v-for="faction in factions" :key="faction">
               <b>{{t(`botFaction.${faction}`)}}</b>:
-              <span v-for="(bonus,index) in getCultTrackBonus(faction)" :key="index">
+              <span v-for="(bonus,index) in getScienceDisciplineBonus(faction)" :key="index">
                 <template v-if="index > 0">, </template>
-                <AppIcon type="cult-track" :name="bonus.cultTrack" class="cultTrackIcon"/>
+                <AppIcon type="cult-track" :name="bonus.scienceDiscipline" class="scienceDisciplineIcon"/>
                 {{bonus.advanceSteps}}
               </span>
-              <span v-if="getCultTrackBonus(faction).length == 0" v-html="t('setupGameAutoma.stepNone')"></span>
+              <span v-if="getScienceDisciplineBonus(faction).length == 0" v-html="t('setupGameAutoma.stepNone')"></span>
             </li>
           </ul>
         </li>
@@ -67,8 +67,8 @@ import { useI18n } from 'vue-i18n'
 import rollDice from '@brdgm/brdgm-commons/src/util/random/rollDice'
 import AppIcon from '../structure/AppIcon.vue'
 import BotFaction from '@/services/enum/BotFaction'
-import { CultTrackBonusSteps } from '@/services/CultTrackBonus'
-import CultTrackBonuses from '@/services/CultTrackBonuses'
+import { ScienceDisciplineBonusSteps } from '@/services/ScienceDisciplineBonus'
+import ScienceDisciplineBonuses from '@/services/ScienceDisciplineBonuses'
 import { useStateStore } from '@/store/state'
 
 export default defineComponent({
@@ -104,8 +104,8 @@ export default defineComponent({
     }
   },
   methods: {
-    getCultTrackBonus(botFaction : BotFaction) : CultTrackBonusSteps[] {
-      return CultTrackBonuses.get(botFaction)
+    getScienceDisciplineBonus(botFaction : BotFaction) : ScienceDisciplineBonusSteps[] {
+      return ScienceDisciplineBonuses.get(botFaction)
     }
   }
 })
@@ -119,7 +119,7 @@ li {
     margin-top: 0rem;
   }
 }
-.structureIcon, .cultTrackIcon {
+.structureIcon, .scienceDisciplineIcon {
   height: 1.5rem;
 }
 .scoring-tile-icon {

@@ -29,7 +29,7 @@ import BotFaction from '@/services/enum/BotFaction'
 import CardDeck from '@/services/CardDeck'
 import BotActions from '@/services/BotActions'
 import BotAction from '@/services/BotAction'
-import ActionAdvanceCultTrack from './botAction/ActionAdvanceCultTrack.vue'
+import ActionAdvanceScienceDiscipline from './botAction/ActionAdvanceScienceDiscipline.vue'
 import ActionBlockPowerAction from './botAction/ActionBlockPowerAction.vue'
 import ActionGainVictoryPoints from './botAction/ActionGainVictoryPoints.vue'
 import ActionTakeFavorTile from './botAction/ActionTakeFavorTile.vue'
@@ -43,7 +43,7 @@ import BotPass from './BotPass.vue'
 export default defineComponent({
   name: 'BotTurn',
   components: {
-    ActionAdvanceCultTrack,
+    ActionAdvanceScienceDiscipline,
     ActionBlockPowerAction,
     ActionGainVictoryPoints,
     ActionTakeFavorTile,

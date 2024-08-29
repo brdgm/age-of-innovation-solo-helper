@@ -8,7 +8,7 @@
   <div class="actionCol text-muted small">
     <ol>
       <li v-html="t('botAction.takeFavorTile.selectCultFavorTile')"></li>
-      <AdvanceCultTrackTrackSelection :bot-action="botAction"/>
+      <AdvanceScienceDisciplineTrackSelection :bot-action="botAction"/>
       <li v-html="t('botAction.takeFavorTile.execute')"></li>
     </ol>
   </div>
@@ -20,7 +20,7 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
-import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue'
+import AdvanceScienceDisciplineTrackSelection from './AdvanceScienceDisciplineTrackSelection.vue'
 
 export default defineComponent({
   name: 'ActionTakeFavorTile',
@@ -28,7 +28,7 @@ export default defineComponent({
   components: {
     AppIcon,
     SupportInfo,
-    AdvanceCultTrackTrackSelection
+    AdvanceScienceDisciplineTrackSelection
   },
   setup() {
     const { t } = useI18n()

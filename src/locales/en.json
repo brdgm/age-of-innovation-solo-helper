@@ -113,7 +113,7 @@
       "directionalSelection": "Directional Selection.",
       "gameBoardExecute": "Execute: Place an Action token on the selected Power action. Automa gains no benefit from this."
     },
-    "advanceCultTrack": {
+    "advanceScienceDiscipline": {
       "factionDruids": "<b>Automa advances 2 spaces on a single track (without placing a Priest)</b>.",
       "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
       "notMarker10": "Automa advances only on tracks without a Marker on space 10.",

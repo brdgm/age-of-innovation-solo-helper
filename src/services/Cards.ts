@@ -2,7 +2,7 @@ import findMandatory from '@brdgm/brdgm-commons/src/util/map/findMandatory'
 import Card from './Card'
 import Action from './enum/Action'
 import BonusCardSelection from './enum/BonusCardSelection'
-import CultTrackSelection from './enum/CultTrackSelection'
+import ScienceDisciplineSelection from './enum/ScienceDisciplineSelection'
 import DirectionalSelection from './enum/DirectionalSelection'
 import InitialDwelling from './enum/InitialDwelling'
 import Structure from './enum/Structure'
@@ -22,7 +22,7 @@ const cards = [
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 2,
-    cultTrackSelection: CultTrackSelection.SCORING_TILE,
+    scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
     bonusCardSelection: BonusCardSelection.LEFT,
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.B
@@ -39,7 +39,7 @@ const cards = [
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 1,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.B
@@ -54,7 +54,7 @@ const cards = [
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 3,
-    cultTrackSelection: CultTrackSelection.SCORING_TILE,
+    scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
     bonusCardSelection: BonusCardSelection.RIGHT,
     initialDwellingMarked: InitialDwelling.D,
     initialDwellingUnmarked: InitialDwelling.E
@@ -71,7 +71,7 @@ const cards = [
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 3,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
     initialDwellingMarked: InitialDwelling.D,
     initialDwellingUnmarked: InitialDwelling.F,
@@ -87,7 +87,7 @@ const cards = [
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 2,
-    cultTrackSelection: CultTrackSelection.SCORING_TILE,
+    scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
     bonusCardSelection: BonusCardSelection.RIGHT,
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.C
@@ -103,7 +103,7 @@ const cards = [
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 3,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.C,
@@ -118,7 +118,7 @@ const cards = [
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 4,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
     initialDwellingMarked: InitialDwelling.D,
     initialDwellingUnmarked: InitialDwelling.F,
@@ -135,7 +135,7 @@ const cards = [
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 1,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.RIGHT,
     initialDwellingMarked: InitialDwelling.D,
     initialDwellingUnmarked: InitialDwelling.E,
@@ -152,7 +152,7 @@ const cards = [
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 2,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.B,
@@ -169,7 +169,7 @@ const cards = [
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 4,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.C,
@@ -186,7 +186,7 @@ const cards = [
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 2,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
     initialDwellingMarked: InitialDwelling.D,
     initialDwellingUnmarked: InitialDwelling.E,
@@ -203,7 +203,7 @@ const cards = [
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 3,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.RIGHT,
     initialDwellingMarked: InitialDwelling.D,
     initialDwellingUnmarked: InitialDwelling.F,
@@ -220,7 +220,7 @@ const cards = [
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 1,
-    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.RIGHT,
     initialDwellingMarked: InitialDwelling.A,
     initialDwellingUnmarked: InitialDwelling.C,
