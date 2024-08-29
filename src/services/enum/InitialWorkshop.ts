@@ -1,7 +1,7 @@
 /**
- * Initial Dwelling
+ * Initial Workshop
  */
-enum InitialDwelling {
+enum InitialWorkshop {
   A = 'A',
   B = 'B',
   C = 'C',
@@ -9,4 +9,4 @@ enum InitialDwelling {
   E = 'E',
   F = 'F'
 }
-export default InitialDwelling
+export default InitialWorkshop

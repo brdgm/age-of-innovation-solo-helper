@@ -32,18 +32,18 @@
     "step3": "Choose a Home Terrain type (color) that is different from yours and give Automa the matching Automa Terrain priority (ATP) card. The ATP’s Terrain type is indicated by the top and bottom bars and the leftmost circles.",
     "step4": "For Automa skip the normal faction setup procedure and instead:",
     "step4a": "Give her all Structures of her color.",
-    "step4b": "Return 2 Automa Dwellings to the box. They will not be used.",
+    "step4b": "Return 2 Automa Workshops to the box. They will not be used.",
     "step4d": "Give her all Priests of her color.",
     "step4e": "Place her Markers on the Cult track. Advance on these tracks:",
     "stepNone": "none",
     "step4f": "Follow the additional setup instructions on the <b>{faction} Automa Faction card</b> and familiarize yourself with the special rules.",
     "step4g": "Place a Marker of Automa’s color on space 20 of the Victory point track (as normal).",
-    "initialDwelling": "Initial Dwelling Placement",
-    "initialDwellingIntro": "Automa places her initial Dwellings after you place your first Dwelling. Select the Automa <b>Initial Dwelling map card</b> for the map you are using and refer to it as you:",
-    "initialDwellingPlayer": "Place your first Dwelling.",
-    "initialDwellingMarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>, together with a power token.",
-    "initialDwellingUnmarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>.",
-    "initialDwellingPlayerSecond": "Place your second Dwelling.",
+    "initialWorkshop": "Initial Workshop Placement",
+    "initialWorkshopIntro": "Automa places her initial Workshops after you place your first Workshop. Select the Automa <b>Initial Workshop map card</b> for the map you are using and refer to it as you:",
+    "initialWorkshopPlayer": "Place your first Workshop.",
+    "initialWorkshopMarked": "Place an Automa Workshop on a Home Terrain space with letter <b>{character}</b>, together with a power token.",
+    "initialWorkshopUnmarked": "Place an Automa Workshop on a Home Terrain space with letter <b>{character}</b>.",
+    "initialWorkshopPlayerSecond": "Place your second Workshop.",
     "bonusCards": "Bonus Cards",
     "bonusCardsTake": "Shuffle the {count} Bonus cards and place them face-up in a horizontal line. Give Automa the first one. Choose your own Bonus card.",
     "bonusCardsCoins": "Place 1 Coin from the general supply on each of the leftover Bonus cards."
@@ -68,7 +68,7 @@
       "text": "Automa gains {count} victory point. | Automa gains {count} victory points."
     },
     "transformAndBuild": {
-      "noDwelling": "No dwelling left",
+      "noWorkshop": "No workshop left",
       "validSpaces": {
         "marked": "Withing Range of any marked Structure",
         "marked-reaching": "Withing Range of any marked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
@@ -87,8 +87,8 @@
       "execute": {
         "title": "Execute:",
         "homeTerrainTile": "Place an Automa Home Terrain tile (if transforming was required).",
-        "dwelling": "Place an Automa Dwelling.",
-        "marked": "Mark the new Dwelling by placing a Power token on its space."
+        "workshop": "Place an Automa Workshop.",
+        "marked": "Mark the new Workshop by placing a Power token on its space."
       },
       "reaching": {
         "title": "Reaching",
@@ -99,7 +99,7 @@
     "upgrade": {
       "tiebreaker": {
         "title": "Choose structure:",
-        "tradingHouse": "If Automa has a Trading house available: Automa Dwellings adjacent to any of your Structures. Otherwise, any Structure that Automa can upgrade.",
+        "tradingHouse": "If Automa has a Trading house available: Automa Workshops adjacent to any of your Structures. Otherwise, any Structure that Automa can upgrade.",
         "littlePower": "Giving you as little Power as possible.",
         "directionalSelection": "Directional Selection."
       },

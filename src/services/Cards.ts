@@ -4,7 +4,7 @@ import Action from './enum/Action'
 import BonusCardSelection from './enum/BonusCardSelection'
 import ScienceDisciplineSelection from './enum/ScienceDisciplineSelection'
 import DirectionalSelection from './enum/DirectionalSelection'
-import InitialDwelling from './enum/InitialDwelling'
+import InitialWorkshop from './enum/InitialWorkshop'
 import Structure from './enum/Structure'
 import TerrainPriority from './enum/TerrainPriority'
 
@@ -24,8 +24,8 @@ const cards = [
     directionalSelectionCount: 2,
     scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.B
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.B
   },
   {
     id: '*2',
@@ -41,8 +41,8 @@ const cards = [
     directionalSelectionCount: 1,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.B
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.B
   },
   {
     id: '*3',
@@ -56,8 +56,8 @@ const cards = [
     directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
     bonusCardSelection: BonusCardSelection.RIGHT,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.E
+    initialWorkshopMarked: InitialWorkshop.D,
+    initialWorkshopUnmarked: InitialWorkshop.E
   },
   {
     id: '*4',
@@ -73,8 +73,8 @@ const cards = [
     directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.F,
+    initialWorkshopMarked: InitialWorkshop.D,
+    initialWorkshopUnmarked: InitialWorkshop.F,
     pass: true
   },
   {
@@ -89,8 +89,8 @@ const cards = [
     directionalSelectionCount: 2,
     scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
     bonusCardSelection: BonusCardSelection.RIGHT,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.C
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.C
   },
   {
     id: '6',
@@ -105,8 +105,8 @@ const cards = [
     directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.C,
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.C,
     pass: true
   },
   {
@@ -120,8 +120,8 @@ const cards = [
     directionalSelectionCount: 4,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.F,
+    initialWorkshopMarked: InitialWorkshop.D,
+    initialWorkshopUnmarked: InitialWorkshop.F,
     pass: true
   },
   {
@@ -137,8 +137,8 @@ const cards = [
     directionalSelectionCount: 1,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.RIGHT,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.E,
+    initialWorkshopMarked: InitialWorkshop.D,
+    initialWorkshopUnmarked: InitialWorkshop.E,
     pass: true
   },
   {
@@ -154,8 +154,8 @@ const cards = [
     directionalSelectionCount: 2,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.B,
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.B,
     pass: true
   },
   {
@@ -171,8 +171,8 @@ const cards = [
     directionalSelectionCount: 4,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.C,
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.C,
     pass: true
   },
   {
@@ -188,8 +188,8 @@ const cards = [
     directionalSelectionCount: 2,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.E,
+    initialWorkshopMarked: InitialWorkshop.D,
+    initialWorkshopUnmarked: InitialWorkshop.E,
     pass: true
   },
   {
@@ -205,8 +205,8 @@ const cards = [
     directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.RIGHT,
-    initialDwellingMarked: InitialDwelling.D,
-    initialDwellingUnmarked: InitialDwelling.F,
+    initialWorkshopMarked: InitialWorkshop.D,
+    initialWorkshopUnmarked: InitialWorkshop.F,
     pass: true
   },
   {
@@ -222,8 +222,8 @@ const cards = [
     directionalSelectionCount: 1,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.RIGHT,
-    initialDwellingMarked: InitialDwelling.A,
-    initialDwellingUnmarked: InitialDwelling.C,
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.C,
     pass: true
   }
 ]

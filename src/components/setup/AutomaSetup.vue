@@ -39,17 +39,17 @@
     </li>
   </ol>
 
-  <h4>{{t('setupGameAutoma.initialDwelling')}}</h4>
-  <p v-html="t('setupGameAutoma.initialDwellingIntro')"></p>
+  <h4>{{t('setupGameAutoma.initialWorkshop')}}</h4>
+  <p v-html="t('setupGameAutoma.initialWorkshopIntro')"></p>
   <ol>
-    <li v-html="t('setupGameAutoma.initialDwellingPlayer')"></li>
+    <li v-html="t('setupGameAutoma.initialWorkshopPlayer')"></li>
     <li>
-      <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingMarked', {character:randomCard.initialDwellingMarked})"></span>
+      <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshopMarked', {character:randomCard.initialWorkshopMarked})"></span>
     </li>
     <li>
-      <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingUnmarked', {character:randomCard.initialDwellingUnmarked})"></span>
+      <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshopUnmarked', {character:randomCard.initialWorkshopUnmarked})"></span>
     </li>
-    <li v-html="t('setupGameAutoma.initialDwellingPlayerSecond')"></li>
+    <li v-html="t('setupGameAutoma.initialWorkshopPlayerSecond')"></li>
   </ol>
 
   <h4>{{t('setupGameAutoma.bonusCards')}}</h4>

@@ -2,7 +2,7 @@ import Action from './enum/Action'
 import BonusCardSelection from './enum/BonusCardSelection'
 import ScienceDisciplineSelection from './enum/ScienceDisciplineSelection'
 import DirectionalSelection from './enum/DirectionalSelection'
-import InitialDwelling from './enum/InitialDwelling'
+import InitialWorkshop from './enum/InitialWorkshop'
 import Structure from './enum/Structure'
 import TerrainPriority from './enum/TerrainPriority'
 
@@ -19,7 +19,7 @@ export default interface Card {
   directionalSelectionCount: number
   scienceDisciplineSelection: ScienceDisciplineSelection
   bonusCardSelection: BonusCardSelection
-  initialDwellingMarked: InitialDwelling
-  initialDwellingUnmarked: InitialDwelling
+  initialWorkshopMarked: InitialWorkshop
+  initialWorkshopUnmarked: InitialWorkshop
   pass?: boolean
 }

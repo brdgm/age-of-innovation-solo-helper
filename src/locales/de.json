@@ -38,12 +38,12 @@
     "stepNone": "keine",
     "step4f": "Wende die weiteren Aufbauregeln der <b>{faction}-Völkerkarte</b> an und mache dich mit den Sonderregeln vertraut.",
     "step4g": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der Punkteleiste.",
-    "initialDwelling": "Einsetzen der ersten Wohnhäuser",
-    "initialDwellingIntro": "Automa setzt ihre beiden Wohnhäuser ein, nachdem du dein erstes Wohnhaus eingesetzt hast. Nutze dafür die <b>Spielplankarte</b>, die den gewählten Spielplan zeigt.",
-    "initialDwellingPlayer": "Setze dein erstes Wohnhaus ein.",
-    "initialDwellingMarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
-    "initialDwellingUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
-    "initialDwellingPlayerSecond": "Setze dein zweites Wohnhaus ein.",
+    "initialWorkshop": "Einsetzen der ersten Wohnhäuser",
+    "initialWorkshopIntro": "Automa setzt ihre beiden Wohnhäuser ein, nachdem du dein erstes Wohnhaus eingesetzt hast. Nutze dafür die <b>Spielplankarte</b>, die den gewählten Spielplan zeigt.",
+    "initialWorkshopPlayer": "Setze dein erstes Wohnhaus ein.",
+    "initialWorkshopMarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
+    "initialWorkshopUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
+    "initialWorkshopPlayerSecond": "Setze dein zweites Wohnhaus ein.",
     "bonusCards": "Rundenbonuskarten",
     "bonusCardsTake": "Mische die {count} Rundenbonuskarten und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält die Karte ganz links. Wähle dann regulär eine Karte für dich.",
     "bonusCardsCoins": "Legt auf die Rundenbonuskarten, die übrig geblieben sind, je eine Geldmünze aus dem allgemeinen Materialvorrat."
@@ -68,7 +68,7 @@
       "text": "Automa erhält {count} Punkt. | Automa erhält {count} Punkte."
     },
     "transformAndBuild": {
-      "noDwelling": "Kein Wohnhaus übrig",
+      "noWorkshop": "Kein Wohnhaus übrig",
       "validSpaces": {
         "marked": "In Reichweite eines markierten Gebäudes",
         "marked-reaching": "In Reichweite eines markierten Gebäudes (mit <a href='#modalReaching' data-bs-toggle='modal'>Zusammenführen</a>)",
@@ -87,7 +87,7 @@
       "execute": {
         "title": "Ausführung:",
         "homeTerrainTile": "Platziere ein Landschaftsplättchen mit Automas Heimatlandschaft (falls nötig).",
-        "dwelling": "Setze ein Automa-Wohnhaus ein.",
+        "workshop": "Setze ein Automa-Wohnhaus ein.",
         "marked": "Markiere das neue Wohnhaus mit einem Machtchip."
       },
       "reaching": {

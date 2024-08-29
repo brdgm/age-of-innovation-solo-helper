@@ -8,7 +8,7 @@
       <SupportInfo :bot-action="botAction" :structure="true" :terrain-priority="true" :directional-selection="true"/>
     </div>
     <div class="actionCol text-muted small">
-      <button type="button" class="btn btn-outline-secondary btn-sm" @click="isUpgrade=true">{{t('botAction.transformAndBuild.noDwelling')}}</button>
+      <button type="button" class="btn btn-outline-secondary btn-sm" @click="isUpgrade=true">{{t('botAction.transformAndBuild.noWorkshop')}}</button>
       <ol class="mt-2">
         <li v-if="isWanderers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.validSpaces.factionWanderers')"></span></li>
         <li v-else v-html="t(`botAction.transformAndBuild.validSpaces.${botAction.structure}`)"></li>
@@ -34,7 +34,7 @@
         <li v-html="t('botAction.transformAndBuild.execute.title')"></li>
         <ol type="a">
           <li v-html="t('botAction.transformAndBuild.execute.homeTerrainTile')"></li>
-          <li v-html="t('botAction.transformAndBuild.execute.dwelling')"></li>
+          <li v-html="t('botAction.transformAndBuild.execute.workshop')"></li>
           <li v-if="isMarkedStructure" v-html="t('botAction.transformAndBuild.execute.marked')"></li>
         </ol>
       </ol>
