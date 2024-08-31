@@ -14,7 +14,6 @@ const cards = [
     starter: true,
     actions: [
       Action.UPGRADE,
-      Action.TAKE_INNOVATION,
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
@@ -42,13 +41,14 @@ const cards = [
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
     initialWorkshopMarked: InitialWorkshop.A,
-    initialWorkshopUnmarked: InitialWorkshop.B
+    initialWorkshopUnmarked: InitialWorkshop.B,
+    pass: true
   },
   {
     id: '*3',
     starter: true,
     actions: [
-      Action.ADVANCE_SCIENCE_DISCIPLINE
+      Action.SEND_SCHOLAR
     ],
     structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.B,
@@ -56,25 +56,23 @@ const cards = [
     directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
     bonusCardSelection: BonusCardSelection.RIGHT,
-    initialWorkshopMarked: InitialWorkshop.D,
-    initialWorkshopUnmarked: InitialWorkshop.E
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.B
   },
   {
     id: '*4',
     starter: true,
     actions: [
-      Action.TRANSFORM_AND_BUILD,
-      Action.GAIN_VICTORY_POINTS
+      Action.TRANSFORM_AND_BUILD
     ],
-    victoryPoints: 1,
     structure: Structure.UNMARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialWorkshopMarked: InitialWorkshop.D,
-    initialWorkshopUnmarked: InitialWorkshop.F,
+    initialWorkshopMarked: InitialWorkshop.A,
+    initialWorkshopUnmarked: InitialWorkshop.B,
     pass: true
   },
   {
@@ -87,27 +85,25 @@ const cards = [
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 2,
-    scienceDisciplineSelection: ScienceDisciplineSelection.SCORING_TILE,
-    bonusCardSelection: BonusCardSelection.RIGHT,
-    initialWorkshopMarked: InitialWorkshop.A,
-    initialWorkshopUnmarked: InitialWorkshop.C
-  },
-  {
-    id: '6',
-    actions: [
-      Action.BLOCK_POWER_BOOK_ACTION,
-      Action.GAIN_VICTORY_POINTS
-    ],
-    victoryPointsDifficultyLevel: true,
-    structure: Structure.MARKED_REACHING,
-    terrainPriority: TerrainPriority.B,
-    directionalSelection: DirectionalSelection.RIGHT_DOWN,
-    directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
     initialWorkshopMarked: InitialWorkshop.A,
-    initialWorkshopUnmarked: InitialWorkshop.C,
-    pass: true
+    initialWorkshopUnmarked: InitialWorkshop.B
+  },
+  {
+    id: '*6',
+    actions: [
+      Action.TAKE_INNOVATION,
+      Action.ADVANCE_SCIENCE_DISCIPLINE
+    ],
+    structure: Structure.UNMARKED,
+    terrainPriority: TerrainPriority.A,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 1,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialWorkshopMarked: InitialWorkshop.C,
+    initialWorkshopUnmarked: InitialWorkshop.D
   },
   {
     id: '7',
@@ -120,42 +116,42 @@ const cards = [
     directionalSelectionCount: 4,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialWorkshopMarked: InitialWorkshop.D,
-    initialWorkshopUnmarked: InitialWorkshop.F,
+    initialWorkshopMarked: InitialWorkshop.C,
+    initialWorkshopUnmarked: InitialWorkshop.D,
     pass: true
   },
   {
     id: '8',
     actions: [
-      Action.ADVANCE_SCIENCE_DISCIPLINE,
+      Action.SEND_SCHOLAR,
       Action.GAIN_VICTORY_POINTS
     ],
-    victoryPoints: 2,
+    victoryPoints: 3,
     structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 1,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
-    bonusCardSelection: BonusCardSelection.RIGHT,
-    initialWorkshopMarked: InitialWorkshop.D,
-    initialWorkshopUnmarked: InitialWorkshop.E,
+    bonusCardSelection: BonusCardSelection.MIDDLE,
+    initialWorkshopMarked: InitialWorkshop.C,
+    initialWorkshopUnmarked: InitialWorkshop.D,
     pass: true
   },
   {
     id: '9',
     actions: [
-      Action.ADVANCE_SCIENCE_DISCIPLINE,
+      Action.SEND_SCHOLAR,
       Action.GAIN_VICTORY_POINTS
     ],
-    victoryPoints: 2,
+    victoryPoints: 3,
     structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.A,
-    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 2,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
-    bonusCardSelection: BonusCardSelection.LEFT,
-    initialWorkshopMarked: InitialWorkshop.A,
-    initialWorkshopUnmarked: InitialWorkshop.B,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialWorkshopMarked: InitialWorkshop.C,
+    initialWorkshopUnmarked: InitialWorkshop.D,
     pass: true
   },
   {
@@ -164,15 +160,15 @@ const cards = [
       Action.UPGRADE,
       Action.GAIN_VICTORY_POINTS
     ],
-    victoryPoints: 1,
+    victoryPoints: 2,
     structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 4,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.LEFT,
-    initialWorkshopMarked: InitialWorkshop.A,
-    initialWorkshopUnmarked: InitialWorkshop.C,
+    initialWorkshopMarked: InitialWorkshop.C,
+    initialWorkshopUnmarked: InitialWorkshop.D,
     pass: true
   },
   {
@@ -188,8 +184,8 @@ const cards = [
     directionalSelectionCount: 2,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.MIDDLE,
-    initialWorkshopMarked: InitialWorkshop.D,
-    initialWorkshopUnmarked: InitialWorkshop.E,
+    initialWorkshopMarked: InitialWorkshop.E,
+    initialWorkshopUnmarked: InitialWorkshop.F,
     pass: true
   },
   {
@@ -205,7 +201,7 @@ const cards = [
     directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
     bonusCardSelection: BonusCardSelection.RIGHT,
-    initialWorkshopMarked: InitialWorkshop.D,
+    initialWorkshopMarked: InitialWorkshop.E,
     initialWorkshopUnmarked: InitialWorkshop.F,
     pass: true
   },
@@ -215,15 +211,32 @@ const cards = [
       Action.TRANSFORM_AND_BUILD,
       Action.GAIN_VICTORY_POINTS
     ],
-    victoryPoints: 2,
+    victoryPoints: 3,
+    structure: Structure.MARKED_REACHING,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 1,
+    scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.LEFT,
+    initialWorkshopMarked: InitialWorkshop.E,
+    initialWorkshopUnmarked: InitialWorkshop.F,
+    pass: true
+  },
+  {
+    id: '14',
+    actions: [
+      Action.BLOCK_POWER_BOOK_ACTION,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPointsDifficultyLevel: true,
     structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
-    directionalSelectionCount: 1,
+    directionalSelectionCount: 3,
     scienceDisciplineSelection: ScienceDisciplineSelection.CATCH_UP,
-    bonusCardSelection: BonusCardSelection.RIGHT,
-    initialWorkshopMarked: InitialWorkshop.A,
-    initialWorkshopUnmarked: InitialWorkshop.C,
+    bonusCardSelection: BonusCardSelection.MIDDLE,
+    initialWorkshopMarked: InitialWorkshop.E,
+    initialWorkshopUnmarked: InitialWorkshop.F,
     pass: true
   }
 ]

@@ -10,7 +10,6 @@ export default interface Card {
   id: string
   starter?: boolean
   actions: Action[]
-  shipLevel?: number
   victoryPoints?: number
   victoryPointsDifficultyLevel?: boolean
   structure: Structure
