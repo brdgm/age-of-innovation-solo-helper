@@ -28,7 +28,7 @@ describe('BotActions', () => {
   it('*1/*2-level4-round6', () => {
     const botActions = new BotActions(Cards.get('*1'), Cards.get('*2'),
         6, BotFaction.SIMPLETONS, DifficultyLevel.ULTOMA)
-    expect(botActions.actions.length).to.eq(3)
+    expect(botActions.actions.length).to.eq(2)
 
     const action1 = botActions.actions[0]
     expect(action1.action).to.eq(Action.UPGRADE)
@@ -36,12 +36,8 @@ describe('BotActions', () => {
     expect(action1.directionalSelectionCount).to.eq(1)
 
     const action2 = botActions.actions[1]
-    expect(action2.action).to.eq(Action.TAKE_INNOVATION)
-    expect(action2.scienceDisciplineSelection).to.eq(ScienceDisciplineSelection.CATCH_UP)
-
-    const action3 = botActions.actions[2]
-    expect(action3.action).to.eq(Action.GAIN_VICTORY_POINTS)
-    expect(action3.victoryPoints).to.eq(3)
+    expect(action2.action).to.eq(Action.GAIN_VICTORY_POINTS)
+    expect(action2.victoryPoints).to.eq(3)
   })
 
   it('*5/*2-simpletons', () => {

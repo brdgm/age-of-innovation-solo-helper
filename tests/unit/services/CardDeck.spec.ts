@@ -6,7 +6,7 @@ describe('CardDeck', () => {
   it('new-level1', () => {
     const cardDeck = CardDeck.new(DifficultyLevel.AUTOMALEIN)
 
-    expect(cardDeck.deck.length, 'deck size').to.eq(4)
+    expect(cardDeck.deck.length, 'deck size').to.eq(5)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(9)
     expect(cardDeck.discard.length, 'discard size').to.eq(0)
 
@@ -18,7 +18,7 @@ describe('CardDeck', () => {
   it('new-level2', () => {
     const cardDeck = CardDeck.new(DifficultyLevel.AUTOMA)
 
-    expect(cardDeck.deck.length, 'deck size').to.eq(5)
+    expect(cardDeck.deck.length, 'deck size').to.eq(6)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(8)
     expect(cardDeck.discard.length, 'discard size').to.eq(0)
   })
@@ -26,7 +26,7 @@ describe('CardDeck', () => {
   it('new-level3', () => {
     const cardDeck = CardDeck.new(DifficultyLevel.AUTOMAECHTIG)
 
-    expect(cardDeck.deck.length, 'deck size').to.eq(6)
+    expect(cardDeck.deck.length, 'deck size').to.eq(7)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(7)
     expect(cardDeck.discard.length, 'discard size').to.eq(0)
   })
@@ -34,18 +34,21 @@ describe('CardDeck', () => {
   it('new-level4', () => {
     const cardDeck = CardDeck.new(DifficultyLevel.ULTOMA)
 
-    expect(cardDeck.deck.length, 'deck size').to.eq(6)
-    expect(cardDeck.reserve.length, 'reserve size').to.eq(7)
+    expect(cardDeck.deck.length, 'deck size').to.eq(8)
+    expect(cardDeck.reserve.length, 'reserve size').to.eq(6)
     expect(cardDeck.discard.length, 'discard size').to.eq(0)
   })
 
   it('new-level5', () => {
     const cardDeck = CardDeck.new(DifficultyLevel.ALPTRAUMA)
 
-    expect(cardDeck.deck.length, 'deck size').to.eq(7)
+    expect(cardDeck.deck.length, 'deck size').to.eq(8)
     expect(cardDeck.reserve.length, 'reserve size').to.eq(6)
     expect(cardDeck.discard.length, 'discard size').to.eq(0)
-  })
+
+    const persistence = cardDeck.toPersistence()
+    expect(persistence.deck.includes('13'), '13 in deck').to.true
+})
 
   it('draw-pass-deck-empty', () => {
     const cardDeck = CardDeck.fromPersistence({
@@ -97,7 +100,7 @@ describe('CardDeck', () => {
     const cardDeck = CardDeck.fromPersistence({
       deck: ['*1','*2',],
       discard: ['*3','*4'],
-      reserve: ['6','7']
+      reserve: ['7','8']
     })
 
     cardDeck.prepareForNextRound()
@@ -106,6 +109,6 @@ describe('CardDeck', () => {
     expect(persistence.deck.length, 'deck size').to.eq(5)
     expect(persistence.discard.length, 'deck size').to.eq(0)
     expect(persistence.reserve.length, 'deck size').to.eq(1)
-    expect(persistence.deck.includes('6'), 'includes reserve card').to.true
+    expect(persistence.deck.includes('7'), 'includes reserve card').to.true
   })
 })

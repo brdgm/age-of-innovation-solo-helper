@@ -92,6 +92,7 @@ const cards = [
   },
   {
     id: '*6',
+    starter: true,
     actions: [
       Action.TAKE_INNOVATION,
       Action.ADVANCE_SCIENCE_DISCIPLINE
