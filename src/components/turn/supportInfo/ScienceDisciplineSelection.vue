@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppIcon type="cult-track-selection" :name="type" class="icon"/>
+    <AppIcon type="science-discipline-selection" :name="type" class="icon"/>
   </div>
 </template>
 

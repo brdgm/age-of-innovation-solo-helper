@@ -3,7 +3,7 @@
     <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
-    <SupportInfo :bot-action="botAction" :directional-selection="true" :cult-track-selection="true"/>
+    <SupportInfo :bot-action="botAction" :directional-selection="true" :science-discipline-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
     <ol>

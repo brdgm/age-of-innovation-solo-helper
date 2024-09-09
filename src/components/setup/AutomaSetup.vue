@@ -24,7 +24,7 @@
               <b>{{t(`botFaction.${faction}`)}}</b>:
               <span v-for="(bonus,index) in getScienceDisciplineBonus(faction)" :key="index">
                 <template v-if="index > 0">, </template>
-                <AppIcon type="cult-track" :name="bonus.scienceDiscipline" class="scienceDisciplineIcon"/>
+                <AppIcon type="science-discipline" :name="bonus.scienceDiscipline" class="scienceDisciplineIcon"/>
                 {{bonus.advanceSteps}}
               </span>
               <span v-if="getScienceDisciplineBonus(faction).length == 0" v-html="t('setupGameAutoma.stepNone')"></span>

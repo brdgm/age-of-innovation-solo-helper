@@ -48,6 +48,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .difficultyLevelIcon {
-  height: 1.5rem;
+  height: 1.25rem;
+  margin-top: -0.15rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
 }
 </style>
