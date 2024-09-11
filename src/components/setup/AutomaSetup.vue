@@ -4,58 +4,66 @@
   <ol>
     <li>
       <AppIcon name="scoring-tile-setup" class="scoring-tile-icon"/>
-      <span v-html="t('setupGameAutoma.step1')"></span>
+      <span v-html="t('setupGameAutoma.roundScoreTiles')"></span>
     </li>
     <li>
       <AppIcon name="scoring-tile-game-end-token" class="scoring-tile-icon"/>
-      <span v-html="t('setupGameAutoma.step2')"></span>
+      <span v-html="t('setupGameAutoma.gameEndToken')"></span>
     </li>
-    <li v-html="t('setupGameAutoma.step3')"></li>
+    <li v-html="t('setupGameAutoma.palaceTiles')"></li>
     <li>
-      <span v-html="t('setupGameAutoma.step4')"></span>
+      <span v-html="t('setupGameAutoma.factionSelection.title')"></span>
       <ol type="a">
-        <li v-html="t('setupGameAutoma.step4a')"></li>
-        <li v-html="t('setupGameAutoma.step4b')"></li>
-        <li v-html="t('setupGameAutoma.step4d')"></li>
+        <li v-html="t('setupGameAutoma.factionSelection.planningDisplayCards')"></li>
+        <li v-html="t('setupGameAutoma.factionSelection.factionTiles')"></li>
+        <li v-html="t('setupGameAutoma.factionSelection.chooseSet')"></li>
+      </ol>
+    </li>
+    <li v-html="t('setupGameAutoma.chooseAutomaTerrain')"></li>
+    <li>
+      <span v-html="t('setupGameAutoma.automaComponents.title')"></span>
+      <ol type="a">
+        <li v-html="t('setupGameAutoma.automaComponents.buildings')"></li>
+        <li v-html="t('setupGameAutoma.automaComponents.scholars')"></li>
         <li>
-          <span v-html="t('setupGameAutoma.step4e')"></span>
+          <span v-html="t('setupGameAutoma.automaComponents.science')"></span>
           <ul>
             <li v-for="faction in factions" :key="faction">
-              <b>{{t(`botFaction.${faction}`)}}</b>:
+              <i>{{t(`botFaction.${faction}`)}}</i>:
               <span v-for="(bonus,index) in getScienceDisciplineBonus(faction)" :key="index">
-                <template v-if="index > 0">, </template>
-                <AppIcon type="science-discipline" :name="bonus.scienceDiscipline" class="scienceDisciplineIcon"/>
                 {{bonus.advanceSteps}}
+                <AppIcon type="science-discipline" :name="bonus.scienceDiscipline" class="scienceDisciplineIcon me-2"/>
               </span>
-              <span v-if="getScienceDisciplineBonus(faction).length == 0" v-html="t('setupGameAutoma.stepNone')"></span>
+              <span v-if="getScienceDisciplineBonus(faction).length == 0" v-html="t('setupGameAutoma.automaComponents.stepNone')"></span>
             </li>
           </ul>
         </li>
-        <li v-if="isFactionSymbionts" v-html="t('setupGameAutoma.step4f',{faction:t('botFaction.symbionts')})"></li>
-        <li v-if="isFactionBlight" v-html="t('setupGameAutoma.step4f',{faction:t('botFaction.blight')})"></li>
-        <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.step4f',{faction:t('botFaction.gognomes')})"></li>
-        <li v-html="t('setupGameAutoma.step4g')"></li>
+        <li v-if="isFactionSymbionts" v-html="t('setupGameAutoma.automaComponents.factionSetup',{faction:t('botFaction.symbionts')})"></li>
+        <li v-if="isFactionBlight" v-html="t('setupGameAutoma.automaComponents.factionSetup',{faction:t('botFaction.blight')})"></li>
+        <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.automaComponents.factionSetup',{faction:t('botFaction.gognomes')})"></li>
+        <li v-html="t('setupGameAutoma.automaComponents.scoreTrack')"></li>
+        <li v-html="t('setupGameAutoma.automaComponents.turnOrder')"></li>
       </ol>
     </li>
   </ol>
 
-  <h4>{{t('setupGameAutoma.initialWorkshop')}}</h4>
-  <p v-html="t('setupGameAutoma.initialWorkshopIntro')"></p>
+  <h4>{{t('setupGameAutoma.initialWorkshop.title')}}</h4>
+  <p v-html="t('setupGameAutoma.initialWorkshop.intro')"></p>
   <ol>
-    <li v-html="t('setupGameAutoma.initialWorkshopPlayer')"></li>
+    <li v-html="t('setupGameAutoma.initialWorkshop.player')"></li>
     <li>
-      <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshopMarked', {character:randomCard.initialWorkshopMarked})"></span>
+      <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.marked', {character:randomCard.initialWorkshopMarked})"></span>
     </li>
     <li>
-      <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshopUnmarked', {character:randomCard.initialWorkshopUnmarked})"></span>
+      <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.unmarked', {character:randomCard.initialWorkshopUnmarked})"></span>
     </li>
-    <li v-html="t('setupGameAutoma.initialWorkshopPlayerSecond')"></li>
+    <li v-html="t('setupGameAutoma.initialWorkshop.playerSecond')"></li>
   </ol>
 
-  <h4>{{t('setupGameAutoma.bonusCards')}}</h4>
+  <h4>{{t('setupGameAutoma.bonusCards.title')}}</h4>
   <ul>
-    <li v-html="t('setupGameAutoma.bonusCardsTake',{count:bonusCardCount})"></li>
-    <li v-html="t('setupGameAutoma.bonusCardsCoins')"></li>
+    <li v-html="t('setupGameAutoma.bonusCards.take',{count:bonusCardCount})"></li>
+    <li v-html="t('setupGameAutoma.bonusCards.coins')"></li>
   </ul>
 </template>
 
@@ -125,6 +133,8 @@ li {
 .scoring-tile-icon {
   float: right;
   height: 6rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }

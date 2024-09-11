@@ -1,7 +1,9 @@
 <template>
   <h1>{{t('setupGameAutoma.title')}}</h1>
 
-  <AutomaSetup/>
+  <div class="instructions">
+    <AutomaSetup/>
+  </div>
 
   <button class="btn btn-primary btn-lg mt-4" @click="startGame">
     {{t('action.startGame')}}
@@ -36,3 +38,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.instructions {
+  max-width: 1000px;
+}
+</style>
