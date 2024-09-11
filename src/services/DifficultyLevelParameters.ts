@@ -9,17 +9,6 @@ const items = [
     round: [
       { round: 1, shipLevel: 0, victoryPoints: 0 },
       { round: 2, shipLevel: 0, victoryPoints: 0 },
-      { round: 3, shipLevel: 1, victoryPoints: 0 },
-      { round: 4, shipLevel: 1, victoryPoints: 0 },
-      { round: 5, shipLevel: 1, victoryPoints: 0 },
-      { round: 6, shipLevel: 1, victoryPoints: 0 },
-    ]
-  },
-  {
-    difficultyLevel: DifficultyLevel.AUTOMA,
-    round: [
-      { round: 1, shipLevel: 0, victoryPoints: 0 },
-      { round: 2, shipLevel: 0, victoryPoints: 0 },
       { round: 3, shipLevel: 1, victoryPoints: 1 },
       { round: 4, shipLevel: 1, victoryPoints: 1 },
       { round: 5, shipLevel: 2, victoryPoints: 1 },
@@ -27,18 +16,18 @@ const items = [
     ]
   },
   {
-    difficultyLevel: DifficultyLevel.AUTOMAECHTIG,
+    difficultyLevel: DifficultyLevel.AUTOMA,
     round: [
       { round: 1, shipLevel: 0, victoryPoints: 1 },
       { round: 2, shipLevel: 0, victoryPoints: 1 },
       { round: 3, shipLevel: 1, victoryPoints: 2 },
       { round: 4, shipLevel: 1, victoryPoints: 2 },
-      { round: 5, shipLevel: 2, victoryPoints: 2 },
-      { round: 6, shipLevel: 2, victoryPoints: 2 },
+      { round: 5, shipLevel: 2, victoryPoints: 3 },
+      { round: 6, shipLevel: 2, victoryPoints: 3 },
     ]
   },
   {
-    difficultyLevel: DifficultyLevel.ULTOMA,
+    difficultyLevel: DifficultyLevel.AUTOMAECHTIG,
     round: [
       { round: 1, shipLevel: 1, victoryPoints: 2 },
       { round: 2, shipLevel: 1, victoryPoints: 2 },
@@ -49,12 +38,23 @@ const items = [
     ]
   },
   {
-    difficultyLevel: DifficultyLevel.ALPTRAUMA,
+    difficultyLevel: DifficultyLevel.ULTOMA,
     round: [
       { round: 1, shipLevel: 1, victoryPoints: 2 },
       { round: 2, shipLevel: 1, victoryPoints: 2 },
       { round: 3, shipLevel: 2, victoryPoints: 3 },
       { round: 4, shipLevel: 2, victoryPoints: 3 },
+      { round: 5, shipLevel: 2, victoryPoints: 3 },
+      { round: 6, shipLevel: 2, victoryPoints: 3 },
+    ]
+  },
+  {
+    difficultyLevel: DifficultyLevel.ALPTRAUMA,
+    round: [
+      { round: 1, shipLevel: 1, victoryPoints: 3 },
+      { round: 2, shipLevel: 1, victoryPoints: 3 },
+      { round: 3, shipLevel: 2, victoryPoints: 4 },
+      { round: 4, shipLevel: 2, victoryPoints: 4 },
       { round: 5, shipLevel: 3, victoryPoints: 4 },
       { round: 6, shipLevel: 3, victoryPoints: 4 },
     ]

@@ -3,7 +3,7 @@
   "home": {
     "title": "Age of Innovation Solo Helper",
     "play1": "Spiele den Automa Solo-Modus von <a href='https://boardgamegeek.com/boardgame/383179/age-of-innovation' target='_blank' rel='noopener'><b>Age of Innovation</b></a>.",
-    "play2": "Diese Applikation ersetzt die Automa-Karten.",
+    "play2": "Diese Applikation ersetzt die Automa-Karten, verwaltet den Schwierigkeitsgrad und die Automa Gemeinschafts-Aktionen.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
@@ -14,7 +14,7 @@
       "playerCountItem": "{count} Spieler",
       "botCount": "Automa",
       "botCountItem": "{count} Automa | {count} Automas (Experimentell)",
-      "botFaction": "Automa Volk | Automa {bot} Volk",
+      "botFaction": "Automa Gemeinschaft | Automa {bot} Gemeinschaft",
       "twoPlayerBotFaction": "Beim Spiel mit zwei Spielern erlauben die offiziellen Regeln nur die Wahl von <i>Die Unscheinbaren</i>."
     },
     "difficultyLevel": {

@@ -22,7 +22,7 @@ describe('BotActions', () => {
 
     const action2 = botActions.actions[1]
     expect(action2.action).to.eq(Action.GAIN_VICTORY_POINTS)
-    expect(action2.victoryPoints).to.eq(1)
+    expect(action2.victoryPoints).to.eq(2)
   })
 
   it('*1/*2-level4-round6', () => {
@@ -139,7 +139,7 @@ describe('BotActions', () => {
 
     const action3 = botActions.actions[2]
     expect(action3.action).to.eq(Action.GAIN_VICTORY_POINTS)
-    expect(action3.victoryPoints).to.eq(1)
+    expect(action3.victoryPoints).to.eq(2)
     expect(action3.botFaction).to.undefined
   })
 })
