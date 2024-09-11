@@ -64,7 +64,7 @@
   "income": {
     "title": "Einkommen",
     "turnInfo": "Runde {round}",
-    "collect": "Erhalte neue Arbeiter, Geldmünzen, Priester und Macht."
+    "collect": "Erhalte Werkzeuge, Geld, Gelehrte, Bücher und Macht."
   },
   "roundTurn": {
     "turnInfo": "Runde {round}, Zug {turn}",

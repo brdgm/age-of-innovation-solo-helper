@@ -64,7 +64,7 @@
   "income": {
     "title": "Income",
     "turnInfo": "Round {round}",
-    "collect": "Collect new Workers, Coins, Priests and Power."
+    "collect": "Collect Tools, Coins, Scholars, Books and Power."
   },
   "roundTurn": {
     "turnInfo": "Round {round}, Turn {turn}",
