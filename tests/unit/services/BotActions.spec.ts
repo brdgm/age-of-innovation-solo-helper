@@ -9,7 +9,7 @@ import Structure from '@/services/enum/Structure'
 import TerrainPriority from '@/services/enum/TerrainPriority'
 import { expect } from 'chai'
 
-describe('BotActions', () => {
+describe('services/BotActions', () => {
   it('*1/*2-level3-round1', () => {
     const botActions = new BotActions(Cards.get('*1'), Cards.get('*2'),
         1, BotFaction.SIMPLETONS, DifficultyLevel.AUTOMAECHTIG)

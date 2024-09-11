@@ -20,18 +20,17 @@ export const useStateStore = defineStore(`${name}.store`, {
     } as State
   },
   actions: {
-    roundTurn(roundTurn : RoundTurn) {
-      let round = this.rounds[roundTurn.round - 1]
+    storeRound(round : Round) {
+      this.rounds = this.rounds.filter(item => item.round < round.round)
+      this.rounds.push(round)
+    },
+    storeRoundTurn(roundTurn : RoundTurn) {
+      const round = this.rounds.find(item => item.round == roundTurn.round)
       if (!round) {
-        round = {
-          round : roundTurn.round,
-          turns: []
-        }
+        throw new Error(`Round ${roundTurn.round} not found.`)
       }
-      round.turns[roundTurn.turn - 1] = roundTurn
-      // delete all "future" turns
-      round.turns = round.turns.slice(0, roundTurn.turn)
-      this.rounds[roundTurn.round - 1] = round
+      round.turns = round.turns.filter(item => (item.turn < roundTurn.turn) || (item.turn == roundTurn.turn && item.turnOrderIndex < roundTurn.turnOrderIndex))
+      round.turns.push(roundTurn)
     },
     resetGame() {
       this.rounds = []
@@ -57,14 +56,19 @@ export interface PlayerSetup {
 }
 export interface Round {
   round: number
+  playerOrder: PlayerOrder[]
   turns: RoundTurn[]
+}
+export interface PlayerOrder {
+  player?: number
+  bot?: number
 }
 export interface RoundTurn {
   round: number
   turn: number
+  turnOrderIndex: number
   player?: number
   bot?: number
-  startPlayer?: boolean
   pass?: boolean
   cardDeck?: CardDeckPersistence
 }

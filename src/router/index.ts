@@ -6,7 +6,10 @@ import NotFound from '@/views/NotFound.vue'
 import SetupGame from '@/views/SetupGame.vue'
 import SetupGameAutoma from '@/views/SetupGameAutoma.vue'
 import RoundIncome from '@/views/RoundIncome.vue'
-import RoundTurn from '@/views/RoundTurn.vue'
+import EndOfRound from '@/views/EndOfRound.vue'
+import EndOfGame from '@/views/EndOfGame.vue'
+import RoundTurnPlayer from '@/views/RoundTurnPlayer.vue'
+import RoundTurnBot from '@/views/RoundTurnBot.vue'
 
 const LOCALSTORAGE_KEY = `${name}.route`
 
@@ -32,9 +35,24 @@ const routes: Array<RouteRecordRaw> = [
     component: RoundIncome
   },
   {
-    path: '/round/:round/turn/:turn',
-    name: 'RoundTurn',
-    component: RoundTurn
+    path: '/round/:round/turn/:turn/:turnOrderIndex/player/:player',
+    name: 'RoundTurnPlayer',
+    component: RoundTurnPlayer
+  },
+  {
+    path: '/round/:round/turn/:turn/:turnOrderIndex/bot/:bot',
+    name: 'RoundTurnBot',
+    component: RoundTurnBot
+  },
+  {
+    path: '/round/:round/end',
+    name: 'EndOfRound',
+    component: EndOfRound
+  },
+  {
+    path: '/endOfGame',
+    name: 'EndOfGame',
+    component: EndOfGame
   },
   {
     path: '/:pathMatch(.*)*',

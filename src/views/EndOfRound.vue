@@ -1,13 +1,16 @@
 <template>
-  <div class="float-end">
-    {{t('income.turnInfo', {round:round})}}
-  </div>
-  <h1>{{t('income.title')}}</h1>
+  <div class="float-end">{{t('endOfRound.turnInfo', {round})}}</div>
+  <h1>{{t('endOfRound.title')}}</h1>
 
-  <p v-html="t('income.collect')"></p>
+  <ol>
+    <li v-html="t('endOfRound.cultBonuses')"></li>
+    <li v-html="t('endOfRound.returnActionTokens')"></li>
+    <li v-html="t('endOfRound.bonusCardsCoin')"></li>
+    <li v-html="t('endOfRound.removeScoringTile')"></li>
+  </ol>
 
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
-    {{t('action.next')}}
+    {{t('action.nextRound')}}
   </router-link>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
@@ -17,37 +20,34 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { useStateStore } from '@/store/state'
-import FooterButtons from '@/components/structure/FooterButtons.vue'
 import NavigationState from '@/util/NavigationState'
+import FooterButtons from '@/components/structure/FooterButtons.vue'
 import RouteCalculator from '@/services/RouteCalculator'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
-  name: 'RoundIncome',
+  name: 'EndOfRound',
   components: {
     FooterButtons
   },
   setup() {
     const { t } = useI18n()
-    const state = useStateStore()
     const route = useRoute()
+    const state = useStateStore()
 
     const navigationState = new NavigationState(route)
     const { round } = navigationState
 
     const routeCalculator = new RouteCalculator({round})
 
-    return { t, state, round, routeCalculator }
+    return { t, state, navigationState, round, routeCalculator }
   },
   computed: {
     backButtonRouteTo() : string {
-      if (this.round > 1) {
-        return `/round/${this.round-1}/end`
-      }
-      return ''
+      return this.routeCalculator.getLastTurnRouteTo(this.state)
     },
     nextButtonRouteTo() : string {
-      return this.routeCalculator.getFirstTurnRouteTo(this.state)
+      return `/round/${this.round+1}/income`
     }
   }
 })

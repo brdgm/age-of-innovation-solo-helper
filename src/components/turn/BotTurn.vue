@@ -15,10 +15,6 @@
     </template>
   </div>
 
-  <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
-    {{t('action.next')}}
-  </router-link>
-
 </template>
 
 <script lang="ts">
@@ -38,6 +34,7 @@ import ActionUpgrade from './botAction/ActionUpgrade.vue'
 import ActionFactionSymbiontsPlaceCube from './botAction/ActionFactionSymbiontsPlaceCube.vue'
 import ActionFactionBlightTransformFallowLand from './botAction/ActionFactionBlightTransformFallowLand.vue'
 import BotPass from './BotPass.vue'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
   name: 'BotTurn',
@@ -54,15 +51,12 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     navigationState: {
       type: NavigationState,
-      required: true
-    },
-    nextButtonRouteTo: {
-      type: String,
       required: true
     }
   },

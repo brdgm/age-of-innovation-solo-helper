@@ -1,7 +1,7 @@
 import Cards from '@/services/Cards'
 import { expect } from 'chai'
 
-describe('Cards', () => {
+describe('services/Cards', () => {
   it('get', () => {
     const card = Cards.get('*1')
 

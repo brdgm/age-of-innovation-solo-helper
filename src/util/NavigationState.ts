@@ -1,11 +1,10 @@
-import { cloneDeep } from 'lodash'
 import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
-import PlayerOrder from '@/services/PlayerOrder'
-import { Round, RoundTurn, useStateStore } from '@/store/state'
+import { State, useStateStore } from '@/store/state'
 import { RouteLocation } from 'vue-router'
 import CardDeck from '@/services/CardDeck'
-import Player from '@/services/Player'
+import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
+import getPreviousTurns from './getPreviousTurns'
 
 export default class NavigationState {
 
@@ -13,11 +12,11 @@ export default class NavigationState {
   readonly difficultyLevel : DifficultyLevel
   readonly playerCount : number
   readonly botCount : number
-  private readonly playerOrder : PlayerOrder
-  readonly anyonePassed : boolean
   readonly round : number
   readonly turn : number
-  readonly roundTurn? : RoundTurn
+  readonly turnOrderIndex : number
+  readonly player : number
+  readonly bot : number
   readonly botFaction? : BotFaction
   readonly cardDeck? : CardDeck
 
@@ -28,114 +27,29 @@ export default class NavigationState {
     this.playerCount = setup.playerSetup.playerCount
     this.botCount = setup.playerSetup.botCount
 
-    this.round = parseInt(route.params['round'] as string)
-    this.turn = parseInt(route.params['turn'] as string)
+    this.round = getIntRouteParam(route, 'round')
+    this.turn = getIntRouteParam(route, 'turn')
+    this.turnOrderIndex = getIntRouteParam(route, 'turnOrderIndex')
+    this.player = getIntRouteParam(route, 'player')
+    this.bot = getIntRouteParam(route, 'bot')
 
-    const roundData = this.getRound(this.round)
-    this.playerOrder = new PlayerOrder(roundData.turns.slice(0, this.turn), setup.playerSetup.playerCount, setup.playerSetup.botCount)
-    this.anyonePassed = this.playerOrder.hasAnyonePassed()
-
-    this.roundTurn = cloneDeep(this.getRoundTurn(roundData, this.turn))
-    if (this.roundTurn?.bot) {
-      this.botFaction = setup.playerSetup.botFaction[this.roundTurn?.bot - 1]
-    }
-    if (this.roundTurn?.cardDeck) {
-      this.cardDeck = CardDeck.fromPersistence(this.roundTurn?.cardDeck)
+    if (this.bot > 0) {
+      this.botFaction = setup.playerSetup.botFaction[this.bot - 1]
+      this.cardDeck = this.getCardDeck(this.state)
+      // draw next card for bot
+      this.cardDeck.draw()
     }
   }
 
-  private getRound(round : number) : Round {
-    let roundData = this.state.rounds[round - 1]
-    if (!roundData) {
-      roundData = {
-        round: round,
-        turns: []
+  getCardDeck(state : State) : CardDeck {
+    const previousTurns = getPreviousTurns({state, round:this.round, turn:this.turn, bot:this.bot})
+    for (let i=previousTurns.length-1; i>=0; i--) {
+      const turn = previousTurns[i]
+      if (turn.cardDeck) {
+        return CardDeck.fromPersistence(turn.cardDeck)
       }
     }
-    return roundData
-  }
-
-  private getRoundTurn(roundData : Round, turn : number) : RoundTurn|undefined {
-    let turnData : |RoundTurn|undefined = roundData.turns[turn - 1]
-    if (!turnData) {
-      turnData = this.createNextRoundTurn(roundData.round, turn)
-    }
-    return turnData
-  }
-
-  private createNextRoundTurn(round : number, turn : number) : RoundTurn|undefined {
-    let nextPlayer
-    let startPlayer = false
-    // if this is 1st turn detect start player for new game, or from previous round
-    if (turn == 1) {
-      if (round == 1) {
-        nextPlayer = this.playerOrder.getStartPlayer()
-      }
-      else {
-        const previousRound = this.state.rounds[round-2]
-        if (previousRound) {
-          const playerOrderPreviousRound = new PlayerOrder(previousRound.turns, this.playerCount, this.botCount)
-          nextPlayer = playerOrderPreviousRound.getStartPlayer()
-        }
-      }
-      startPlayer = true
-    }
-    if (!nextPlayer) {
-      // otherwise get next player in player order that did not pass
-      nextPlayer = this.playerOrder.getNextPlayer()
-    }
-    if (nextPlayer) {
-      startPlayer = startPlayer || this.playerOrder.getStartPlayer().is(nextPlayer)
-      const turnData : RoundTurn = { round : round, turn : turn, player : nextPlayer.player, bot : nextPlayer.bot }
-      if (startPlayer) {
-        turnData.startPlayer = startPlayer
-      }
-      if (turnData.bot) {
-        const cardDeck = this.createCardDeck(round, nextPlayer)
-        if (cardDeck.isPass()) {
-          turnData.pass = true
-          if (!this.playerOrder.hasAnyonePassed()) {
-            turnData.startPlayer = true
-          }
-        }
-        turnData.cardDeck = cardDeck.toPersistence()
-      }
-      this.state.roundTurn(turnData)
-      return turnData
-    }
-    return undefined
-  }
-
-  private createCardDeck(round : number, player : Player) : CardDeck {
-    let cardDeck
-
-    // get card deck from last turn in current round and draw a new card
-    let turnData = this.playerOrder.getLastTurn(player)
-    if (turnData != undefined && turnData.cardDeck != undefined) {
-      cardDeck = CardDeck.fromPersistence(turnData.cardDeck)
-      cardDeck.draw()
-      return cardDeck
-    }
-
-    // get card deck from previous round and prepare for new round
-    if (round > 1) {
-      const previousRound = this.state.rounds[round-2]
-      if (previousRound) {
-        const playerOrderPreviousRound = new PlayerOrder(previousRound.turns, this.playerCount, this.botCount)
-        turnData = playerOrderPreviousRound.getLastTurn(player)
-        if (turnData != undefined && turnData.cardDeck != undefined) {
-          cardDeck = CardDeck.fromPersistence(turnData.cardDeck)
-          cardDeck.prepareForNextRound()
-          cardDeck.draw()
-          return cardDeck
-        }
-      }
-    }
-
-    // prepare new card deck
-    cardDeck = CardDeck.new(this.state.setup.difficultyLevel)
-    cardDeck.draw()
-    return cardDeck
+    return CardDeck.new(state.setup.difficultyLevel)
   }
 
 }

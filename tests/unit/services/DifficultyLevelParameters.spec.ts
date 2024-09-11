@@ -2,7 +2,7 @@ import DifficultyLevelParameters from '@/services/DifficultyLevelParameters'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { expect } from 'chai'
 
-describe('DifficultyLevelParameters', () => {
+describe('services/DifficultyLevelParameters', () => {
   it('get', () => {
     const params = DifficultyLevelParameters.get(DifficultyLevel.AUTOMAECHTIG, 5)
 

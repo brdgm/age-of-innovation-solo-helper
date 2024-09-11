@@ -3,7 +3,7 @@ import BotFaction from '@/services/enum/BotFaction'
 import ScienceDiscipline from '@/services/enum/ScienceDiscipline'
 import { expect } from 'chai'
 
-describe('ScienceDisciplineBonuses', () => {
+describe('services/ScienceDisciplineBonuses', () => {
   it('get', () => {
     const steps = ScienceDisciplineBonuses.get(BotFaction.GOGNOMES)
 
