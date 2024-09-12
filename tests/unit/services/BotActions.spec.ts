@@ -55,13 +55,13 @@ describe('services/BotActions', () => {
 
     const action2 = botActions.actions[1]
     expect(action2.action).to.eq(Action.GAIN_VICTORY_POINTS)
-    expect(action2.victoryPoints).to.eq(2)
+    expect(action2.victoryPoints).to.eq(1)
     expect(action2.botFaction).to.undefined
   })
 
   it('*5/*2-wanderers', () => {
     const botActions = new BotActions(Cards.get('*5'), Cards.get('*2'),
-        1, BotFaction.WANDERERS, DifficultyLevel.AUTOMA)
+        3, BotFaction.WANDERERS, DifficultyLevel.AUTOMA)
     expect(botActions.actions.length).to.eq(2)
 
     const action1 = botActions.actions[0]
@@ -117,7 +117,7 @@ describe('services/BotActions', () => {
 
     const action3 = botActions.actions[2]
     expect(action3.action).to.eq(Action.GAIN_VICTORY_POINTS)
-    expect(action3.victoryPoints).to.eq(2)
+    expect(action3.victoryPoints).to.eq(1)
     expect(action3.botFaction).to.undefined
   })
 

@@ -55,8 +55,8 @@ export default class BotActions {
       botAction.shipLevel = botAction.shipLevel ?? this._dlParams.shipLevel
       botAction.victoryPointsDifficultyLevel = botAction.victoryPointsDifficultyLevel ?? actionCard.victoryPointsDifficultyLevel
       botAction.victoryPoints = botAction.victoryPoints ?? actionCard.victoryPoints 
-      if (!botAction.victoryPoints && botAction.victoryPointsDifficultyLevel) {
-        botAction.victoryPoints = this._dlParams.victoryPoints
+      if (botAction.victoryPointsDifficultyLevel) {
+        botAction.victoryPoints = Math.max(this._dlParams.victoryPoints + (botAction.victoryPoints ?? 0), 0)
         botAction.victoryPointsDifficultyLevel = undefined
       }
       botAction.structure = botAction.structure ?? supportCard.structure
@@ -76,12 +76,12 @@ export default class BotActions {
       case BotFaction.SIMPLETONS:
         return [
           {action: Action.TRANSFORM_AND_BUILD},
-          {action: Action.GAIN_VICTORY_POINTS, victoryPoints: 2}
+          {action: Action.GAIN_VICTORY_POINTS, victoryPointsDifficultyLevel:true}
         ]
       case BotFaction.KUDDLERS:
         return [
           {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.KUDDLERS},
-          {action: Action.GAIN_VICTORY_POINTS, victoryPoints: 2}
+          {action: Action.GAIN_VICTORY_POINTS, victoryPointsDifficultyLevel:true, victoryPoints: +1}
         ]
       case BotFaction.DRUIDS:
         return [
@@ -95,17 +95,17 @@ export default class BotActions {
       case BotFaction.WANDERERS:
         return [
           {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.WANDERERS},
-          {action: Action.GAIN_VICTORY_POINTS, victoryPoints: 1}
+          {action: Action.GAIN_VICTORY_POINTS, victoryPointsDifficultyLevel:true, victoryPoints: -1}
         ]
       case BotFaction.MIMICS:
         return [
           {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.MIMICS},
-          {action: Action.GAIN_VICTORY_POINTS, victoryPoints: 2}
+          {action: Action.GAIN_VICTORY_POINTS, victoryPointsDifficultyLevel:true, victoryPoints: +1}
         ]
       case BotFaction.POWERMONGERS:
         return [
           {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.POWERMONGERS},
-          {action: Action.GAIN_VICTORY_POINTS, victoryPoints: 2}
+          {action: Action.GAIN_VICTORY_POINTS, victoryPointsDifficultyLevel:true}
         ]
       case BotFaction.SYMBIONTS:
         return [
@@ -116,7 +116,7 @@ export default class BotActions {
         return [
           {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.BLIGHT},
           {action: Action.FACTION_BLIGHT_TRANSFORM_FALLOW_LAND, botFaction: BotFaction.BLIGHT},
-          {action: Action.GAIN_VICTORY_POINTS, victoryPoints: 1}
+          {action: Action.GAIN_VICTORY_POINTS, victoryPointsDifficultyLevel:true, victoryPoints: +1}
         ]
       case BotFaction.GOGNOMES:
         return [

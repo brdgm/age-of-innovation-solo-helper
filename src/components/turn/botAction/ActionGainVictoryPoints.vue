@@ -1,6 +1,7 @@
 <template>
   <div class="actionCol">
-    <AppIcon type="gain-victory-point" :name="botAction.victoryPoints?.toString() ?? ''" class="actionIcon"/>
+    <div class="count">{{botAction.victoryPoints}}</div>
+    <AppIcon type="action" name="gain-victory-points" class="actionIcon"/>
   </div>
   <div class="actionCol"></div>
   <div class="actionCol text-muted small">
@@ -36,5 +37,15 @@ export default defineComponent({
 <style lang="scss" scoped>
 .actionIcon {
   width: 5rem;
+}
+.count {
+  position: absolute;
+  width: 4.9rem;
+  margin-top: -0.5rem;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 10px #000, 1px 1px 10px #000;
 }
 </style>
