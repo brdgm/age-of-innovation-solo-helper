@@ -4,17 +4,18 @@
     <AppIcon v-else type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
-    <SupportInfo :bot-action="botAction" :directional-selection="true"/>
+    <SupportInfo :bot-action="botAction" :directional-selection="true" :science-discipline-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
     <ol>
-      <li v-if="isDruids"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionDruids')"></span></li>
-      <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionPowerMongers')"></span></li>
-      <li v-html="t('botAction.advanceScienceDiscipline.canAdvance')"></li>
+      <li v-if="isDruids"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.sendScholar.factionDruids')"></span></li>
+      <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.sendScholar.factionPowerMongers')"></span></li>
+      <li v-html="t('botAction.sendScholar.canAdvance')"></li>
       <SendScholarTrackSelection :bot-action="botAction"/>
-      <li v-html="t('botAction.advanceScienceDiscipline.execute.title')"></li>
+      <li v-html="t('botAction.sendScholar.execute.title')"></li>
       <ol type="a">
-        <li v-html="t('botAction.advanceScienceDiscipline.execute.advance')"></li>
+        <li v-html="t('botAction.sendScholar.execute.placeScholar')"></li>
+        <li v-html="t('botAction.sendScholar.execute.noScholar')"></li>
       </ol>
     </ol>
   </div>
@@ -30,7 +31,7 @@ import SendScholarTrackSelection from './SendScholarTrackSelection.vue'
 import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
-  name: 'ActionAdvanceScienceDiscipline',
+  name: 'ActionSendScholar',
   inheritAttrs: false,
   components: {
     AppIcon,

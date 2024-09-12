@@ -129,22 +129,31 @@
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Automa advances 2 spaces on a single track (without placing a Priest)</b>.",
       "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
-      "notMarker10": "Automa advances only on tracks without a Marker on space 10.",
+      "canAdvance": "Automa ignores disciplines it cannot advance.",
+      "execute": {
+        "title": "Execute:",
+        "advance": "Advance Automa‘s marker 1 Level in the chosen Discipline."
+      }
+    },
+    "sendScholar": {
+      "factionDruids": "<b>Automa advances 2 spaces on a single track (without placing a Priest)</b>.",
+      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
+      "canAdvance": "Automa ignores disciplines it cannot advance.",
       "scoringTile": {
-        "title": "Prefer cult track matching the <b>color</b> of the Automa icon on current <b>Scoring tile</b>."
+        "title": "The Discipline matching the <b>color</b> of the Automa icon on the current <b>Round Score tile</b>."
       },
       "catchUp": {
-        "title": "Use <b>Catch-Up</b> selection:",
-        "otherwiseTitle": "Otherwise use Catch-Up selection:",
-        "marketAt0": "The Cult track where Automa‘s Marker is at 0.",
-        "highestMarker": "The Cult track where Automa‘s Marker is nearest to your Marker; it can be on the same space or above or below you.",
-        "highestMarkerMultipleHumans": "The Cult track, where Automa‘s Marker is nearest to the highest Marker; it can be on the same space or above or below the other marker.",
+        "title": "Use <b>Catch-up</b> selection:",
+        "otherwiseTitle": "Otherwise use Catch-up selection:",
+        "marketAt0": "The Discipline where Automa‘s Marker is at 0.",
+        "highestMarker": "The Discipline where Automa‘s Marker is closest to your Marker; it can be on the same Level or above or below you.",
+        "highestMarkerMultipleHumans": "The Discipline, where Automa‘s Marker is nearest to the highest Marker; it can be on the same Level or above or below the other marker.",
         "directionalSelection": "Directional Selection."
       },
       "execute": {
         "title": "Execute:",
-        "placePriest": "Place an available Automa Priest on the highest numbered Priest space below the chosen track and advance Automa‘s Marker the corresponding number of spaces.",
-        "noPriest": "If Automa has no more available Priests, or if there’s no empty Priest space available below the track, advance Automa‘s Marker by 1 on that track without placing a Priest."
+        "placeScholar": "Place an available Automa Scholar on the highest-­valued Scholar space below the chosen Discipline and advance Automa's marker the corresponding number of Levels.",
+        "noScholar": "If Automa has no more available Scholars, or if there's no empty Scholar space available below the chosen Discipline, advance Automa's marker 1 Level In that Discipline without placing a Scholar."
       }
     },
     "takeInnovation": {

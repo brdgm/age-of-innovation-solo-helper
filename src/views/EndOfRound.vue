@@ -10,7 +10,7 @@
   </ol>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
-    {{t('action.nextRound')}}
+    {{t(isLastRound ? 'endOfGame.title' : 'action.nextRound')}}
   </button>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
@@ -46,11 +46,14 @@ export default defineComponent({
   computed: {
     backButtonRouteTo() : string {
       return this.routeCalculator.getLastTurnRouteTo(this.state)
+    },
+    isLastRound() : boolean {
+      return this.round == 6
     }
   },
   methods: {
     next() : void {
-      if (this.round == 6) {
+      if (this.isLastRound) {
         this.$router.push('/endOfGame')
         return
       }

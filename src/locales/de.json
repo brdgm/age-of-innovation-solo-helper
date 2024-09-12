@@ -129,22 +129,31 @@
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Aufsteigen auf einer Kultskala: Automa setzt keinen Priester ein und steigt um 2 Stufen auf</b>.",
       "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
-      "notMarker10": "Automa schreitet nur auf Kultskalen voran ohne Markierungsstein auf Stufe 10.",
+      "canAdvance": "Automa ignoriert Disziplinen, in der sie nicht aufsteigen kann.",
+      "execute": {
+        "title": "Ausführung:",
+        "advance": "Setze Automas Markierungsstein in der gewählten Disziplin 1 Schritt nach oben."
+      }
+    },
+    "sendScholar": {
+      "factionDruids": "<b>Aufsteigen auf einer Kultskala: Automa setzt keinen Priester ein und steigt um 2 Stufen auf</b>.",
+      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
+      "canAdvance": "Automa ignoriert Disziplinen, in der sie nicht aufsteigen kann.",
       "scoringTile": {
-        "title": "Automa bevorzugt eine Skala deren <b>Farbe</b> dem Kult auf dem <b>Wertungsplättchen</b> entspricht."
+        "title": "Automa wählt die Disziplin, deren <b>Farbe</b> dem Automa-Symbol auf dem aktuellen <b>Wertungsplättchen</b> entspricht."
       },
       "catchUp": {
         "title": "Automa versucht <b>aufzuholen</b>:",
         "otherwiseTitle": "Ansonsten versucht Automa aufzuholen:",
-        "marketAt0": "Die Skala, auf der Automas Markierungsstein auf 0 steht.",
-        "highestMarker": "Die Skala, auf der Automas Markierungsstein den geringsten Abstand zu deinem hat. Automa kann dabei auf gleicher, höherer oder niedriger Stufe sein als du.",
-        "highestMarkerMultipleHumans": "Die Skala, auf der Automas Markierungsstein den kleinsten Abstand zu dem Markierungsstein auf der höchsten Stufe derselben Skala hat. Automas Markierungsstein kann dabei auf der gleichen, einer höheren oder niedrigeren Stufe stehen als der andere Markierungstein.",
+        "marketAt0": "Die Disziplin, in der Automas Markierungsstein auf 0 steht.",
+        "highestMarker": "Die Disziplin, in der Automas Markierungsstein den geringsten Abstand zu deinem hat. Automa kann dabei auf gleicher, höherer oder niedrigerer Stufe sein als du.",
+        "highestMarkerMultipleHumans": "Die Disziplin, in der Automas Markierungsstein den kleinsten Abstand zu eurem höchsten Markierungsstein (derselben Disziplin) hat. Automas Markierungsstein kann dabei auf der gleichen, einer höheren oder niedrigeren Stufe stehen als der höchste Markierungstein.",
         "directionalSelection": "Richtungsauswahl."
       },
       "execute": {
         "title": "Ausführung:",
-        "placePriest": "Setze 1 Priester aus Automas Vorrat unterhalb der gewählten Skala auf das freie Feld mit der höchsten Zahl. Automa steigt mit ihrem Markierungsstein um die entsprechende Anzahl an Stufen auf.",
-        "noPriest": "Hat Automa keinen Priester mehr oder gibt es unter der gewählten Skala kein freies Feld mehr, steigt Automa dort um 1 Stufe auf, ohne einen Priester einzusetzen."
+        "placeScholar": "Setze 1 Gelehrten aus Automas Vorrat unterhalb der gewählten Disziplin auf das freie Feld mit der höchsten Zahl. Automa steigt mit ihrem Markierungsstein um die entsprechende Anzahl an Stufen auf.",
+        "noScholar": "Hat Automa keinen Gelehrten mehr oder gibt es unter der gewählten Disziplin kein freies Feld mehr, steigt Automa dort um 1 Stufe auf, ohne einen Gelehrten einzusetzen."
       }
     },
     "takeInnovation": {

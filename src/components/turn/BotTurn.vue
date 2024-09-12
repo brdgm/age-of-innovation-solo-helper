@@ -27,6 +27,7 @@ import BotActions from '@/services/BotActions'
 import BotAction from '@/services/BotAction'
 import ActionAdvanceScienceDiscipline from './botAction/ActionAdvanceScienceDiscipline.vue'
 import ActionBlockPowerBookAction from './botAction/ActionBlockPowerBookAction.vue'
+import ActionSendScholar from './botAction/ActionSendScholar.vue'
 import ActionGainVictoryPoints from './botAction/ActionGainVictoryPoints.vue'
 import ActionTakeInnovation from './botAction/ActionTakeInnovation.vue'
 import ActionTransformAndBuild from './botAction/ActionTransformAndBuild.vue'
@@ -42,6 +43,7 @@ export default defineComponent({
     ActionAdvanceScienceDiscipline,
     ActionBlockPowerBookAction,
     ActionGainVictoryPoints,
+    ActionSendScholar,
     ActionTakeInnovation,
     ActionTransformAndBuild,
     ActionUpgrade,

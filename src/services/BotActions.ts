@@ -52,7 +52,7 @@ export default class BotActions {
 
     // apply defaults from support card
     result.forEach(botAction => {
-      botAction.shipLevel = botAction.shipLevel ?? actionCard.shipLevel ?? this._dlParams.shipLevel
+      botAction.shipLevel = botAction.shipLevel ?? this._dlParams.shipLevel
       botAction.victoryPointsDifficultyLevel = botAction.victoryPointsDifficultyLevel ?? actionCard.victoryPointsDifficultyLevel
       botAction.victoryPoints = botAction.victoryPoints ?? actionCard.victoryPoints 
       if (!botAction.victoryPoints && botAction.victoryPointsDifficultyLevel) {
@@ -67,8 +67,8 @@ export default class BotActions {
     })
 
     // filter out actions not relevant for current round
-    return result.filter(botAction => (botAction.action != Action.TAKE_INNOVATION || round >= 5)
-        && (botAction.action != Action.GAIN_VICTORY_POINTS || (botAction.victoryPoints && botAction.victoryPoints > 0)))
+    return result.filter(botAction => (botAction.action != Action.TAKE_INNOVATION || round >= 3)
+        && (botAction.action != Action.GAIN_VICTORY_POINTS || (botAction.victoryPoints ?? 0 > 0)))
   }
 
   private getFactionBotActions(botFaction : BotFaction) : BotAction[] {
