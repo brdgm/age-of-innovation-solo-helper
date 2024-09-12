@@ -122,9 +122,16 @@
       }
     },
     "blockPowerBookAction": {
-      "gameBoard": "Decke ein offenes Machtfeld auf dem Spielplan ab",
-      "directionalSelection": "Richtungsauswahl.",
-      "gameBoardExecute": "Ausführung: Decke das gewählte Machtfeld mit einer Aktionsmarke ab. Automa erhält nichts durch diese Aktion."
+      "power": {
+        "gameBoard": "Decke eine offene <b>Machtaktion</b> auf dem Spielplan ab.",
+        "directionalSelection": "Richtungsauswahl.",
+        "gameBoardExecute": "Ausführung: Decke die gewählte Machtaktion mit einem X-Marker ab. Automa erhält nichts durch diese Aktion."
+      },
+      "book": {
+        "gameBoard": "Decke eine offene <b>Buchaktion</b> auf dem Spielplan ab.",
+        "directionalSelection": "Richtungsauswahl.",
+        "gameBoardExecute": "Ausführung: Decke die gewählte Buchaktion mit einem X-Marker ab. Automa erhält nichts durch diese Aktion."
+      }
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Aufsteigen auf einer Kultskala: Automa setzt keinen Priester ein und steigt um 2 Stufen auf</b>.",

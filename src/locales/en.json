@@ -122,9 +122,16 @@
       }
     },
     "blockPowerBookAction": {
-      "gameBoard": "Block one uncovered power action on game board",
-      "directionalSelection": "Directional Selection.",
-      "gameBoardExecute": "Execute: Place an Action token on the selected Power action. Automa gains no benefit from this."
+      "power": {
+        "gameBoard": "Block one uncovered <b>Power action</b> on the game board",
+        "directionalSelection": "Directional Selection.",
+        "gameBoardExecute": "Execute: Place an X-token on the selected Power action. Automa gains no benefit from this."
+      },
+      "book": {
+        "gameBoard": "Block one uncovered <b>Book action</b> on the game board",
+        "directionalSelection": "Directional Selection.",
+        "gameBoardExecute": "Execute: Place an X-token on the selected Book action. Automa gains no benefit from this."
+      }
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Automa advances 2 spaces on a single track (without placing a Priest)</b>.",

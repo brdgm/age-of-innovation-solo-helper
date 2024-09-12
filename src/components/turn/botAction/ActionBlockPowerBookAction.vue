@@ -7,10 +7,15 @@
   </div>
   <div class="actionCol text-muted small">
     <ol>
-      <li v-html="t('botAction.blockPowerBookAction.gameBoard')"></li>
+      <li v-html="t('botAction.blockPowerBookAction.power.gameBoard')"></li>
       <ol type="a">
-        <li v-html="t('botAction.blockPowerBookAction.directionalSelection')"></li>
-        <li v-html="t('botAction.blockPowerBookAction.gameBoardExecute')"></li>
+        <li v-html="t('botAction.blockPowerBookAction.power.directionalSelection')"></li>
+        <li v-html="t('botAction.blockPowerBookAction.power.gameBoardExecute')"></li>
+      </ol>
+      <li v-html="t('botAction.blockPowerBookAction.book.gameBoard')"></li>
+      <ol type="a">
+        <li v-html="t('botAction.blockPowerBookAction.book.directionalSelection')"></li>
+        <li v-html="t('botAction.blockPowerBookAction.book.gameBoardExecute')"></li>
       </ol>
     </ol>
   </div>
