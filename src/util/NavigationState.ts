@@ -53,7 +53,7 @@ function getCardDeck(state:State, round:number, turn:number, bot:number) : CardD
     }
   }
   if (round > 1) {
-    const cardDeck = getCardDeck(state, round-1, MAX_TURN, bot)
+    const cardDeck = getCardDeck(state, round-1, MAX_TURN-1, bot)
     cardDeck.prepareForNextRound()
     return cardDeck
   }

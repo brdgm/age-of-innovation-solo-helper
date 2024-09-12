@@ -2,7 +2,7 @@ import { State, RoundTurn } from '@/store/state'
 import getTurnOrder from './getTurnOrder'
 
 /**
- * Get all previous turns in turn order.
+ * Get previous turns of given bot/player in turn order.
  * @param params.state State
  * @param params.round Current round
  * @param params.turn Current turn
@@ -17,7 +17,7 @@ export default function getPreviousTurns(params:{state: State, round: number, tu
   const turnOrder = getTurnOrder(params.state, params.round, params.turn)
   const currentIndex = turnOrder.findIndex(item => item.round==params.round && item.turn==params.turn
       && item.player==params.player && item.bot==params.bot)
-  const previousTurnOrder = turnOrder.slice(0, currentIndex)
+  const previousTurnOrder = currentIndex >= 0 ? turnOrder.slice(0, currentIndex) : turnOrder
   const result : RoundTurn[] = []
   previousTurnOrder.forEach(item => {
     const matchingTurn = round.turns.find(turn => turn.round==item.round && turn.turn==item.turn
@@ -26,5 +26,5 @@ export default function getPreviousTurns(params:{state: State, round: number, tu
       result.push(matchingTurn)
     }
   })
-  return result
+  return result.filter(item => item.bot == params.bot && item.player == params.player)
 }
