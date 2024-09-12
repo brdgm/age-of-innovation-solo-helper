@@ -1,4 +1,4 @@
-import { State } from "@/store/state"
+import { State } from '@/store/state'
 
 /**
  * Generate list of all player/bot turns - leaving out steps after player/bot has passed.

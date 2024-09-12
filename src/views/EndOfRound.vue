@@ -9,9 +9,9 @@
     <li v-html="t('endOfRound.removeScoringTile')"></li>
   </ol>
 
-  <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
+  <button class="btn btn-primary btn-lg mt-4" @click="next()">
     {{t('action.nextRound')}}
-  </router-link>
+  </button>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
@@ -24,6 +24,7 @@ import NavigationState from '@/util/NavigationState'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import RouteCalculator from '@/services/RouteCalculator'
 import { useStateStore } from '@/store/state'
+import getPlayerOrder from '@/util/getPlayerOrder'
 
 export default defineComponent({
   name: 'EndOfRound',
@@ -45,9 +46,22 @@ export default defineComponent({
   computed: {
     backButtonRouteTo() : string {
       return this.routeCalculator.getLastTurnRouteTo(this.state)
-    },
-    nextButtonRouteTo() : string {
-      return `/round/${this.round+1}/income`
+    }
+  },
+  methods: {
+    next() : void {
+      if (this.round == 6) {
+        this.$router.push('/endOfGame')
+        return
+      }
+      // prepare next round with new player order
+      const playerOrder = getPlayerOrder(this.state, this.round)
+      this.state.storeRound({
+        round: this.round+1,
+        playerOrder,
+        turns: []
+      })
+      this.$router.push(`/round/${this.round+1}/income`)
     }
   }
 })

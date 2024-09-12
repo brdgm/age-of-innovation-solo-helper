@@ -1,4 +1,4 @@
-import { State, RoundTurn } from "@/store/state"
+import { State, RoundTurn } from '@/store/state'
 import getTurnOrder from "./getTurnOrder"
 
 /**
