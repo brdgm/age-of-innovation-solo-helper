@@ -68,7 +68,7 @@ export default class BotActions {
 
     // filter out actions not relevant for current round
     return result.filter(botAction => (botAction.action != Action.TAKE_INNOVATION || round >= 3)
-        && (botAction.action != Action.GAIN_VICTORY_POINTS || (botAction.victoryPoints ?? 0 > 0)))
+        && (botAction.action != Action.GAIN_VICTORY_POINTS || ((botAction.victoryPoints ?? 0) > 0)))
   }
 
   private getFactionBotActions(botFaction : BotFaction) : BotAction[] {
