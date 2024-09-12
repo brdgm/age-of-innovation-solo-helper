@@ -1,5 +1,5 @@
 import { State, RoundTurn } from '@/store/state'
-import getTurnOrder from "./getTurnOrder"
+import getTurnOrder from './getTurnOrder'
 
 /**
  * Get all previous turns in turn order.
