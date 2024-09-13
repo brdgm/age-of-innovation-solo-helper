@@ -180,7 +180,7 @@
   "botPass": {
     "title": "Automa <i>passt</i>.",
     "scoringTile": "Automa erhält <b>genau einmal</b> die auf dem aktuellen <b>Wertungsplättchen</b> rechts unten angegebenen Punkte.",
-    "scoringTileFactionRacelings": "Sprinter: Automa hat als erste gepasst and erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte nochmals</b>.",
+    "scoringTileFactionRacelings": "Sprinter: Automa hat als erste gepasst and erhält die auf dem aktuellen <b>Wertungsplättchen</b> angegebenen Punkte <b><i>nochmals</i></b>.",
     "bonusCard": "Automa nimmt einen <b>Rundenbonus</b>:",
     "bonusCardGold": "Lege alle Geldmünzen darauf zurück in den allgemeinen Vorrat."
   },
@@ -196,7 +196,7 @@
     "title": "Spielende",
     "areaScoring": "Automa erhält Punkte durch die <b>Gebietswertung</b>.",
     "cultScoring": "Automa erhält Punkte durch die <b>Wissenswertung</b>.",
-    "factionWanderers": "<b>Wanderer:</b> Erhalte 1 Punkt für jedes eigene Gebäude auf dem Spielplan.",
+    "factionWanderers": "<b>Wanderer:</b> Erhalte 2 Punkte für jedes eigene Gebäude auf dem Spielplan.",
     "factionGognomes": "<b>Gognome</b>: Stelle sicher, dass die Gognome die Punkte für ihre Aufgaben erhalten haben.",
     "resourceScoring": "Automa erhält keine Punkte durch die Ressourcenwertung."
   },

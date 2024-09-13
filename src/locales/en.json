@@ -180,7 +180,7 @@
   "botPass": {
     "title": "Automa <i>passes</i>.",
     "scoringTile": "Automa gains the fixed number of points depicted in the lower right corner of the current <b>Round Score tile</b> (but only <b>once</b>).",
-    "scoringTileFactionRacelings": "Racelings: Automa passed first this round and gains the <b>fixed number of Victory Points</b> on the current Scoring tile <b>again</b>.",
+    "scoringTileFactionRacelings": "Racelings: Automa passed first this round and gains the fixed number of points from the current <b>Round Scoring tile <i>again</i></b>.",
     "bonusCard": "Automa takes a <b>Round Bonus tile</b>:",
     "bonusCardGold": "If there are any coins on the Round Bonus tile return them to the general supply."
   },
@@ -196,7 +196,7 @@
     "title": "End of Game",
     "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
     "cultScoring": "Automa gains victory points from <b>Science scoring</b>.",
-    "factionWanderers": "<b>Wanderers:</b> Gain 1 victory point per structure anywhere on the board.",
+    "factionWanderers": "<b>Wanderers:</b> Gain 2 victory points per own building anywhere on the board.",
     "factionGognomes": "<b>Gognomes</b>: Ensure Gognomes got victory points for their achievements.",
     "resourceScoring": "Automa doesn't get any points from Resource scoring."
   },

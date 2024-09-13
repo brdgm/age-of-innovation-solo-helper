@@ -29,8 +29,8 @@ const items = [
   {
     botFaction: BotFaction.RACELINGS,
     steps: [
-      { scienceDiscipline: ScienceDiscipline.BANKING, advanceSteps: 1 },
-      { scienceDiscipline: ScienceDiscipline.LAW, advanceSteps: 1 }
+      { scienceDiscipline: ScienceDiscipline.LAW, advanceSteps: 1 },
+      { scienceDiscipline: ScienceDiscipline.MEDICINE, advanceSteps: 1 }
     ]
   },
   {

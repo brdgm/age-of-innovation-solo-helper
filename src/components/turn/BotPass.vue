@@ -5,7 +5,7 @@
       <span v-html="t('botPass.scoringTile')"></span>
       <AppIcon name="scoring-tile-cult-color" class="scoringTile"/>
     </li>
-    <li v-if="isFactionRacelings && isStartPlayer">
+    <li v-if="isFactionRacelings && isFirstToPass">
       <AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botPass.scoringTileFactionRacelings')"></span>
       <AppIcon name="scoring-tile-cult-color" class="scoringTile"/>
     </li>
@@ -15,7 +15,6 @@
     </li>
     <li v-html="t('botPass.bonusCardGold')"></li>
   </ol>
-    
 </template>
 
 <script lang="ts">
@@ -25,6 +24,7 @@ import AppIcon from '@/components/structure/AppIcon.vue'
 import NavigationState from '@/util/NavigationState'
 import BonusCardSelection from '@/services/enum/BonusCardSelection'
 import BotFaction from '@/services/enum/BotFaction'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
   name: 'BotPass',
@@ -33,7 +33,8 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     navigationState: {
@@ -48,8 +49,11 @@ export default defineComponent({
     isFactionRacelings() : boolean {
       return this.navigationState.botFaction == BotFaction.RACELINGS
     },
-    isStartPlayer(): boolean {
-      return this.navigationState.roundTurn?.startPlayer ?? false
+    isFirstToPass(): boolean {
+      const { round, turn, turnOrderIndex } = this.navigationState
+      const previousTurns = this.state.rounds.find(item => item.round==round)?.turns
+          .filter(item => (item.turn < turn) || (item.turn == turn && item.turnOrderIndex < turnOrderIndex)) ?? []
+      return previousTurns.find(turn => turn.pass) == undefined
     }
   }
 })
