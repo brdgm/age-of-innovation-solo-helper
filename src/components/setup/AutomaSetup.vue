@@ -42,10 +42,21 @@
         <li v-if="isFactionBlight" v-html="t('setupGameAutoma.automaComponents.factionSetup',{faction:t('botFaction.blight')})"></li>
         <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.automaComponents.factionSetup',{faction:t('botFaction.gognomes')})"></li>
         <li v-html="t('setupGameAutoma.automaComponents.scoreTrack')"></li>
-        <li v-html="t('setupGameAutoma.automaComponents.turnOrder')"></li>
       </ol>
     </li>
   </ol>
+
+  <template v-if="isTwoPlayerGame">
+    <h4>{{t('setupGameAutoma.twoPlayer.title')}}</h4>
+    <ol>
+      <li v-html="t('setupGameAutoma.twoPlayer.areaScoreTile')"></li>
+      <li v-html="t('setupGameAutoma.twoPlayer.componentsUnusedColor')"></li>
+      <ul>
+        <li v-html="t('setupGameAutoma.twoPlayer.placeScholars')"></li>
+        <li v-html="t('setupGameAutoma.twoPlayer.placeStatusMarkers')"></li>
+      </ul>
+    </ol>
+  </template>
 
   <h4>{{t('setupGameAutoma.initialWorkshop.title')}}</h4>
   <p v-html="t('setupGameAutoma.initialWorkshop.intro')"></p>
@@ -109,6 +120,10 @@ export default defineComponent({
     },
     factions() : BotFaction[] {
       return this.state.setup.playerSetup.botFaction
+    },
+    isTwoPlayerGame() : boolean {
+      const { playerCount, botCount } = this.state.setup.playerSetup
+      return (playerCount + botCount) == 2
     }
   },
   methods: {

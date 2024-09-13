@@ -44,8 +44,14 @@
       "science": "Setze 1 ihrer Markierungssteine auf Stufe 0 jeder Disziplin auf dem <b>Wissenstableau</b>. Aufstieg in diesen Disziplinen:",
       "stepNone": "keine",
       "factionSetup": "Wende die weiteren Aufbauregeln der <i>{faction}</i>-<b>Gemeinschaftskarte</b> an und mache dich mit den Sonderregeln vertraut.",
-      "scoreTrack": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der <b>Punkteleiste</b>.",
-      "turnOrder": "Lege ihren <b>Reihenfolgemarker</b> unter deinen auf dem Reihenfolgetableau."
+      "scoreTrack": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der <b>Punkteleiste</b>."
+    },
+    "twoPlayer": {
+      "title": "Aufbau für 2 Spieler",
+      "areaScoreTile": "Platziere verdeckt ein zufälliges <b>2-Spieler Gebietswertungsplättchen</b>.",
+      "componentsUnusedColor": "Verwende das Material einer nicht genutzten Spielerfarbe:",
+      "placeScholars": "Stelle je <b>1 Gelehrten</b> in jeder Disziplin auf ein <b>2er-Feld</b>.",
+      "placeStatusMarkers": "Stelle je <b>1 Markierungsstein</b> in jeder Disziplin auf <b>Stufe 2</b>."
     },
     "initialWorkshop": {
       "title": "Platzierung der ersten Werkstätten",
@@ -64,7 +70,8 @@
   "income": {
     "title": "Einkommen",
     "turnInfo": "Runde {round}",
-    "collect": "Erhalte Werkzeuge, Geld, Gelehrte, Bücher und Macht."
+    "collect": "Erhalte Werkzeuge, Geld, Gelehrte, Bücher und Macht.",
+    "twoPlayer": "<i>2 Spieler:</i> Drehe das <b>Plättchen für die Gebietswertung</b> um."
   },
   "roundTurn": {
     "turnInfo": "Runde {round}, Zug {turn}",
@@ -186,9 +193,10 @@
     "title": "Rundenende",
     "turnInfo": "Runde {round}",
     "scienceBonus": "Du erhältst den <b>Wissensbonus</b>.",
+    "scienceBonusTwoPlayer": "<i>2 Spieler</i>: Bewege für jeden der Wissensboni (auf der rechten Seite der Rundenwertungsplättchen) den Markierungsstein der ungenutzten Spielerfarbe in der abgebildeten Disziplin um die abgebildete Anzahl Schritte nach oben. Dafür wird kein Schlüssel benötigt.",
     "returnActionTokens": "X-Marker zurücknehmen.",
     "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenboni je <b>1 Geldmünze</b>.",
-    "removeScoringTile": "Drehe das aktuelle Rundenwertungsplättchen um."
+    "removeScoringTile": "Entferne das aktuelle Rundenwertungsplättchen."
   },
   "endOfGame": {
     "title": "Spielende",
