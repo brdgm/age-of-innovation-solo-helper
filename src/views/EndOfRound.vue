@@ -1,21 +1,26 @@
 <template>
-  <div class="float-end">{{t('endOfRound.turnInfo', {round})}}</div>
-  <h1>{{t('endOfRound.title')}}</h1>
+  <template v-if="isLastRound">
+    <EndOfGame/>
+  </template>
+  <template v-else>
+    <div class="float-end">{{t('endOfRound.turnInfo', {round})}}</div>
+    <h1>{{t('endOfRound.title')}}</h1>
 
-  <ol>
-    <li v-html="t('endOfRound.scienceBonus')"></li>
-    <template v-if="!isLastRound">
-      <li v-html="t('endOfRound.returnActionTokens')"></li>
-      <li v-html="t('endOfRound.bonusCardsCoin')"></li>
-      <li v-html="t('endOfRound.removeScoringTile')"></li>
-    </template>
-  </ol>
+    <ol>
+      <li v-html="t('endOfRound.scienceBonus')"></li>
+      <template v-if="!isLastRound">
+        <li v-html="t('endOfRound.returnActionTokens')"></li>
+        <li v-html="t('endOfRound.bonusCardsCoin')"></li>
+        <li v-html="t('endOfRound.removeScoringTile')"></li>
+      </template>
+    </ol>
 
-  <button class="btn btn-primary btn-lg mt-4" @click="next()">
-    {{t(isLastRound ? 'endOfGame.title' : 'action.nextRound')}}
-  </button>
+    <button class="btn btn-primary btn-lg mt-4" @click="next()">
+      {{t(isLastRound ? 'endOfGame.title' : 'action.nextRound')}}
+    </button>
+  </template>
 
-  <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
+  <FooterButtons :backButtonRouteTo="backButtonRouteTo" :endGameButtonType="isLastRound ? 'endGame' : 'abortGame'"/>
 </template>
 
 <script lang="ts">
@@ -27,11 +32,13 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import RouteCalculator from '@/services/RouteCalculator'
 import { useStateStore } from '@/store/state'
 import getPlayerOrder from '@/util/getPlayerOrder'
+import EndOfGame from '@/components/turn/EndOfGame.vue'
 
 export default defineComponent({
   name: 'EndOfRound',
   components: {
-    FooterButtons
+    FooterButtons,
+    EndOfGame
   },
   setup() {
     const { t } = useI18n()
@@ -55,10 +62,6 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      if (this.isLastRound) {
-        this.$router.push('/endOfGame')
-        return
-      }
       // prepare next round with new player order
       const playerOrder = getPlayerOrder(this.state, this.round)
       this.state.storeRound({
