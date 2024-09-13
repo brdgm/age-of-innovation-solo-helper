@@ -135,7 +135,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Automa advances 2 Levels in 1 Discipline (without placing a Scholar)</b>.",
-      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
+      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via buildings, Automa advances 1 Level in a Discipline.</b>",
       "canAdvance": "Automa ignores disciplines it cannot advance.",
       "execute": {
         "title": "Execute:",
@@ -144,8 +144,6 @@
       }
     },
     "sendScholar": {
-      "factionDruids": "<b>Automa advances 2 spaces on a single track (without placing a Priest)</b>.",
-      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
       "canAdvance": "Automa ignores disciplines it cannot advance.",
       "scoringTile": {
         "title": "The Discipline matching the <b>color</b> of the Automa icon on the current <b>Round Score tile</b>."
@@ -169,9 +167,9 @@
       "directionalSelection": "Directional Selection."
     },
     "factionSymbiontsPlaceCube": {
-      "validSpaces": "Valid Spaces: All Terrain spaces directly adjacent to any of your structures.",
+      "validSpaces": "Valid Spaces: All Terrain spaces directly adjacent to any of your buildings.",
       "symbiontYouthATP": "Terrain Priority <b>{terrainPriority}</b> with Symbiont <b>youth</b> ATP card.",
-      "placeCube": "Place a <b>worker cube</b> on the selected Terrain space."
+      "placeCube": "Place a <b>Tool</b> on the selected Terrain space."
     },
     "factionBlightTransformFallowLand": {
       "transform": "Transform <b>Fallow Land</B> into <b>Blighted Land twice</b>."

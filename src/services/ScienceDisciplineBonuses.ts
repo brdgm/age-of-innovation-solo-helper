@@ -49,7 +49,10 @@ const items = [
   },
   {
     botFaction: BotFaction.POWERMONGERS,
-    steps: []
+    steps: [
+      { scienceDiscipline: ScienceDiscipline.ENGINEERING, advanceSteps: 1 },
+      { scienceDiscipline: ScienceDiscipline.MEDICINE, advanceSteps: 1 }
+    ]
   },
   {
     botFaction: BotFaction.SYMBIONTS,

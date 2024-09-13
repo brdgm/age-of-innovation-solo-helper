@@ -135,7 +135,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Aufsteigen in einer Disziplin: Automa setzt keinen Gelehrten ein und steigt um 2 Stufen auf</b>.",
-      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
+      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa in 1 Disziplin um 1 Stufe auf.</b>",
       "canAdvance": "Automa ignoriert Disziplinen, in der sie nicht aufsteigen kann.",
       "execute": {
         "title": "Ausführung:",
@@ -144,8 +144,6 @@
       }
     },
     "sendScholar": {
-      "factionDruids": "<b>Aufsteigen auf einer Kultskala: Automa setzt keinen Priester ein und steigt um 2 Stufen auf</b>.",
-      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
       "canAdvance": "Automa ignoriert Disziplinen, in der sie nicht aufsteigen kann.",
       "scoringTile": {
         "title": "Automa wählt die Disziplin, deren <b>Farbe</b> dem Automa-Symbol auf dem aktuellen <b>Wertungsplättchen</b> entspricht."
@@ -170,8 +168,8 @@
     },
     "factionSymbiontsPlaceCube": {
       "validSpaces": "Mögliche Optionen: Alle Felder direkt benachbart zu deinen Gebäuden.",
-      "symbiontYouthATP": "Landschaftsprioriät <b>{terrainPriority}</b>. Nutze die LTP-Karte der <b>Jugend</b>.",
-      "placeCube": "Setze 1 <b>Arbeiterklötzchen</b> auf das gewählte Feld."
+      "symbiontYouthATP": "Landschaftspriorität <b>{terrainPriority}</b>. Nutze die LTP-Karte der <b>Jugend</b>.",
+      "placeCube": "Setze 1 <b>Werkzeug</b> auf das gewählte Feld."
     },
     "factionBlightTransformFallowLand": {
       "transform": "Wandle <b>2 Brachland</B>-Felder in <b>Verwüstetes Land</b> um."

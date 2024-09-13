@@ -53,7 +53,7 @@ export default defineComponent({
       const { round, turn, turnOrderIndex } = this.navigationState
       const previousTurns = this.state.rounds.find(item => item.round==round)?.turns
           .filter(item => (item.turn < turn) || (item.turn == turn && item.turnOrderIndex < turnOrderIndex)) ?? []
-      return previousTurns.find(turn => turn.pass) == undefined
+      return previousTurns.find(item => item.pass) == undefined
     }
   }
 })
