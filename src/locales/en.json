@@ -172,7 +172,7 @@
       "placeCube": "Place a <b>Tool</b> on the selected Terrain space."
     },
     "factionBlightTransformFallowLand": {
-      "transform": "Transform <b>Fallow Land</B> into <b>Blighted Land twice</b>."
+      "transform": "Transform <b>2 Fallow Land</B> into <b>Blighted Land</b>."
     }
   },
   "botPass": {
