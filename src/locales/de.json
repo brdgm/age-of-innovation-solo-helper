@@ -178,18 +178,18 @@
   },
   "botPass": {
     "title": "Automa <i>passt</i>.",
-    "scoringTile": "Automa erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte</b>.",
+    "scoringTile": "Automa erhält <b>genau einmal</b> die auf dem aktuellen <b>Wertungsplättchen</b> rechts unten angegebenen Punkte.",
     "scoringTileFactionRacelings": "Sprinter: Automa hat als erste gepasst and erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte nochmals</b>.",
-    "bonusCard": "Automa nimmt eine <b>Rundenbonuskarte</b>:",
-    "bonusCardGold": "Lege alle Geldmünzen von dieser Karte zurück in den allgemeinen Vorrat."
+    "bonusCard": "Automa nimmt einen <b>Rundenbonus</b>:",
+    "bonusCardGold": "Lege alle Geldmünzen darauf zurück in den allgemeinen Vorrat."
   },
   "endOfRound": {
     "title": "Rundenende",
     "turnInfo": "Runde {round}",
-    "cultBonuses": "Du erhältst den <b>Kultbonus</b>.",
-    "returnActionTokens": "Aktionsmarken zurücknehmen.",
-    "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenbonuskarten je <b>1 Geldmünze</b>.",
-    "removeScoringTile": "Entferne das aktuelle Wertungsplättchen aus dem Spiel."
+    "cultBonuses": "Du erhältst den <b>Wissensbonus</b>.",
+    "returnActionTokens": "X-Marker zurücknehmen.",
+    "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenboni je <b>1 Geldmünze</b>.",
+    "removeScoringTile": "Drehe das aktuelle Rundenwertungsplättchen um."
   },
   "endOfGame": {
     "title": "Spielende",

@@ -178,18 +178,18 @@
   },
   "botPass": {
     "title": "Automa <i>passes</i>.",
-    "scoringTile": "Automa gains a <b>fixed number of Victory points</b> as shown in the lower right corner of the current Scoring tile.",
+    "scoringTile": "Automa gains the fixed number of points depicted in the lower right corner of the current <b>Round Score tile</b> (but only <b>once</b>).",
     "scoringTileFactionRacelings": "Racelings: Automa passed first this round and gains the <b>fixed number of Victory Points</b> on the current Scoring tile <b>again</b>.",
-    "bonusCard": "Automa takes a <b>Bonus card</b>:",
-    "bonusCardGold": "If there are any coins on the Bonus card return them to the general supply."
+    "bonusCard": "Automa takes a <b>Round Bonus tile</b>:",
+    "bonusCardGold": "If there are any coins on the Round Bonus tile return them to the general supply."
   },
   "endOfRound": {
     "title": "End of Round",
     "turnInfo": "Round {round}",
-    "cultBonuses": "You gain the <b>Cult Bonus</b>.",
-    "returnActionTokens": "Return action tokens.",
-    "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Bonus Cards.",
-    "removeScoringTile": "Remove current scoring tile from board."
+    "cultBonuses": "You gain the <b>Science Bonus</b>.",
+    "returnActionTokens": "Remove X-tokens.",
+    "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Round Bonus tiles.",
+    "removeScoringTile": "Flip the current Round Score tile."
   },
   "endOfGame": {
     "title": "End of Game",

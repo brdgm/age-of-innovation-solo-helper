@@ -69,6 +69,7 @@ export default defineComponent({
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: 3rem;
+  border-radius: 5px;
 }
 .factionActionIcon {
   height: 1.3rem;
