@@ -32,7 +32,7 @@ export default defineComponent({
     const route = useRoute()
     const state = useStateStore()
 
-    const navigationState = new NavigationState(route)
+    const navigationState = new NavigationState(route, state)
     const { round, turn, turnOrderIndex, bot, botCount, botFaction } = navigationState
     const routeCalculator = new RouteCalculator({round, turn, turnOrderIndex, bot})
 

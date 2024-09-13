@@ -1,7 +1,7 @@
 import { PlayerOrder, Round, RoundTurn } from '@/store/state'
 
 export default function (params?: MockRoundParams) : Round {
-  const round = {
+  const round : Round = {
     round: params?.round ?? 1,
     playerOrder: params?.playerOrder ?? [{bot:1},{player:1}],
     turns: params?.turns ?? []

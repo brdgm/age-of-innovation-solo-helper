@@ -1,5 +1,3 @@
-import CardDeck from '@/services/CardDeck'
-import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { CardDeckPersistence, RoundTurn } from '@/store/state'
 
 export default function (params?: MockTurnParams) : RoundTurn {
@@ -10,7 +8,7 @@ export default function (params?: MockTurnParams) : RoundTurn {
     player: params?.player,
     bot: params?.bot,
     pass: params?.pass,
-    cardDeck: params?.cardDeck ?? CardDeck.new(DifficultyLevel.AUTOMALEIN).toPersistence()
+    cardDeck: params?.cardDeck
   }
 }
 

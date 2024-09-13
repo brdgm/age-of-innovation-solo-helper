@@ -36,7 +36,7 @@ export default defineComponent({
     const route = useRoute()
     const state = useStateStore()
 
-    const navigationState = new NavigationState(route)
+    const navigationState = new NavigationState(route, state)
     const { round } = navigationState
 
     const routeCalculator = new RouteCalculator({round})
