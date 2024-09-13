@@ -44,8 +44,7 @@
       "science": "Place 1 of her Status markers on each of the spaces marked O on the <b>Science display</b>. Advance on these disciplines:",
       "stepNone": "none",
       "factionSetup": "Follow the additional setup instructions on the <i>{faction}</i> <b>Automa Faction card</b> and familiarize yourself with the special rules.",
-      "scoreTrack": "Place 1 of her Status markers on space 20 of the <b>Score track</b>",
-      "turnOrder": "Place her <b>Turn Order marker</b> below your marker on the Turn Order display."
+      "scoreTrack": "Place 1 of her Status markers on space 20 of the <b>Score track</b>"
     },
     "initialWorkshop": {
       "title": "Placement of the First Workshops",

@@ -42,7 +42,6 @@
         <li v-if="isFactionBlight" v-html="t('setupGameAutoma.automaComponents.factionSetup',{faction:t('botFaction.blight')})"></li>
         <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.automaComponents.factionSetup',{faction:t('botFaction.gognomes')})"></li>
         <li v-html="t('setupGameAutoma.automaComponents.scoreTrack')"></li>
-        <li v-html="t('setupGameAutoma.automaComponents.turnOrder')"></li>
       </ol>
     </li>
   </ol>
