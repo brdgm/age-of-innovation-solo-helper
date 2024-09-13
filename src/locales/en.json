@@ -46,6 +46,13 @@
       "factionSetup": "Follow the additional setup instructions on the <i>{faction}</i> <b>Automa Faction card</b> and familiarize yourself with the special rules.",
       "scoreTrack": "Place 1 of her Status markers on space 20 of the <b>Score track</b>"
     },
+    "twoPlayer": {
+      "title": "2-Player Game Setup",
+      "areaScoreTile": "Place a random <b>2-player Area Score tile</b> face-down.",
+      "componentsUnusedColor": "Use components of an unused color:",
+      "placeScholars": "Place <b>1 Scholar</b> on a <b>2 space</b> of each Discipline.",
+      "placeStatusMarkers": "Place <b>1 Status marker</b> on <b>Level 2</b> for each of the 4 Disciplines."
+    },
     "initialWorkshop": {
       "title": "Placement of the First Workshops",
       "intro": "Automa places her initial Workshops after you place your first Workshop. Use the side of the <b>Initial Workshop Setup card</b> that shows the corresponding side of the game board.",
@@ -63,7 +70,8 @@
   "income": {
     "title": "Income",
     "turnInfo": "Round {round}",
-    "collect": "Collect Tools, Coins, Scholars, Books and Power."
+    "collect": "Collect Tools, Coins, Scholars, Books and Power.",
+    "twoPlayer": "<i>2-Player Game:</i> Reveal the <b>Area Score tile</b>."
   },
   "roundTurn": {
     "turnInfo": "Round {round}, Turn {turn}",
@@ -185,6 +193,7 @@
     "title": "End of Round",
     "turnInfo": "Round {round}",
     "scienceBonus": "You gain the <b>Science Bonus</b>.",
+    "scienceBonusTwoPlayer": "<i>2-Player Game</i>: Using the Science Bonuses on the right side of the Round Score Bonus tile, advance the corresponding Discipline marker of the unused player color a number of Levels as shown by the number of Discipline icons. No key is needed in this case to advance to or above Level 8.",
     "returnActionTokens": "Remove X-tokens.",
     "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Round Bonus tiles.",
     "removeScoringTile": "Remove the current Round Score tile."

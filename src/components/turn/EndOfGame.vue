@@ -54,6 +54,6 @@ export default defineComponent({
   margin-right: 0.2rem;
 }
 ol > li {
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 </style>
