@@ -25,6 +25,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .icon {
   margin-top: 0.25rem;
-  width: 2rem;
+  width: 2.25rem;
 }
 </style>

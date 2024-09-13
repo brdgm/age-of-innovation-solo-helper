@@ -1,6 +1,6 @@
 <template>
   <div class="actionCol">
-    <AppIcon v-if="isDruids || isPowerMongers" type="action" name="advance-science-discipline-no-priest" class="actionIcon"/>
+    <AppIcon v-if="isDruids" type="action" name="advance-science-discipline-2" class="actionIcon"/>
     <AppIcon v-else type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
@@ -14,7 +14,8 @@
       <SendScholarTrackSelection :bot-action="botAction"/>
       <li v-html="t('botAction.advanceScienceDiscipline.execute.title')"></li>
       <ol type="a">
-        <li v-html="t('botAction.advanceScienceDiscipline.execute.advance')"></li>
+        <li v-if="isDruids" v-html="t('botAction.advanceScienceDiscipline.execute.factionDruids')"></li>
+        <li v-else v-html="t('botAction.advanceScienceDiscipline.execute.advance')"></li>
       </ol>
     </ol>
   </div>

@@ -134,12 +134,13 @@
       }
     },
     "advanceScienceDiscipline": {
-      "factionDruids": "<b>Aufsteigen auf einer Kultskala: Automa setzt keinen Priester ein und steigt um 2 Stufen auf</b>.",
+      "factionDruids": "<b>Aufsteigen in einer Disziplin: Automa setzt keinen Gelehrten ein und steigt um 2 Stufen auf</b>.",
       "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
       "canAdvance": "Automa ignoriert Disziplinen, in der sie nicht aufsteigen kann.",
       "execute": {
         "title": "Ausführung:",
-        "advance": "Setze Automas Markierungsstein in der gewählten Disziplin 1 Schritt nach oben."
+        "advance": "Setze Automas Markierungsstein in der gewählten Disziplin 1 Schritt nach oben.",
+        "factionDruids": "Setze Automas Markierungsstein in der gewählten Disziplin 2 Schritte nach oben."
       }
     },
     "sendScholar": {

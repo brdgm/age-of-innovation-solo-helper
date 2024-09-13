@@ -134,12 +134,13 @@
       }
     },
     "advanceScienceDiscipline": {
-      "factionDruids": "<b>Automa advances 2 spaces on a single track (without placing a Priest)</b>.",
+      "factionDruids": "<b>Automa advances 2 Levels in 1 Discipline (without placing a Scholar)</b>.",
       "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
       "canAdvance": "Automa ignores disciplines it cannot advance.",
       "execute": {
         "title": "Execute:",
-        "advance": "Advance Automa‘s marker 1 Level in the chosen Discipline."
+        "advance": "Advance Automa‘s marker 1 Level in the chosen Discipline.",
+        "factionDruids": "Advance Automa‘s marker 2 Levels in the chosen Discipline."
       }
     },
     "sendScholar": {

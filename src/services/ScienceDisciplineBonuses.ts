@@ -23,7 +23,7 @@ const items = [
   {
     botFaction: BotFaction.DRUIDS,
     steps: [
-      { scienceDiscipline: ScienceDiscipline.BANKING, advanceSteps: 2 }
+      { scienceDiscipline: ScienceDiscipline.MEDICINE, advanceSteps: 2 }
     ]
   },
   {
