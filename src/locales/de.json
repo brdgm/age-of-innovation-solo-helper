@@ -185,7 +185,7 @@
   "endOfRound": {
     "title": "Rundenende",
     "turnInfo": "Runde {round}",
-    "cultBonuses": "Du erhältst den <b>Wissensbonus</b>.",
+    "scienceBonus": "Du erhältst den <b>Wissensbonus</b>.",
     "returnActionTokens": "X-Marker zurücknehmen.",
     "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenboni je <b>1 Geldmünze</b>.",
     "removeScoringTile": "Drehe das aktuelle Rundenwertungsplättchen um."
@@ -193,7 +193,7 @@
   "endOfGame": {
     "title": "Spielende",
     "areaScoring": "Automa erhält Punkte durch die <b>Gebietswertung</b>.",
-    "cultScoring": "Automa erhält Punkte durch die <b>Wissenswertung</b>.",
+    "scienceScoring": "Automa erhält Punkte durch die <b>Wissenswertung</b>.",
     "factionWanderers": "<b>Wanderer:</b> Erhalte 2 Punkte für jedes eigene Gebäude auf dem Spielplan.",
     "factionGognomes": "<b>Gognome</b>: Stelle sicher, dass die Gognome die Punkte für ihre Aufgaben erhalten haben.",
     "resourceScoring": "Automa erhält keine Punkte durch die Ressourcenwertung."

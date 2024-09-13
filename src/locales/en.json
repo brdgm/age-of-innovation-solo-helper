@@ -185,7 +185,7 @@
   "endOfRound": {
     "title": "End of Round",
     "turnInfo": "Round {round}",
-    "cultBonuses": "You gain the <b>Science Bonus</b>.",
+    "scienceBonus": "You gain the <b>Science Bonus</b>.",
     "returnActionTokens": "Remove X-tokens.",
     "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Round Bonus tiles.",
     "removeScoringTile": "Flip the current Round Score tile."
@@ -193,7 +193,7 @@
   "endOfGame": {
     "title": "End of Game",
     "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
-    "cultScoring": "Automa gains victory points from <b>Science scoring</b>.",
+    "scienceScoring": "Automa gains victory points from <b>Science scoring</b>.",
     "factionWanderers": "<b>Wanderers:</b> Gain 2 victory points per own building anywhere on the board.",
     "factionGognomes": "<b>Gognomes</b>: Ensure Gognomes got victory points for their achievements.",
     "resourceScoring": "Automa doesn't get any points from Resource scoring."

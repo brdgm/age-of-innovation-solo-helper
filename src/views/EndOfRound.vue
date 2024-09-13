@@ -3,7 +3,7 @@
   <h1>{{t('endOfRound.title')}}</h1>
 
   <ol>
-    <li v-html="t('endOfRound.cultBonuses')"></li>
+    <li v-html="t('endOfRound.scienceBonus')"></li>
     <template v-if="!isLastRound">
       <li v-html="t('endOfRound.returnActionTokens')"></li>
       <li v-html="t('endOfRound.bonusCardsCoin')"></li>
