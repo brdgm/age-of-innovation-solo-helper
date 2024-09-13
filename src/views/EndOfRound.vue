@@ -8,11 +8,12 @@
 
     <ol>
       <li v-html="t('endOfRound.scienceBonus')"></li>
-      <template v-if="!isLastRound">
-        <li v-html="t('endOfRound.returnActionTokens')"></li>
-        <li v-html="t('endOfRound.bonusCardsCoin')"></li>
-        <li v-html="t('endOfRound.removeScoringTile')"></li>
-      </template>
+      <ul v-if="navigationState.isTwoPlayerGame">
+        <li v-html="t('endOfRound.scienceBonusTwoPlayer')"></li>
+      </ul>
+      <li v-html="t('endOfRound.returnActionTokens')"></li>
+      <li v-html="t('endOfRound.bonusCardsCoin')"></li>
+      <li v-html="t('endOfRound.removeScoringTile')"></li>
     </ol>
 
     <button class="btn btn-primary btn-lg mt-4" @click="next()">
@@ -77,6 +78,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 ol > li {
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 </style>
