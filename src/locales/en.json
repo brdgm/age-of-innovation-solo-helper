@@ -164,8 +164,8 @@
       }
     },
     "takeInnovation": {
-      "selectCultFavorTile": "Take one of the +3 Cult Favor tiles for Cult tracks without a Marker on space 10.",
-      "execute": "Execute: Give the chosen tile to Automa and increase her Marker by 3 on the track shown on the tile."
+      "take": "Take one innovation from the display (if Automa has less then 3).",
+      "directionalSelection": "Directional Selection."
     },
     "factionSymbiontsPlaceCube": {
       "validSpaces": "Valid Spaces: All Terrain spaces directly adjacent to any of your structures.",

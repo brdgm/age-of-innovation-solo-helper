@@ -3,13 +3,14 @@
     <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
-    <SupportInfo :bot-action="botAction" :directional-selection="true" :science-discipline-selection="true"/>
+    <SupportInfo :bot-action="botAction" :directional-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
     <ol>
-      <li v-html="t('botAction.takeInnovation.selectCultFavorTile')"></li>
-      <SendScholarTrackSelection :bot-action="botAction"/>
-      <li v-html="t('botAction.takeInnovation.execute')"></li>
+      <li v-html="t('botAction.takeInnovation.take')"></li>
+      <ol type="a">
+        <li v-html="t('botAction.takeInnovation.directionalSelection')"></li>
+      </ol>
     </ol>
   </div>
 </template>
@@ -20,15 +21,13 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
-import SendScholarTrackSelection from './SendScholarTrackSelection.vue'
 
 export default defineComponent({
   name: 'ActionTakeInnovation',
   inheritAttrs: false,
   components: {
     AppIcon,
-    SupportInfo,
-    SendScholarTrackSelection
+    SupportInfo
   },
   setup() {
     const { t } = useI18n()

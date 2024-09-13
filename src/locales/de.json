@@ -164,8 +164,8 @@
       }
     },
     "takeInnovation": {
-      "selectCultFavorTile": "Nimm ein Gunstplättchen, die einen Kult um 3 Stufen erhöhen und auf deren Kultskala sich kein Markierungsstein auf Stufe 10 befindet.",
-      "execute": "Ausführung: Automa nimmt das ausgewählte Plättchen und steigt auf der entsprechenden Kultskala um 3 Felder auf."
+      "take": "Nehme eine Erfindung vom Innovationstableau (wenn Automa noch nicht 3 hat).",
+      "directionalSelection": "Richtungsauswahl."
     },
     "factionSymbiontsPlaceCube": {
       "validSpaces": "Mögliche Optionen: Alle Felder direkt benachbart zu deinen Gebäuden.",
