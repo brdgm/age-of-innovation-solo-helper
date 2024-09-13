@@ -1,0 +1,246 @@
+{
+  "gameTitle": "Age of Innovation",
+  "home": {
+    "title": "Age of Innovation Solo Helper",
+    "play1": "Play the Automa Solo Mode of <a href='https://boardgamegeek.com/boardgame/383179/age-of-innovation' target='_blank' rel='noopener'><b>Age of Innovation</b></a>.",
+    "play2": "This helper application replaces the Automa card deck, manages the difficulty levels and Automa faction abilities.",
+    "feedback": "Discussion and Feedback:"
+  },
+  "setup": {
+    "title": "Setup Game",
+    "players": {
+      "title": "Player",
+      "playerCount": "Human Players",
+      "playerCountItem": "{count} Player | {count} Players",
+      "botCount": "Automa",
+      "botCountItem": "{count} Automa | {count} Automas (Experimental)",
+      "botFaction": "Automa Faction | Automa {bot} Faction",
+      "twoPlayerBotFaction": "When playing with two players, the official rules only allow to play with <i>The Simpletons</i>."
+    },
+    "difficultyLevel": {
+      "title": "Difficulty Level",
+      "easy": "Easy",
+      "hard": "Hard"
+    }
+  }, 
+  "setupGameAutoma": {
+    "title": "Automa Setup",
+    "generalSetup": "General Setup",
+    "generalSetupIntro": "Set up the game as usual, but with the following changes:",
+    "roundScoreTiles": "Use the double-sided <b>Automa Round Score tiles</b> instead of those from the multiplayer game. Flip the Automa Round Score tile to the side that shows the relevant round with a light marking. As In the base game, the Round Score tile with the Spade on its left side cannot be placed In Round 5 or 6.",
+    "gameEndToken": "Use the <b>Automa Final Round Score tiles</b> instead of those from the multiplayer game. Place a random tile as usual.",
+    "palaceTiles": "Place only 2 random <b>Palace tiles</b> next to the game board. Place Palace tile #17 (with the red back) next to them.",
+    "factionSelection": {
+      "title": "Choose your <b>Faction</b> as follows:",
+      "planningDisplayCards": "Lay out 3 random Planning Display cards.",
+      "factionTiles": "Add 2 random Faction tiles to each of these Planning Display cards.",
+      "chooseSet": "Choose a set, take the corresponding Planning display, and select one of the two Factions."
+    },
+    "chooseAutomaTerrain": "Choose a <b>Native terrain</b> for Automa different from yours. Give Automa the matching Automa Terrain Priority (ATP) card. The ATP's Terrain type is Indicated by the top and bottom bars and the leftmost circles.",
+    "automaComponents": {
+      "title": "Distribute the Automa components as follows:",
+      "buildings": "Place all her <b>buildings</b> in her play area.",
+      "scholars": "Place all her <b>Scholars</b> in her play area.",
+      "science": "Place 1 of her Status markers on each of the spaces marked O on the <b>Science display</b>. Advance on these disciplines:",
+      "stepNone": "none",
+      "factionSetup": "Follow the additional setup instructions on the <i>{faction}</i> <b>Automa Faction card</b> and familiarize yourself with the special rules.",
+      "scoreTrack": "Place 1 of her Status markers on space 20 of the <b>Score track</b>",
+      "turnOrder": "Place her <b>Turn Order marker</b> below your marker on the Turn Order display."
+    },
+    "initialWorkshop": {
+      "title": "Placement of the First Workshops",
+      "intro": "Automa places her initial Workshops after you place your first Workshop. Use the side of the <b>Initial Workshop Setup card</b> that shows the corresponding side of the game board.",
+      "player": "Place your first Workshop.",
+      "marked": "Place an Automa Workshop on the Native terrain space with letter <b>{character}</b>, together with a power token.",
+      "unmarked": "Place an Automa Workshop on the Native terrain space with letter <b>{character}</b>.",
+      "playerSecond": "Place your second Workshop."
+    },
+    "bonusCards": {
+      "title": "Round Bonus",
+      "take": "Shuffle the {count} Round Bonus tiles and place them face-up in a horizontal line. Give Automa the first one. Then choose your own Round Bonus tile.",
+      "coins": "Place 1 Coin on each of the leftover Round Bonus tiles."
+    }
+  },
+  "income": {
+    "title": "Income",
+    "turnInfo": "Round {round}",
+    "collect": "Collect Tools, Coins, Scholars, Books and Power."
+  },
+  "roundTurn": {
+    "turnInfo": "Round {round}, Turn {turn}",
+    "titlePlayer": "Player | Player {player}",
+    "titleBot": "Automa: {faction} | Automa {bot}: {faction}"
+  },
+  "playerTurn": {
+    "text": "Please make your turn - or pass.",
+    "passConfirm": "Do you want to pass?",
+    "passInfo": "Collect your Round Bonus tile victory points (if any) and take a new Round Bonus tile."
+  },
+  "botAction": {
+    "gainVictoryPoints": {
+      "text": "Automa gains {count} victory point. | Automa gains {count} victory points."
+    },
+    "transformAndBuild": {
+      "noWorkshop": "No Workshop left",
+      "validSpaces": {
+        "marked": "Within Reach of any marked building.",
+        "marked-reaching": "Within Reach of any marked building (with <a href='#modalBringTogether' data-bs-toggle='modal'>Bring together</a>)",
+        "unmarked": "Within Range of any unmarked Structure",
+        "unmarked-reaching": "Within Reach of any unmarked building (with <a href='#modalBringTogether' data-bs-toggle='modal'>Bring together</a>)",
+        "factionWanderers": "<b>Ignore range restrictions.</b>"
+      },
+      "tiebreaker": {
+        "title": "Select Hex:",
+        "factionPowerMongers": "Giving you the <b>most power</b>.",
+        "terrainPriority": "Automa Terrain Priority <b>{terrainPriority}</b>.",
+        "terrainPriorityYourTerrainType": "Terrain Priority <b>{terrainPriority}</b> with ATP card of <b>your</b> terrain type.",
+        "structureClosest": "Hexes <b>closest</b> to any of <b>your</b> buildings.",
+        "directionalSelection": "Directional Selection."
+      },
+      "execute": {
+        "title": "Execute:",
+        "homeTerrainTile": "Place an Automa Native terrain tile (if terraforming was required).",
+        "workshop": "Place an available Automa Workshop.",
+        "marked": "Mark the new Workshop by placing a Power token on its hex."
+      },
+      "bringTogether": {
+        "title": "Bring together",
+        "text1": "If none of the marked buildings are in Reach of any of the unmarked buildings, the valid hexes are further limited to only those that would decrease the current <i>shortest distance</i> between <i>marked and unmarked buildings</i>.",
+        "text2": "If there are none that would decrease it, all the hexes previously identified remain valid."
+      }
+    },
+    "upgrade": {
+      "tiebreaker": {
+        "title": "Choose building:",
+        "guild": "Automa Workshops adjacent to any of your buildings. Otherwise, any building that Automa can upgrade.",
+        "littlePower": "Giving you as little Power as possible.",
+        "directionalSelection": "Directional Selection."
+      },
+      "execute": {
+        "title": "Execute:",
+        "highestPowerStructure": "Replace the chosen building with the highest Power value building it can be legally upgraded to."
+      }
+    },
+    "blockPowerBookAction": {
+      "power": {
+        "gameBoard": "Block one uncovered <b>Power action</b> on the game board",
+        "directionalSelection": "Directional Selection.",
+        "gameBoardExecute": "Execute: Place an X-token on the selected Power action. Automa gains no benefit from this."
+      },
+      "book": {
+        "gameBoard": "Block one uncovered <b>Book action</b> on the game board",
+        "directionalSelection": "Directional Selection.",
+        "gameBoardExecute": "Execute: Place an X-token on the selected Book action. Automa gains no benefit from this."
+      }
+    },
+    "advanceScienceDiscipline": {
+      "factionDruids": "<b>Automa advances 2 Levels in 1 Discipline (without placing a Scholar)</b>.",
+      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via buildings, Automa advances 1 Level in a Discipline.</b>",
+      "canAdvance": "Automa ignores disciplines it cannot advance.",
+      "execute": {
+        "title": "Execute:",
+        "advance": "Advance Automa‘s marker 1 Level in the chosen Discipline.",
+        "factionDruids": "Advance Automa‘s marker 2 Levels in the chosen Discipline."
+      }
+    },
+    "sendScholar": {
+      "canAdvance": "Automa ignores disciplines it cannot advance.",
+      "scoringTile": {
+        "title": "The Discipline matching the <b>color</b> of the Automa icon on the current <b>Round Score tile</b>."
+      },
+      "catchUp": {
+        "title": "Use <b>Catch-up</b> selection:",
+        "otherwiseTitle": "Otherwise use Catch-up selection:",
+        "marketAt0": "The Discipline where Automa‘s Marker is at 0.",
+        "highestMarker": "The Discipline where Automa‘s Marker is closest to your Marker; it can be on the same Level or above or below you.",
+        "highestMarkerMultipleHumans": "The Discipline, where Automa‘s Marker is nearest to the highest Marker; it can be on the same Level or above or below the other marker.",
+        "directionalSelection": "Directional Selection."
+      },
+      "execute": {
+        "title": "Execute:",
+        "placeScholar": "Place an available Automa Scholar on the highest-­valued Scholar space below the chosen Discipline and advance Automa's marker the corresponding number of Levels.",
+        "noScholar": "If Automa has no more available Scholars, or if there's no empty Scholar space available below the chosen Discipline, advance Automa's marker 1 Level In that Discipline without placing a Scholar."
+      }
+    },
+    "takeInnovation": {
+      "take": "Take one innovation from the display (if Automa has less then 3).",
+      "directionalSelection": "Directional Selection."
+    },
+    "factionSymbiontsPlaceCube": {
+      "validSpaces": "Valid Spaces: All Terrain spaces directly adjacent to any of your buildings.",
+      "symbiontYouthATP": "Terrain Priority <b>{terrainPriority}</b> with Symbiont <b>youth</b> ATP card.",
+      "placeCube": "Place a <b>Tool</b> on the selected Terrain space."
+    },
+    "factionBlightTransformFallowLand": {
+      "transform": "Transform <b>2 Fallow Land</B> into <b>Blighted Land</b>."
+    }
+  },
+  "botPass": {
+    "title": "Automa <i>passes</i>.",
+    "scoringTile": "Automa gains the fixed number of points depicted in the lower right corner of the current <b>Round Score tile</b> (but only <b>once</b>).",
+    "scoringTileFactionRacelings": "Racelings: Automa passed first this round and gains the fixed number of points from the current <b>Round Scoring tile <i>again</i></b>.",
+    "bonusCard": "Automa takes a <b>Round Bonus tile</b>:",
+    "bonusCardGold": "If there are any coins on the Round Bonus tile return them to the general supply."
+  },
+  "endOfRound": {
+    "title": "End of Round",
+    "turnInfo": "Round {round}",
+    "scienceBonus": "You gain the <b>Science Bonus</b>.",
+    "returnActionTokens": "Remove X-tokens.",
+    "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Round Bonus tiles.",
+    "removeScoringTile": "Flip the current Round Score tile."
+  },
+  "endOfGame": {
+    "title": "End of Game",
+    "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
+    "scienceScoring": "Automa gains victory points from <b>Science scoring</b>.",
+    "factionWanderers": "<b>Wanderers:</b> Gain 2 victory points per own building anywhere on the board.",
+    "factionGognomes": "<b>Gognomes</b>: Ensure Gognomes got victory points for their achievements.",
+    "resourceScoring": "Automa doesn't get any points from Resource scoring."
+  },
+  "difficultyLevel": {
+    "1": "Automalein",
+    "2": "Automa",
+    "3": "Automächtig",
+    "4": "Ultoma",
+    "5": "Alptrauma"
+  },
+  "botFaction": {
+    "simpletons": "The Simpletons",
+    "kuddlers": "The Kuddlers",
+    "druids": "Druids",
+    "racelings": "Racelings",
+    "wanderers": "Wanderers",
+    "mimics": "Mimics",
+    "powermongers": "Powermongers",
+    "symbionts": "Symbionts",
+    "blight": "The Blight",
+    "gognomes": "Gognomes"
+  },
+  "notfound": {
+    "title": "Not Found"
+  },
+  "action": {
+    "playGame": "Play Game",
+    "startGame": "Start Game",
+    "next": "Next",
+    "nextRound": "Next Round",
+    "abortGame": "Abort Game",
+    "abortGameConfirm": "Aborting the running game - are you sure?",
+    "endGame": "End Game",
+    "endGameConfirm": "End this game and return to home screen - are you sure?",
+    "cancel": "Cancel",
+    "backToHome": "Back to Home",
+    "back": "Back",
+    "close": "Close",
+    "reset": "Reset",
+    "pass": "Pass"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Refresh Application",
+    "notice": "The application was updated - do you want to refresh to use the latest version?"
+  }
+}
