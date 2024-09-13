@@ -7,7 +7,6 @@ import SetupGame from '@/views/SetupGame.vue'
 import SetupGameAutoma from '@/views/SetupGameAutoma.vue'
 import RoundIncome from '@/views/RoundIncome.vue'
 import EndOfRound from '@/views/EndOfRound.vue'
-import EndOfGame from '@/views/EndOfGame.vue'
 import RoundTurnPlayer from '@/views/RoundTurnPlayer.vue'
 import RoundTurnBot from '@/views/RoundTurnBot.vue'
 
@@ -48,11 +47,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/round/:round/end',
     name: 'EndOfRound',
     component: EndOfRound
-  },
-  {
-    path: '/endOfGame',
-    name: 'EndOfGame',
-    component: EndOfGame
   },
   {
     path: '/:pathMatch(.*)*',
