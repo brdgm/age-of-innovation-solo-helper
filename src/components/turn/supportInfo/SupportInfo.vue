@@ -4,6 +4,7 @@
     <TerrainPriority v-if="terrainPriority" :type="botAction.terrainPriority!"/>
     <DirectionalSelection v-if="directionalSelection" :type="botAction.directionalSelection!" :count="botAction.directionalSelectionCount!"/>
     <ScienceDisciplineSelection v-if="scienceDisciplineSelection" :type="botAction.scienceDisciplineSelection!"/>
+    <ShipLevel v-if="shipLevel" :shipLevel="botAction.shipLevel!"/>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import StructureSelection from '@/components/turn/supportInfo/StructureSelection
 import DirectionalSelection from '@/components/turn/supportInfo/DirectionalSelection.vue'
 import TerrainPriority from '@/components/turn/supportInfo/TerrainPriority.vue'
 import ScienceDisciplineSelection from '@/components/turn/supportInfo/ScienceDisciplineSelection.vue'
+import ShipLevel from './ShipLevel.vue'
 
 export default defineComponent({
   name: 'SupportInfo',
@@ -21,7 +23,8 @@ export default defineComponent({
     StructureSelection,
     DirectionalSelection,
     TerrainPriority,
-    ScienceDisciplineSelection
+    ScienceDisciplineSelection,
+    ShipLevel
   },
   props: {
     botAction: {
@@ -41,6 +44,10 @@ export default defineComponent({
       required: false
     },
     scienceDisciplineSelection: {
+      type: Boolean,
+      required: false
+    },
+    shipLevel: {
       type: Boolean,
       required: false
     }

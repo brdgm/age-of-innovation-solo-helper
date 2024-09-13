@@ -81,44 +81,44 @@
       "text": "Automa gains {count} victory point. | Automa gains {count} victory points."
     },
     "transformAndBuild": {
-      "noWorkshop": "No workshop left",
+      "noWorkshop": "No Workshop left",
       "validSpaces": {
-        "marked": "Withing Range of any marked Structure",
-        "marked-reaching": "Withing Range of any marked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
-        "unmarked": "Withing Range of any unmarked Structure",
-        "unmarked-reaching": "Withing Range of any unmarked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
+        "marked": "Within Reach of any marked building.",
+        "marked-reaching": "Within Reach of any marked building (with <a href='#modalBringTogether' data-bs-toggle='modal'>Bring together</a>)",
+        "unmarked": "Within Range of any unmarked Structure",
+        "unmarked-reaching": "Within Reach of any unmarked building (with <a href='#modalBringTogether' data-bs-toggle='modal'>Bring together</a>)",
         "factionWanderers": "<b>Ignore range restrictions.</b>"
       },
       "tiebreaker": {
-        "title": "Select Space:",
+        "title": "Select Hex:",
         "factionPowerMongers": "Giving you the <b>most power</b>.",
         "terrainPriority": "Automa Terrain Priority <b>{terrainPriority}</b>.",
         "terrainPriorityYourTerrainType": "Terrain Priority <b>{terrainPriority}</b> with ATP card of <b>your</b> terrain type.",
-        "structureClosest": "Space <b>closest</b> to any of your Structures.",
+        "structureClosest": "Hexes <b>closest</b> to any of <b>your</b> buildings.",
         "directionalSelection": "Directional Selection."
       },
       "execute": {
         "title": "Execute:",
-        "homeTerrainTile": "Place an Automa Home Terrain tile (if transforming was required).",
-        "workshop": "Place an Automa Workshop.",
-        "marked": "Mark the new Workshop by placing a Power token on its space."
+        "homeTerrainTile": "Place an Automa Native terrain tile (if terraforming was required).",
+        "workshop": "Place an available Automa Workshop.",
+        "marked": "Mark the new Workshop by placing a Power token on its hex."
       },
-      "reaching": {
-        "title": "Reaching",
-        "text1": "If none of the marked Structures are adjacent (directly or indirectly) to any of the unmarked Structures the valid spaces are further limited to only those that would decrease the current <i>shortest distance</i> between <i>marked and unmarked structures</i>.",
-        "text2": "If there are none that would decrease it, all the spaces previously identified remain valid."
+      "bringTogether": {
+        "title": "Bring together",
+        "text1": "If none of the marked buildings are in Reach of any of the unmarked buildings, the valid hexes are further limited to only those that would decrease the current <i>shortest distance</i> between <i>marked and unmarked buildings</i>.",
+        "text2": "If there are none that would decrease it, all the hexes previously identified remain valid."
       }
     },
     "upgrade": {
       "tiebreaker": {
-        "title": "Choose structure:",
-        "tradingHouse": "If Automa has a Trading house available: Automa Workshops adjacent to any of your Structures. Otherwise, any Structure that Automa can upgrade.",
+        "title": "Choose building:",
+        "guild": "Automa Workshops adjacent to any of your buildings. Otherwise, any building that Automa can upgrade.",
         "littlePower": "Giving you as little Power as possible.",
         "directionalSelection": "Directional Selection."
       },
       "execute": {
         "title": "Execute:",
-        "highestPowerStructure": "Replace the chosen Structure with the highest Power value Structure it can be legally upgraded to."
+        "highestPowerStructure": "Replace the chosen building with the highest Power value building it can be legally upgraded to."
       }
     },
     "blockPowerBookAction": {

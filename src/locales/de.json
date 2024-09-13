@@ -81,12 +81,12 @@
       "text": "Automa erhält {count} Punkt. | Automa erhält {count} Punkte."
     },
     "transformAndBuild": {
-      "noWorkshop": "Kein Wohnhaus übrig",
+      "noWorkshop": "Keine Werkstatt übrig",
       "validSpaces": {
         "marked": "In Reichweite eines markierten Gebäudes",
-        "marked-reaching": "In Reichweite eines markierten Gebäudes (mit <a href='#modalReaching' data-bs-toggle='modal'>Zusammenführen</a>)",
+        "marked-reaching": "In Reichweite eines markierten Gebäudes (mit <a href='#modalBringTogether' data-bs-toggle='modal'>Zusammenführen</a>)",
         "unmarked": "In Reichweite eines nicht markierten Gebäudes",
-        "unmarked-reaching": "In Reichweite eines nicht markierten Gebäudes (mit <a href='#modalReaching' data-bs-toggle='modal'>Zusammenführen</a>)",
+        "unmarked-reaching": "In Reichweite eines nicht markierten Gebäudes (mit <a href='#modalBringTogether' data-bs-toggle='modal'>Zusammenführen</a>)",
         "factionWanderers": "<b>Automa hat unbegrenzte Reichweite.</b>"
       },
       "tiebreaker": {
@@ -94,25 +94,25 @@
         "factionPowerMongers": "Größter <b>Machterhalt</b> für dich.",
         "terrainPriority": "Landschaftspriorität <b>{terrainPriority}</b>.",
         "terrainPriorityYourTerrainType": "Landschaftspriorität <b>{terrainPriority}</b>, verwende LTP-Karte <b>deiner</b> Heimatlandschaft.",
-        "structureClosest": "Felder, die deinen Gebäuden am <b>nächsten</b> sind.",
+        "structureClosest": "Felder, die <b>deinen</b> Gebäuden am <b>nächsten</b> sind.",
         "directionalSelection": "Richtungsauswahl."
       },
       "execute": {
         "title": "Ausführung:",
-        "homeTerrainTile": "Platziere ein Landschaftsplättchen mit Automas Heimatlandschaft (falls nötig).",
-        "workshop": "Setze ein Automa-Wohnhaus ein.",
-        "marked": "Markiere das neue Wohnhaus mit einem Machtchip."
+        "homeTerrainTile": "Lege ein Landschaftsplättchen mit Automas Heimatlandschaft auf das gewählte Feld (falls nötig).",
+        "workshop": "Setze eine Automa-Werkstatt ein.",
+        "marked": "Markiere die neue Werkstatt mit einem Machtchip."
       },
-      "reaching": {
+      "bringTogether": {
         "title": "Zusammenführen",
-        "text1": "Befindet sich noch kein markiertes Automa-Gebäude direkt oder indirekt benachbart zu einem ihrer nicht markierten Gebäude, gelten nur die Felder als mögliche Optionen, die den <i>kürzesten Weg</i> zwischen <i>markierten und unmarkierten Gebäuden</i> weiter verkürzen.",
+        "text1": "Befindet sich noch kein markiertes Automa-Gebäude in Reichweite zu einem ihrer nicht markierten Gebäude, gelten nur die Felder als mögliche Optionen, die den <i>kürzesten Weg</i> zwischen <i>markierten und unmarkierten</i> Gebäuden weiter verkürzen.",
         "text2": "Gibt es keine solchen Felder, gelten alle vorher bestimmten möglichen Optionen."
       }
     },
     "upgrade": {
       "tiebreaker": {
         "title": "Gebäude wählen:",
-        "tradingHouse": "Falls Automa ein Handelshaus in ihrem Vorrat hat: Automa-Wohnhäuser direkt benachbart zu einem deiner Gebäude. Andernfalls alle Gebäude, die Automa aufwerten kann.",
+        "guild": "Falls Automa eine Gilde in ihrem Vorrat hat: Automa-Werkstätten direkt benachbart zu einem deiner Gebäude. Andernfalls alle Gebäude, die Automa aufwerten kann.",
         "littlePower": "Gebäude, durch deren Aufwertung sie dir am wenigsten Macht gibt.",
         "directionalSelection": "Richtungsauswahl."
       },

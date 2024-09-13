@@ -9,7 +9,7 @@
     <ol>
       <li v-html="t('botAction.upgrade.tiebreaker.title')"></li>
       <ol type="a">
-        <li v-html="t('botAction.upgrade.tiebreaker.tradingHouse')"></li>
+        <li v-html="t('botAction.upgrade.tiebreaker.guild')"></li>
         <li v-html="t('botAction.upgrade.tiebreaker.littlePower')"></li>
         <li v-html="t('botAction.upgrade.tiebreaker.directionalSelection')"></li>
       </ol>

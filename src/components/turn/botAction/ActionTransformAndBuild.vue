@@ -1,11 +1,10 @@
 <template>
   <template v-if="!isUpgrade">
     <div class="actionCol">
-      <div class="shipLevel">{{botAction.shipLevel}}</div>
       <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
     </div>
     <div class="actionCol">
-      <SupportInfo :bot-action="botAction" :structure="true" :terrain-priority="true" :directional-selection="true"/>
+      <SupportInfo :bot-action="botAction" :structure="true" :terrain-priority="true" :directional-selection="true" :ship-level="true"/>
     </div>
     <div class="actionCol text-muted small">
       <button type="button" class="btn btn-outline-secondary btn-sm" @click="isUpgrade=true">{{t('botAction.transformAndBuild.noWorkshop')}}</button>
@@ -40,10 +39,10 @@
       </ol>
     </div>
 
-    <ModalDialog id="modalReaching" :title="t('botAction.transformAndBuild.reaching.title')">
+    <ModalDialog id="modalBringTogether" :title="t('botAction.transformAndBuild.bringTogether.title')">
       <template #body>
-        <p v-html="t('botAction.transformAndBuild.reaching.text1')"></p>
-        <p v-html="t('botAction.transformAndBuild.reaching.text2')"></p>
+        <p v-html="t('botAction.transformAndBuild.bringTogether.text1')"></p>
+        <p v-html="t('botAction.transformAndBuild.bringTogether.text2')"></p>
       </template>
     </ModalDialog>
 
@@ -137,21 +136,9 @@ export default defineComponent({
   height: 1.3rem;
   margin-right: 0.2rem;
 }
-.fire-ice {
-  color: #a1350e;
-}
 :deep(a) {
   text-decoration: underline;
   text-decoration-style: dotted;
   color: #000;
-}
-.shipLevel {
-  position: absolute;
-  margin-left: 3rem;
-  margin-top: 3.65rem;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  color: black;
 }
 </style>

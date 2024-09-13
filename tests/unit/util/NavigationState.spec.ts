@@ -49,9 +49,6 @@ describe('util/NavigationState', () => {
   })
 })
 
-/**
- * Simplified method to build card deck based on card index (of all cards).
- */
 function cardDeck(deck:string[], discard:string[], reserve:string[]) : CardDeckPersistence {
   return mockCardDeck({deck, discard, reserve}).toPersistence()
 }

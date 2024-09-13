@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div class="shipLevel">{{shipLevel}}</div>
-    <AppIcon name="ship-level" class="icon"/>
+    <AppIcon type="ship-level" :name="shipLevel.toString()" class="icon"/>
   </div>
 </template>
 
@@ -25,13 +24,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .icon {
-  width: 3rem;
-}
-.shipLevel {
-  position: absolute;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 0.2rem;
-  margin-left: 1.2rem;
+  margin-top: 0.25rem;
+  width: 2rem;
 }
 </style>
