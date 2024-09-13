@@ -4,7 +4,7 @@
   <ol>
     <li>
       <span v-html="t('endOfGame.areaScoring')"></span>
-      <ShipLevel :shipLevel="shipLevel"/>
+      <ShipLevel :shipLevel="shipLevel" class="ms-3"/>
     </li>
     <li v-html="t('endOfGame.cultScoring')"></li>
     <li v-if="isFactionWanderers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionWanderers')"></span></li>
@@ -22,11 +22,13 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import DifficultyLevelParameters from '@/services/DifficultyLevelParameters'
 import { useStateStore } from '@/store/state'
 import BotFaction from '@/services/enum/BotFaction'
+import ShipLevel from '@/components/turn/supportInfo/ShipLevel.vue'
 
 export default defineComponent({
   name: 'EndOfGame',
   components: {
-    FooterButtons
+    FooterButtons,
+    ShipLevel
   },
   setup() {
     const { t } = useI18n()
@@ -39,8 +41,7 @@ export default defineComponent({
       return `/round/6/end`
     },
     shipLevel() : number {
-      const params = DifficultyLevelParameters.get(this.state.setup.difficultyLevel, 6)
-      return params.shipLevel
+      return DifficultyLevelParameters.get(this.state.setup.difficultyLevel, 6).shipLevel
     },
     isFactionWanderers() : boolean {
       return this.state.setup.playerSetup.botFaction.includes(BotFaction.WANDERERS)
@@ -56,5 +57,8 @@ export default defineComponent({
 .factionActionIcon {
   height: 1.3rem;
   margin-right: 0.2rem;
+}
+ol > li {
+  margin-bottom: 0.5rem;
 }
 </style>

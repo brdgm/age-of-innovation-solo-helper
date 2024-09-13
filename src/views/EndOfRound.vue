@@ -4,9 +4,11 @@
 
   <ol>
     <li v-html="t('endOfRound.cultBonuses')"></li>
-    <li v-html="t('endOfRound.returnActionTokens')"></li>
-    <li v-html="t('endOfRound.bonusCardsCoin')"></li>
-    <li v-html="t('endOfRound.removeScoringTile')"></li>
+    <template v-if="!isLastRound">
+      <li v-html="t('endOfRound.returnActionTokens')"></li>
+      <li v-html="t('endOfRound.bonusCardsCoin')"></li>
+      <li v-html="t('endOfRound.removeScoringTile')"></li>
+    </template>
   </ol>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
@@ -69,3 +71,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+ol > li {
+  margin-bottom: 0.5rem;
+}
+</style>

@@ -74,7 +74,7 @@
   "playerTurn": {
     "text": "Please make your turn - or pass.",
     "passConfirm": "Do you want to pass?",
-    "passInfo": "Collect your round bonus victory points (if any) and take a new Bonus card."
+    "passInfo": "Collect your Round Bonus tile victory points (if any) and take a new Round Bonus tile."
   },
   "botAction": {
     "gainVictoryPoints": {
@@ -193,8 +193,8 @@
   },
   "endOfGame": {
     "title": "End of Game",
-    "cultScoring": "Automa gains victory points from <b>Cult scoring</b>.",
     "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
+    "cultScoring": "Automa gains victory points from <b>Science scoring</b>.",
     "factionWanderers": "<b>Wanderers:</b> Gain 1 victory point per structure anywhere on the board.",
     "factionGognomes": "<b>Gognomes</b>: Ensure Gognomes got victory points for their achievements.",
     "resourceScoring": "Automa doesn't get any points from Resource scoring."

@@ -74,7 +74,7 @@
   "playerTurn": {
     "text": "Bitte führe deinen Zug durch - oder passe.",
     "passConfirm": "Möchtest du passen?",
-    "passInfo": "Erhalte Siegpunkte von deiner Rundenbonuskarte (falls vorhanden) und nimm eine neue Rundenbonuskarte."
+    "passInfo": "Erhalte Siegpunkte von deinem Rundenbonus (falls vorhanden) und nimm einen neuen Rundenbonus."
   },
   "botAction": {
     "gainVictoryPoints": {
@@ -193,8 +193,8 @@
   },
   "endOfGame": {
     "title": "Spielende",
-    "cultScoring": "Automa erhält Punkte durch die <b>Kultwertung</b>.",
     "areaScoring": "Automa erhält Punkte durch die <b>Gebietswertung</b>.",
+    "cultScoring": "Automa erhält Punkte durch die <b>Wissenswertung</b>.",
     "factionWanderers": "<b>Wanderer:</b> Erhalte 1 Punkt für jedes eigene Gebäude auf dem Spielplan.",
     "factionGognomes": "<b>Gognome</b>: Stelle sicher, dass die Gognome die Punkte für ihre Aufgaben erhalten haben.",
     "resourceScoring": "Automa erhält keine Punkte durch die Ressourcenwertung."
