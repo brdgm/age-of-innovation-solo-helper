@@ -30,7 +30,7 @@
     "noTwoPlayerSpecialRules": "Die besonderen Regeln für das Spiel zu zweit (Standardspiel-Regel, Seite 19) werden <b>nicht</b> angewendet.",
     "roundScoreTiles": "Verwende die <b>Automa-Rundenwertungsplättchen</b> anstelle der Plättchen des Grundspiels. Lege die Plättchen mit der Seite nach oben ab, deren helle Markierung (links) dem Rundenfeld entspricht, auf das du sie legst. Wie im Grundspiel darf das Plättchen mit dem Spaten nicht auf den Feldern für Runde 5 oder 6 liegen.",
     "gameEndToken": "Verwende die <b>Automa-Zusatzwertungsplättchen</b> für die letzte Runde anstelle der Plättchen des Grundspiels. Lege ein zufälliges dieser Plättchen nach den üblichen Regeln aus.",
-    "palaceTiles": "Lege nur 2 zufällige <b>Palastplättchen</b> neben den Spielplan. Lege das Palastplättchen Nr. 17 (mit der roten Rückseite) daneben.",
+    "palaceTiles": "Lege {count} zufällige <b>Palastplättchen</b> neben den Spielplan. Lege das Palastplättchen Nr. 17 (mit der roten Rückseite) daneben.",
     "factionSelection": {
       "title": "Wähle deine <b>Gemeinschaft</b> wie folgt:",
       "planningDisplayCards": "Lege 3 zufällige Planungstableaukarten aus.",
