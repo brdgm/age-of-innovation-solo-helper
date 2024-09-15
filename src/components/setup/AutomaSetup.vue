@@ -11,7 +11,7 @@
       <AppIcon name="scoring-tile-game-end-token" class="scoring-tile-icon"/>
       <span v-html="t('setupGameAutoma.gameEndToken')"></span>
     </li>
-    <li v-html="t('setupGameAutoma.palaceTiles')"></li>
+    <li v-html="t('setupGameAutoma.palaceTiles', {count:palaceTileCount})"></li>
     <li>
       <span v-html="t('setupGameAutoma.factionSelection.title')"></span>
       <ol type="a">
@@ -90,6 +90,9 @@ export default defineComponent({
     return { t, state }
   },
   computed: {
+    palaceTileCount() : number {
+      return this.state.setup.playerSetup.playerCount + 1
+    },
     bonusCardCount() : number {
       return this.state.setup.playerSetup.botCount + this.state.setup.playerSetup.playerCount + 3
     },
