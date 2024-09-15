@@ -8,9 +8,6 @@
 
     <ol>
       <li v-html="t('endOfRound.scienceBonus')"></li>
-      <ul v-if="navigationState.isTwoPlayerGame">
-        <li v-html="t('endOfRound.scienceBonusTwoPlayer')"></li>
-      </ul>
       <li v-html="t('endOfRound.returnActionTokens')"></li>
       <li v-html="t('endOfRound.bonusCardsCoin')"></li>
       <li v-html="t('endOfRound.removeScoringTile')"></li>

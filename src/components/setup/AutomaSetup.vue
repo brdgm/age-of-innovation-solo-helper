@@ -2,6 +2,7 @@
   <h4>{{t('setupGameAutoma.generalSetup')}}</h4>
   <p v-html="t('setupGameAutoma.generalSetupIntro')"></p>
   <ol>
+    <li v-if="isTwoPlayerGame" v-html="t('setupGameAutoma.noTwoPlayerSpecialRules')"></li>
     <li>
       <AppIcon name="scoring-tile-setup" class="scoring-tile-icon"/>
       <span v-html="t('setupGameAutoma.roundScoreTiles')"></span>
@@ -45,18 +46,6 @@
       </ol>
     </li>
   </ol>
-
-  <template v-if="isTwoPlayerGame">
-    <h4>{{t('setupGameAutoma.twoPlayer.title')}}</h4>
-    <ol>
-      <li v-html="t('setupGameAutoma.twoPlayer.areaScoreTile')"></li>
-      <li v-html="t('setupGameAutoma.twoPlayer.componentsUnusedColor')"></li>
-      <ul>
-        <li v-html="t('setupGameAutoma.twoPlayer.placeScholars')"></li>
-        <li v-html="t('setupGameAutoma.twoPlayer.placeStatusMarkers')"></li>
-      </ul>
-    </ol>
-  </template>
 
   <h4>{{t('setupGameAutoma.initialWorkshop.title')}}</h4>
   <p v-html="t('setupGameAutoma.initialWorkshop.intro')"></p>
