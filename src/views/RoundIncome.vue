@@ -6,8 +6,6 @@
 
   <p v-html="t('income.collect')"></p>
 
-  <p v-if="navigationState.isTwoPlayerGame && round == 6" v-html="t('income.twoPlayer')"></p>
-
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
   </router-link>
@@ -39,7 +37,7 @@ export default defineComponent({
 
     const routeCalculator = new RouteCalculator({round})
 
-    return { t, state, round, navigationState, routeCalculator }
+    return { t, state, round, routeCalculator }
   },
   computed: {
     backButtonRouteTo() : string {

@@ -27,6 +27,7 @@
     "title": "Automa Spielaufbau",
     "generalSetup": "Allgemeiner Aufbau",
     "generalSetupIntro": "Baue das Spiel wie gewohnt auf, mit diesen Änderungen:",
+    "noTwoPlayerSpecialRules": "Die besonderen Regeln für das Spiel zu zweit (Standardspiel-Regel, Seite 19) werden <b>nicht</b> angewendet.",
     "roundScoreTiles": "Verwende die <b>Automa-Rundenwertungsplättchen</b> anstelle der Plättchen des Grundspiels. Lege die Plättchen mit der Seite nach oben ab, deren helle Markierung (links) dem Rundenfeld entspricht, auf das du sie legst. Wie im Grundspiel darf das Plättchen mit dem Spaten nicht auf den Feldern für Runde 5 oder 6 liegen.",
     "gameEndToken": "Verwende die <b>Automa-Zusatzwertungsplättchen</b> für die letzte Runde anstelle der Plättchen des Grundspiels. Lege ein zufälliges dieser Plättchen nach den üblichen Regeln aus.",
     "palaceTiles": "Lege nur 2 zufällige <b>Palastplättchen</b> neben den Spielplan. Lege das Palastplättchen Nr. 17 (mit der roten Rückseite) daneben.",
@@ -46,13 +47,6 @@
       "factionSetup": "Wende die weiteren Aufbauregeln der <i>{faction}</i>-<b>Gemeinschaftskarte</b> an und mache dich mit den Sonderregeln vertraut.",
       "scoreTrack": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der <b>Punkteleiste</b>."
     },
-    "twoPlayer": {
-      "title": "Aufbau für 2 Spieler",
-      "areaScoreTile": "Platziere verdeckt ein zufälliges <b>2-Spieler Gebietswertungsplättchen</b>.",
-      "componentsUnusedColor": "Verwende das Material einer nicht genutzten Spielerfarbe:",
-      "placeScholars": "Stelle je <b>1 Gelehrten</b> in jeder Disziplin auf ein <b>2er-Feld</b>.",
-      "placeStatusMarkers": "Stelle je <b>1 Markierungsstein</b> in jeder Disziplin auf <b>Stufe 2</b>."
-    },
     "initialWorkshop": {
       "title": "Platzierung der ersten Werkstätten",
       "intro": "Automa setzt ihre beiden Werkstätten ein, nachdem du deine erste Werkstatt eingesetzt hast. Nutze dafür die <b>Aufbaukarte</b>, die zu der Spielplanseite passt.",
@@ -70,8 +64,7 @@
   "income": {
     "title": "Einkommen",
     "turnInfo": "Runde {round}",
-    "collect": "Erhalte Werkzeuge, Geld, Gelehrte, Bücher und Macht.",
-    "twoPlayer": "<i>2 Spieler:</i> Drehe das <b>Plättchen für die Gebietswertung</b> um."
+    "collect": "Erhalte Werkzeuge, Geld, Gelehrte, Bücher und Macht."
   },
   "roundTurn": {
     "turnInfo": "Runde {round}, Zug {turn}",
@@ -193,7 +186,6 @@
     "title": "Rundenende",
     "turnInfo": "Runde {round}",
     "scienceBonus": "Du erhältst den <b>Wissensbonus</b>.",
-    "scienceBonusTwoPlayer": "<i>2 Spieler</i>: Bewege für jeden der Wissensboni (auf der rechten Seite der Rundenwertungsplättchen) den Markierungsstein der ungenutzten Spielerfarbe in der abgebildeten Disziplin um die abgebildete Anzahl Schritte nach oben. Dafür wird kein Schlüssel benötigt.",
     "returnActionTokens": "X-Marker zurücknehmen.",
     "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenboni je <b>1 Geldmünze</b>.",
     "removeScoringTile": "Entferne das aktuelle Rundenwertungsplättchen."

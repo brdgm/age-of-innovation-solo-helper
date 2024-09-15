@@ -12,7 +12,6 @@ export default class NavigationState {
   readonly difficultyLevel : DifficultyLevel
   readonly playerCount : number
   readonly botCount : number
-  readonly isTwoPlayerGame : boolean
   readonly round : number
   readonly turn : number
   readonly turnOrderIndex : number
@@ -26,7 +25,6 @@ export default class NavigationState {
     this.difficultyLevel = setup.difficultyLevel
     this.playerCount = setup.playerSetup.playerCount
     this.botCount = setup.playerSetup.botCount
-    this.isTwoPlayerGame = (this.playerCount + this.botCount) == 2
 
     this.round = getIntRouteParam(route, 'round')
     this.turn = getIntRouteParam(route, 'turn')
