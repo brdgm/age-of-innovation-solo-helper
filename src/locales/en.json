@@ -27,9 +27,10 @@
     "title": "Automa Setup",
     "generalSetup": "General Setup",
     "generalSetupIntro": "Set up the game as usual, but with the following changes:",
+    "noTwoPlayerSpecialRules": "The special rules for a 2-player game (multiplayer rulebook, p. 19) <b>do not</b> apply.",
     "roundScoreTiles": "Use the double-sided <b>Automa Round Score tiles</b> instead of those from the multiplayer game. Flip the Automa Round Score tile to the side that shows the relevant round with a light marking. As In the base game, the Round Score tile with the Spade on its left side cannot be placed In Round 5 or 6.",
     "gameEndToken": "Use the <b>Automa Final Round Score tiles</b> instead of those from the multiplayer game. Place a random tile as usual.",
-    "palaceTiles": "Place only 2 random <b>Palace tiles</b> next to the game board. Place Palace tile #17 (with the red back) next to them.",
+    "palaceTiles": "Place {count} random <b>Palace tiles</b> next to the game board. Place Palace tile #17 (with the red back) next to them.",
     "factionSelection": {
       "title": "Choose your <b>Faction</b> as follows:",
       "planningDisplayCards": "Lay out 3 random Planning Display cards.",
@@ -45,13 +46,6 @@
       "stepNone": "none",
       "factionSetup": "Follow the additional setup instructions on the <i>{faction}</i> <b>Automa Faction card</b> and familiarize yourself with the special rules.",
       "scoreTrack": "Place 1 of her Status markers on space 20 of the <b>Score track</b>"
-    },
-    "twoPlayer": {
-      "title": "2-Player Game Setup",
-      "areaScoreTile": "Place a random <b>2-player Area Score tile</b> face-down.",
-      "componentsUnusedColor": "Use components of an unused color:",
-      "placeScholars": "Place <b>1 Scholar</b> on a <b>2 space</b> of each Discipline.",
-      "placeStatusMarkers": "Place <b>1 Status marker</b> on <b>Level 2</b> for each of the 4 Disciplines."
     },
     "initialWorkshop": {
       "title": "Placement of the First Workshops",
@@ -70,8 +64,7 @@
   "income": {
     "title": "Income",
     "turnInfo": "Round {round}",
-    "collect": "Collect Tools, Coins, Scholars, Books and Power.",
-    "twoPlayer": "<i>2-Player Game:</i> Reveal the <b>Area Score tile</b>."
+    "collect": "Collect Tools, Coins, Scholars, Books and Power."
   },
   "roundTurn": {
     "turnInfo": "Round {round}, Turn {turn}",
@@ -193,7 +186,6 @@
     "title": "End of Round",
     "turnInfo": "Round {round}",
     "scienceBonus": "You gain the <b>Science Bonus</b>.",
-    "scienceBonusTwoPlayer": "<i>2-Player Game</i>: Using the Science Bonuses on the right side of the Round Score Bonus tile, advance the corresponding Discipline marker of the unused player color a number of Levels as shown by the number of Discipline icons. No key is needed in this case to advance to or above Level 8.",
     "returnActionTokens": "Remove X-tokens.",
     "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Round Bonus tiles.",
     "removeScoringTile": "Remove the current Round Score tile."

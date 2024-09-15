@@ -93,6 +93,13 @@ describe('services/RouteCalculator', () => {
     expect(routeCalculator.getFirstTurnRouteTo(state)).to.eq('/round/1/turn/1/0/player/1')
   })
 
+  it('getFirstTurnRouteTo_noRounds', () => {
+    const routeCalculator = new RouteCalculator({round:1})
+
+    const state = mockState({playerCount:1, botCount:2})
+    expect(routeCalculator.getFirstTurnRouteTo(state)).to.eq('')
+  })
+
   it('getLastTurnRouteTo', () => {
     const routeCalculator = new RouteCalculator({round:1})
 

@@ -86,8 +86,11 @@ export default class RouteCalculator {
   /**
    * Build route to player/bot step
    */
-  private static routeTo(step: Step) : string {
-    if (step.bot) {
+  private static routeTo(step?: Step) : string {
+    if (!step) {
+      return ''
+    }
+    else if (step.bot) {
       return `/round/${step.round}/turn/${step.turn}/${step.turnOrderIndex}/bot/${step.bot}`
     }
     else {
