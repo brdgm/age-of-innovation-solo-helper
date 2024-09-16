@@ -137,6 +137,9 @@ li {
 .structureIcon, .scienceDisciplineIcon {
   height: 1.5rem;
 }
+.scienceDisciplineIcon {
+  filter: drop-shadow(2px 2px 2px #888);
+}
 .scoring-tile-icon {
   float: right;
   height: 6rem;
