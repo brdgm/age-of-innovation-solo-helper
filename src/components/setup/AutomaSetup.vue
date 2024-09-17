@@ -134,10 +134,11 @@ li {
     margin-top: 0rem;
   }
 }
-.structureIcon, .scienceDisciplineIcon {
+.structureIcon {
   height: 1.5rem;
 }
 .scienceDisciplineIcon {
+  height: 1.75rem;
   filter: drop-shadow(2px 2px 2px #888);
 }
 .scoring-tile-icon {

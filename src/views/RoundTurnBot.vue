@@ -3,6 +3,7 @@
   <h1>{{t('roundTurn.titleBot', {bot, faction:t('botFaction.'+botFaction)}, botCount)}}</h1>
 
   <BotTurn :navigationState="navigationState"/>
+  <BotBackgroundImage v-if="botFaction" :botFaction="botFaction"/>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
     {{t('action.next')}}
@@ -20,11 +21,13 @@ import BotTurn from '@/components/turn/BotTurn.vue'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import RouteCalculator from '@/services/RouteCalculator'
 import { useStateStore } from '@/store/state'
+import BotBackgroundImage from '@/components/structure/BotBackgroundImage.vue'
 
 export default defineComponent({
   name: 'RoundTurnBot',
   components: {
     BotTurn,
+    BotBackgroundImage,
     FooterButtons
   },
   setup() {
