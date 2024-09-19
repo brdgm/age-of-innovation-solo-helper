@@ -14,7 +14,8 @@
   <ModalDialog id="passModal" :title="t('action.pass')">
     <template #body>
       <p v-html="t('playerTurn.passConfirm')"></p>
-      <p v-html="t('playerTurn.passInfo')"></p>
+      <p v-if="round == 6" v-html="t('playerTurn.passInfoRound6')"></p>
+      <p v-else v-html="t('playerTurn.passInfo')"></p>
     </template>
     <template #footer>
       <button class="btn btn-danger" @click="pass" data-bs-dismiss="modal">{{t('action.pass')}}</button>
