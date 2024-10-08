@@ -1,0 +1,248 @@
+{
+    "gameTitle": "La Era de la Innovación",
+    "home": {
+      "title": "La Era de la Innovación Solo Helper",
+      "play1": "Juega con el Automa al modo solitario de <a href='https://boardgamegeek.com/boardgame/383179/age-of-innovation' target='_blank' rel='noopener'><b>La Era de la Innovación</b></a>.",
+      "play2": "Esta aplicación de ayuda sustituye al mazo de cartas del Automa, gestiona los niveles de dificultad y las habilidades de facción.",
+      "feedback": "Comentarios:"
+    },
+    "setup": {
+      "title": "Configuración del juego",
+      "players": {
+        "title": "Jugador",
+        "playerCount": "Jugadores humanos",
+        "playerCountItem": "{count} jugador | {count} jugadores",
+        "botCount": "Automa",
+        "botCountItem": "{count} Automa | {count} Automas (Experimental)",
+        "botFaction": "Facción del Automa | Facción del Automa {bot}",
+        "twoPlayerBotFaction": "Cuando juegues a dos jugadores, las reglas oficiales sólo permiten jugar con <i>Los Simplones</i>."
+      },
+      "difficultyLevel": {
+        "title": "Nivel de dificultad",
+        "easy": "Fácil",
+        "hard": "Difícil"
+      }
+    }, 
+    "setupGameAutoma": {
+      "title": "Configuración del Automa",
+      "generalSetup": "Configuración general",
+      "generalSetupIntro": "Despliega el juego como se indica en el reglamento, pero con los siguientes cambios:",
+      "noTwoPlayerSpecialRules": "Las reglas especiales de partida a 2 jugadores (reglamento, página 19) <b>no</b> se aplican.",
+      "roundScoreTiles": "Usa las <b>losetas de Puntuación de Ronda del Automa</b>, de doble cara, en vez de las normales. Voltea cada loseta de Puntuación de Ronda del Automa a la cara que muestre la ronda correspondiente en fondo claro. Al igual que en el juego normal, la loseta de Puntuación de Ronda con la pala en el lado izquierdo no se coloca en las rondas 5 o 6.",
+      "gameEndToken": "Usa las <b>losetas de Puntuación Final de Ronda del Automa</b> en lugar de las normales. Coloca una al azar como indica el reglamento.",
+      "palaceTiles": "Coloca al azar {count} <b>losetas de Palacio</b> junto al tablero de juego. Coloca la loseta de Palacio 17 (con la trasera en rojo) junto a ellas.",
+      "factionSelection": {
+        "title": "Elige tu <b>Facción</b> de la siguiente manera:",
+        "planningDisplayCards": "Selecciona 3 cartas de Planificación al azar.",
+        "factionTiles": "Añade 2 losetas de Facción al azar a cada carta de Planificación.",
+        "chooseSet": "Coge uno de los conjuntos de carta y losetas. Coge la carta de Planificación y selecciona una de las dos facciones."
+      },
+      "chooseAutomaTerrain": "Elige un <b>terreno natal</b> para el Automa diferente al tuyo. Dale al Automa la carta de prioridad de terreno (PTA) correspondiente. El tipo de terreno de esta carta está indicado en las barras superior e inferior, y en los círculos de la parte izquierda.",
+      "automaComponents": {
+        "title": "Distribuye los componentes del Automa como se indica a continuación:",
+        "buildings": "Coloca sus <b>edificios</b> en su zona de juego.",
+        "scholars": "Coloca todos sus <b>eruditos</b> en su zona de juego.",
+        "science": "Coloca uno de sus marcadores de estado en cada uno de los espacios de valor 0 del <b>tablero de Ciencias</b>. Avanza cada una de las disciplinas:",
+        "stepNone": "nada",
+        "factionSetup": "Sigue las instrucciones adicionales en la <b>carta de facción de Automa</b> de la facción <i>{faction}</i> y familiarízate con las reglas especiales.",
+        "scoreTrack": "Coloca 1 marcador de estado en la casilla 20 del <i>track<i> de <b>puntuación</b>"
+      },
+      "initialWorkshop": {
+        "title": "Colocación de los primeros talleres",
+        "intro": "El Automa coloca sus talleres iniciales después de que tú coloques tu primer taller. Usa la cara de <b>la carta de colocación inicial de talleres</b> que muestre el lado correspondiente del tablero de juego.",
+        "player": "Coloca tu primer taller.",
+        "marked": "Coloca un taller del Automa en un espacio de su terreno natal con la letra <b>{character}</b>, junto con una ficha de poder.",
+        "unmarked": "Coloca un taller del Automa en un espacio de su terreno natal con la letra <b>{character}</b>.",
+        "playerSecond": "Coloca tu segundo taller."
+      },
+      "bonusCards": {
+        "title": "Bonificación de ronda",
+        "take": "Baraja las {count} losetas de bonificación de ronda y colócalas boca arriba en fila horizontal. Dale al Automa la primera. Luego elige una loseta de bonificación de ronda para ti.",
+        "coins": "Coloca una moneda en cada una de las losetas de bonificación de ronda restantes."
+      }
+    },
+    "income": {
+      "title": "Ingresos",
+      "turnInfo": "Ronda {round}",
+      "collect": "Coge herramientas, monedas, eruditos, libros y poder."
+    },
+    "roundTurn": {
+      "turnInfo": "Ronda {round}, turno {turn}",
+      "titlePlayer": "Jugador | Jugador {player}",
+      "titleBot": "Automa: {faction} | Automa {bot}: {faction}"
+    },
+    "playerTurn": {
+      "text": "Por favor, juega tu turno, o pasa.",
+      "passConfirm": "¿Quieres pasar?",
+      "passInfo": "Acumula los puntos de victoria de tu loseta de bonificación de ronda (si los hay) y coge una nueva loseta de bonificación de ronda.",
+      "passInfoRound6": "Acumula los puntos de victoria de tu loseta de bonificación de ronda (si los hay), <b>no/b> cojas una nueva loseta de bonificación de ronda."
+    },
+    "botAction": {
+      "gainVictoryPoints": {
+        "text": "Automa gana {count} punto de victoria. | Automa gana {count} puntos de victoria."
+      },
+      "transformAndBuild": {
+        "noWorkshop": "No quedan talleres",
+        "validSpaces": {
+          "marked": "Al alcance de cualquier edificio marcado.",
+          "marked-reaching": "Al alcance de cualquier edificio marcado (con <a href='#modalBringTogether' data-bs-toggle='modal'>mantener juntos</a>)",
+          "unmarked": "Al alcance de cualquier edificio no marcado",
+          "unmarked-reaching": "Al alcance de cualquier edificio no marcado (con <a href='#modalBringTogether' data-bs-toggle='modal'>mantener juntos</a>)",
+          "factionWanderers": "<b>Ignorar restricciones de alcance.</b>"
+        },
+        "tiebreaker": {
+          "title": "Elige casilla:",
+          "factionPowerMongers": "Que te dé la <b>mayor cantida de poder</b>.",
+          "terrainPriority": "Prioridad de terreno del <b>{terrainPriority}</b>.",
+          "terrainPriorityYourTerrainType": "Prioridad de terreno <b>{terrainPriority}</b> de la carta PTA o de <b>tu</b> tipo de terreno.",
+          "structureClosest": "Casillas <b>más cercanas</b> a cualquiera de <b>tus</b> edificios.",
+          "directionalSelection": "Directional Selection."
+        },
+        "execute": {
+          "title": "Ejecutar:",
+          "homeTerrainTile": "Coloca una loseta de terreno natal del Automa (si se requiere terraformar).",
+          "workshop": "Coloca un taller del Automa disponible.",
+          "marked": "Marca el nuevo taller colocando una ficha de poder en su casilla."
+        },
+        "bringTogether": {
+          "title": "Mantener juntos",
+          "text1": "Si ninguno de los edificios marcados están al alcance de ninguno de los edificios no marcados, las casillas válidas están limitadas a aquellas que podrían reducir la <i>distancia más corta</i> entre <i>edificios marcados y no marcados</i>.",
+          "text2": "Si no hay ninguna que reduzca esa distancia, todas las casillas previamente identificadas serán válidas."
+        }
+      },
+      "upgrade": {
+        "tiebreaker": {
+          "title": "Selecciona edificio:",
+          "guild": "Los talleres del Automa adyacentes a cualquiera de tus edificios. En otro caso, cualquier edificio que el Automa pueda actualizar.",
+          "littlePower": "Que te de la menor cantidad de poder posible.",
+          "directionalSelection": "Selección direccional."
+        },
+        "execute": {
+          "title": "Acción:",
+          "highestPowerStructure": "Actualiza el edificio seleccionado con el edificio de mayor poder al que se pueda actualizar según el reglamento."
+        }
+      },
+      "blockPowerBookAction": {
+        "power": {
+          "gameBoard": "Bloquea una <b>acción de poder</b> que no esté usada en el tablero de juego.",
+          "directionalSelection": "Selección direccional.",
+          "gameBoardExecute": "Acción: Coloca un marcador 'X' en la acción de poder seleccionada. El Automa no obtiene los beneficios de esta acción."
+        },
+        "book": {
+          "gameBoard": "Bloquea una <b>acción de libro</b> que no esté usada en el tablero de juego.",
+          "directionalSelection": "Selección direccional.",
+          "gameBoardExecute": "Acción: Coloca un marcador 'X' en la acción de libro seleccionada. El Automa no obtiene los beneficios de esta acción."
+        }
+      },
+      "advanceScienceDiscipline": {
+        "factionDruids": "<b>El Automa avanza 2 niveles en 1 disciplina (sin colocar un erudito)</b>.",
+        "factionPowerMongers": "<b>Beneficio: Cuando ganes 2 o más poder por edificios, el Automa avanzará 1 nivel en una disciplina.</b>",
+        "canAdvance": "El Automa ignorará las disciplinas en las que no pueda avanzar.",
+        "execute": {
+          "title": "Acción:",
+          "advance": "Avanza el marcador del Automa 1 nivel en la disciplina seleccionada.",
+          "factionDruids": "Avanza el marcador del Automa 2 niveles en la disciplina seleccionada."
+        }
+      },
+      "sendScholar": {
+        "canAdvance": "El Automa ignora las disciplinas en las que no puede avanzar.",
+        "scoringTile": {
+          "title": "La disciplina del <b>color</b> correspondiente del icono del Automa en la actual <b>loseta de puntuación de turno</b>."
+        },
+        "catchUp": {
+          "title": "Usa la selección de <b>acercamiento</b>:",
+          "otherwiseTitle": "En otro caso usa la selección de acercamiento:",
+          "marketAt0": "La disciplina en la que el Automa esté a 0.",
+          "highestMarker": "La disciplina en la que el marcador del Automa esté más cercano al tuyo; puede estar al mismo nivel, por encima o por debajo tuyo.",
+          "highestMarkerMultipleHumans": "La disciplina donde el Automa esté más cerca del marcador más alto; puede estar en el mismo nivel, por encima o por debajo del otro marcador.",
+          "directionalSelection": "Selección direccional."
+        },
+        "execute": {
+          "title": "Acción:",
+          "placeScholar": "Coloca un erudito disponible del Automa en el espacio de mayor valor de eruditos, bajo la disciplina seleccionada, y avanza el marcador del Automa el correspondiente número de niveles.",
+          "noScholar": "Si el Automa no tiene más eruditos disponibles, o si no hay un espacio de eruditos disponible bajo la disciplina seleccionada, avanza el marcador del Automa 1 nivel sin colocar ningún erudito."
+        }
+      },
+      "takeInnovation": {
+        "take": "Coge una innovación del tablero (si el Automa tiene menos de 3).",
+        "directionalSelection": "Selección direccional."
+      },
+      "factionSymbiontsPlaceCube": {
+        "validSpaces": "Casillas válidas: todas las casillas de terrreno directamente adyacentes a cualquiera de tus edificios.",
+        "symbiontYouthATP": "Prioridad de terreno <b>{terrainPriority}</b> con la carta PTA de Simbionte <b>joven</b>.",
+        "placeCube": "Coloca una <b>herramienta</b> en la casilla de terreno seleccionada."
+      },
+      "factionBlightTransformFallowLand": {
+        "transform": "Transforma <b>2 terrenos en barbecho</b> en <b>terreno baldío</b>."
+      }
+    },
+    "botPass": {
+      "title": "El Automa <i>pasa</i>.",
+      "scoringTile": "El Automa gana un número de puntos fijo indicado en la esquina inferior derecha de la <b>loseta de puntuación de ronda</b> (solo <b>una vez</b>).",
+      "scoringTileFactionRacelings": "Apresurados: el Automa pasa el primero este turno y gana el número de puntos fijos de la <b>loseta de puntuación de ronda <i>de nuevo</i></b>.",
+      "bonusCard": "El Automa coge una <b>loseta de bonificación de ronda</b>:",
+      "bonusCardGold": "Si hay alguna moneda en la loseta de bonificación de ronda devuélvelas al suministro general."
+    },
+    "endOfRound": {
+      "title": "Final de ronda",
+      "turnInfo": "Ronda {round}",
+      "scienceBonus": "Ganas la <b>bonificación de ciencias</b>.",
+      "returnActionTokens": "Elimina los marcadores 'X'.",
+      "bonusCardsCoin": "Pon <b>1 moneda</b> en cada una de las 3 losetas de bonificación de ronda restantes.",
+      "removeScoringTile": "Retira la loseta actual de bonificación de ronda."
+    },
+    "endOfGame": {
+      "title": "Final de la partida",
+      "areaScoring": "El Automa gana puntos de victoria de <b>puntuación de áreas</b>.",
+      "scienceScoring": "El Automa gana puntos de victoria de <b>puntuación de ciencias</b>.",
+      "factionWanderers": "<b>Errantes:</b> ganan 2 puntos de victoria por cada edificio suyo en cualquier casilla del tablero.",
+      "factionGognomes": "<b>Gognomos</b>: asegúrate que los Gognomos obtienen puntos de victoria por sus logros.",
+      "resourceScoring": "El Automa no obtiene puntos de victoria por recursos."
+    },
+    "difficultyLevel": {
+      "1": "Protoautoma",
+      "2": "Automa",
+      "3": "Granautoma",
+      "4": "Ultrautoma",
+      "5": "Megautoma"
+    },
+    "botFaction": {
+      "simpletons": "Simplones",
+      "kuddlers": "Afectuosos",
+      "druids": "Druidas",
+      "racelings": "Apresurados",
+      "wanderers": "Errantes",
+      "mimics": "Imitadores",
+      "powermongers": "Poderosos",
+      "symbionts": "Simbiontes",
+      "blight": "Infectos",
+      "gognomes": "Gognomos"
+    },
+    "notfound": {
+      "title": "No encontrado"
+    },
+    "action": {
+      "playGame": "Jugar partida",
+      "startGame": "Iniciar partida",
+      "next": "Siguiente",
+      "nextRound": "Siguiente ronda",
+      "abortGame": "Abandonar partida",
+      "abortGameConfirm": "Abandonando la partida actual, ¿estás seguro?",
+      "endGame": "Final de partida",
+      "endGameConfirm": "Finalizar esta partida y volver a la página inicial ¿estás seguro?",
+      "cancel": "Cancelar",
+      "backToHome": "Volver al inicio",
+      "back": "Atrás",
+      "close": "Cerrar",
+      "reset": "Reiniciar",
+      "pass": "Pasar"
+    },
+    "footer": {
+      "credits": "Créditos"
+    },
+    "serviceWorkerUpdatedRefresh": {
+      "title": "Actualizar aplicación",
+      "notice": "La aplicación se actualizó, ¿quieres actualizar a la última versión?"
+    }
+  }
+  
