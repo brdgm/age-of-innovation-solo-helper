@@ -37,6 +37,7 @@
       "factionTiles": "Lege zu jeder dieser Planungstableaukarten 2 zufällige Gemeinschaften.",
       "chooseSet": "Wähle 1 Set, nimm dir das passende Planungstableau und wähle eine der beiden Gemeinschaften."
     },
+    "factionSelectionTwoHumanPlayer": "Wähle deine <b>Gemeinschaft</b> und Rundenbonus nach den üblichen Regeln für ein Spiel mit 3 Spielern.",
     "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine, und lege die entsprechende Landschaftstyp-Priorisierungskarte (LTP) in Automas Bereich. Automas Heimatlandschaft wird auf der Karte oben und unten sowie im ersten Kreis von links angezeigt.",
     "automaComponents": {
       "title": "Verteile Automas Spielsteine wie folgt:",
@@ -58,6 +59,7 @@
     "bonusCards": {
       "title": "Rundenboni",
       "take": "Mische die {count} Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links. Wähle dann regulär einen für dich.",
+      "takeTwoHumanPlayer": "Mische 4 zufällig gewählte Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links.",
       "coins": "Legt auf die Rundenboni, die übrig geblieben sind, je 1 Geldmünze."
     }
   },
