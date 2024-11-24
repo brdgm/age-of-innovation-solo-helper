@@ -12,7 +12,8 @@
       <span v-html="t('setupGameAutoma.gameEndToken')"></span>
     </li>
     <li v-html="t('setupGameAutoma.palaceTiles', {count:palaceTileCount})"></li>
-    <li>
+    <li v-if="isTwoHumanPlayers" v-html="t('setupGameAutoma.factionSelectionTwoHumanPlayer')"></li>
+    <li v-else>
       <span v-html="t('setupGameAutoma.factionSelection.title')"></span>
       <ol type="a">
         <li v-html="t('setupGameAutoma.factionSelection.planningDisplayCards')"></li>
@@ -62,7 +63,8 @@
 
   <h4>{{t('setupGameAutoma.bonusCards.title')}}</h4>
   <ul>
-    <li v-html="t('setupGameAutoma.bonusCards.take',{count:bonusCardCount})"></li>
+    <li v-if="isTwoHumanPlayers" v-html="t('setupGameAutoma.bonusCards.takeTwoHumanPlayer',{count:bonusCardCount})"></li>
+    <li v-else v-html="t('setupGameAutoma.bonusCards.take',{count:bonusCardCount})"></li>
     <li v-html="t('setupGameAutoma.bonusCards.coins')"></li>
   </ul>
 </template>
@@ -116,6 +118,9 @@ export default defineComponent({
     isTwoPlayerGame() : boolean {
       const { playerCount, botCount } = this.state.setup.playerSetup
       return (playerCount + botCount) == 2
+    },
+    isTwoHumanPlayers() : boolean {
+      return this.state.setup.playerSetup.playerCount === 2
     }
   },
   methods: {
