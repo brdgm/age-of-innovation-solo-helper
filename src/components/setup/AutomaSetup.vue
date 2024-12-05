@@ -3,14 +3,6 @@
   <p v-html="t('setupGameAutoma.generalSetupIntro')"></p>
   <ol>
     <li v-if="isTwoPlayerGame" v-html="t('setupGameAutoma.noTwoPlayerSpecialRules')"></li>
-    <li>
-      <AppIcon name="scoring-tile-setup" class="scoring-tile-icon"/>
-      <span v-html="t('setupGameAutoma.roundScoreTiles')"></span>
-    </li>
-    <li>
-      <AppIcon name="scoring-tile-game-end-token" class="scoring-tile-icon"/>
-      <span v-html="t('setupGameAutoma.gameEndToken')"></span>
-    </li>
     <li v-html="t('setupGameAutoma.palaceTiles', {count:palaceTileCount})"></li>
     <li v-if="isTwoHumanPlayers" v-html="t('setupGameAutoma.factionSelectionTwoHumanPlayer')"></li>
     <li v-else>
@@ -145,13 +137,5 @@ li {
 .scienceDisciplineIcon {
   height: 1.75rem;
   filter: drop-shadow(2px 2px 2px #888);
-}
-.scoring-tile-icon {
-  float: right;
-  height: 6rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 </style>
