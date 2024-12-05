@@ -237,6 +237,7 @@ export default defineComponent({
   overflow-x: auto;
 }
 .bookActions {
+  position: relative;
   height: 75px;
   width: 400px;
   .background {
@@ -263,6 +264,7 @@ export default defineComponent({
   filter: drop-shadow(2px 2px 2px #888);
 }
 .innovation {
+  position: relative;
   width: 600px;
   height: 300px;
   .background {
@@ -302,6 +304,7 @@ export default defineComponent({
   }
 }
 .competency {
+  position: relative;
   width: 600px;
   height: 350px;
   margin-top: -25px;
