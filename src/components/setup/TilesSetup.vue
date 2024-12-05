@@ -14,31 +14,45 @@
 
   <div>
     <button class="btn btn-outline-secondary me-2 mb-2" data-bs-toggle="collapse" data-bs-target="#randomizedSetup">
-      {{t('setupTiles.tileRandomizer.title')}} &#x25BC;      
+      {{t('setupTiles.other.randomizer')}} &#x25BC;      
     </button>
   </div>
   <div class="collapse mt-2" id="randomizedSetup">
     <div class="alert alert-secondary fst-italic">
-      <span v-html="t('setupTiles.tileRandomizer.notice')"></span>
+      <span v-html="t('setupTiles.other.notice')"></span>
       <button class="btn btn-sm btn-secondary ms-2" @click="randomizeOtherTiles">{{t('action.randomize')}}</button>
     </div>
 
-    <h5 v-html="t('setupTiles.tileRandomizer.researchBoard')"></h5>
-    <div class="researchBoardWrapper">
-      <div class="researchBoard">
-        <img src="@/assets/gameboard.webp" alt="" class="background"/>
-        <div class="techAdvanced">
-          <template v-for="(id,index) of setup.setupInnovationTiles" :key="id">
-            <AppIcon type="innovation" :name="`${id}`" extension="webp" class="tile"/>
-          </template> 
-        </div>
-        <div class="techStandard">
-          <template v-for="(id,index) of setup.setupInnovationTiles" :key="id">
-            <AppIcon type="competency" :name="`${id}`" class="tile" :class="{'column': index < 6, 'common': index >= 6}"/>
-          </template>
+    <div class="tilesContainerWrapper">
+      <div class="bookActions mb-2">
+        <img src="@/assets/book-actions-background.webp" alt="" class="background"/>
+        <div>
+          <AppIcon v-for="tile of setup.setupBookActions" :key="tile" type="book-action" extension="webp" :name="`${tile}`" class="tile"/><br/>
         </div>
       </div>
     </div>
+
+    <div class="palaceTiles mb-2">
+      <AppIcon v-for="id of setup.setupPalaceTiles" :key="id" type="palace" :name="`${id}`" extension="webp" class="tile"/>
+      <AppIcon type="palace" name="17" extension="webp" class="tile"/>
+    </div>
+
+    <div class="tilesContainerWrapper" v-if="setup.setupInnovationTiles && setup.setupCompetencyTiles">
+      <div class="innovation" :class="{[`player${totalPlayerCount}`]:true}">
+        <img v-if="totalPlayerCount == 3" src="@/assets/innovation-display-3player.webp" alt="" class="background"/>
+        <img v-else src="@/assets/innovation-display-2player.webp" alt="" class="background"/>
+        <div>
+          <AppIcon v-for="(id,index) of setup.setupInnovationTiles" :key="id" type="innovation" :name="`${id}`" extension="webp" class="tile"
+              :class="{[`row${(index >= setup.setupInnovationTiles.length - 4) ? '2' : '1'}`]:true}"/>
+        </div>
+      </div>
+      <div class="competency">
+        <img src="@/assets/competency-display.webp" alt="" class="background"/>
+        <AppIcon v-for="(id,index) of setup.setupCompetencyTiles" :key="id" type="competency" :name="`${id}`" extension="webp" class="tile"
+            :class="{[`row${Math.floor(index / 4) + 1}`]:true}"/>
+      </div>
+    </div>
+
   </div>
 
   <ModalDialog id="roundScoreTilesModal" :title="t('setupTiles.roundScore.title')" :size-lg="true">
@@ -89,8 +103,8 @@ const INNOVATION_TILES_TOTAL = 18
 const INNOVATION_TILES_COUNT_2PLAYER = 6
 const INNOVATION_TILES_COUNT_3PLAYER = 8
 const PALACE_TILES_TOTAL = 16
-const PALACE_TILES_COUNT_2PLAYER = 3
-const PALACE_TILES_COUNT_3PLAYER = 4
+const PALACE_TILES_COUNT_2PLAYER = 2
+const PALACE_TILES_COUNT_3PLAYER = 3
 
 export default defineComponent({
   name: 'TilesSetup',
@@ -190,9 +204,10 @@ export default defineComponent({
   .background {
     position: absolute;
     width: 150px;
-    opacity: 30%;
+    opacity: 50%;
     border-radius: 5px;
     z-index: -100;
+    filter: drop-shadow(2px 2px 2px #888);
   }
 }
 .roundScoreTileIcon {
@@ -217,58 +232,96 @@ export default defineComponent({
     cursor: pointer;
   }
 }
-.roundBoosterTile {
-  height: 10rem;
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
-}
-.researchBoardWrapper {
+.tilesContainerWrapper {
   width: 100%;
   overflow-x: auto;
 }
-.researchBoard {
-  position: relative;
-  width: 600px;
-  height: calc(600px / 1008px * 539px);
-  img {
-    filter: drop-shadow(5px 5px 4px #555);
+.bookActions {
+  height: 75px;
+  width: 400px;
+  .background {
+    position: absolute;
+    width: 400px;
+    opacity: 50%;
+    border-radius: 5px;
+    z-index: -100;
+    filter: drop-shadow(2px 2px 2px #888);
   }
+  .tile {
+    width: 118px;
+    margin-top: 7px;
+    margin-left: 7px;
+    margin-right: 9px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+.palaceTiles .tile {
+  width: 130px;
+  margin-right: 10px;
+  filter: drop-shadow(2px 2px 2px #888);
+}
+.innovation {
+  width: 600px;
+  height: 300px;
   .background {
     position: absolute;
     width: 600px;
-    opacity: 30%;
-    border-radius: 5px;
+    opacity: 50%;
     z-index: -100;
+    filter: drop-shadow(2px 2px 2px #888);
   }
-  .federationToken {
+  .tile {
+    width: 125px;
+    margin-top: 24px;
+    margin-left: 8px;
+    margin-right: 18px;
+  }
+  &.player2 {
+    .tile.row1 {
+      margin-top: 48px;
+      margin-left: 90px;
+      margin-right: 82px;
+    }
+    .tile.row2 {
+      margin-top: 80px;
+      margin-left: 11px
+    }
+    .tile:nth-child(2), .tile:nth-child(6) {
+      margin-right: 0;
+    }
+  }
+  &.player3 {
+    .tile.row1 {
+      margin-top: 90px;
+    }
+    .tile:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+.competency {
+  width: 600px;
+  height: 350px;
+  margin-top: -25px;
+  .background {
     position: absolute;
-    height: 4rem;
-    left: 5px;
-    z-index: 100;
+    width: 600px;
+    opacity: 50%;
+    z-index: -150;
+    filter: drop-shadow(2px 2px 2px #888);
   }
-  .techAdvanced {
-    .tile {
-      margin-top: 50px;
-      margin-left: 18.5px;
-      width: 81px;
+  .tile {
+    width: 74px;
+    margin-top: 16px;
+    margin-left: 65px;
+    margin-right: 9px;
+    &:nth-child(4n-2) {
+      margin-left: 58px;
     }
-  }
-  .techStandard {
-    .tile {
-      width: 100px;
-      margin-top: 35px;
-    }
-    .tile:nth-child(7), .tile:nth-child(8), .tile:nth-child(9) {
-      margin-top: 13px;
-    }
-    .tile:nth-child(7) {
-      margin-left: 36px;
-    }
-    .tile:nth-child(8) {
-      margin-left: 105px;
-    }
-    .tile:nth-child(9) {
-      margin-left: 94px;
+    &.row1 {
+      margin-top: 80px;
     }
   }
 }

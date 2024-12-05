@@ -34,7 +34,9 @@
       "none": "(none)"
     },
     "other": {
-      "title": "Other Tiles"
+      "title": "Other Tiles",
+      "randomizer": "Book Actions, Innovation Display and Palace Tiles",
+      "notice": "The actual selection of these tiles is not relevant for the application."
     }
   },
   "setupGameAutoma": {

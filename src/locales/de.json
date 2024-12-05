@@ -34,7 +34,9 @@
       "none": "(keine)"
     },
     "other": {
-      "title": "Andere Plättchen"
+      "title": "Andere Plättchen",
+      "randomizer": "Buchaktionen, Innovationstableau und Palastplättchen",
+      "notice": "Die konkrete Auswahl von diesen Plättchen ist für die Applikation nicht relevant."
     }
   },
   "setupGameAutoma": {
