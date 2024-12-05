@@ -33,6 +33,12 @@ export const useStateStore = defineStore(`${name}.store`, {
       round.turns.push(roundTurn)
     },
     resetGame() {
+      this.setup.roundScoreTiles = undefined
+      this.setup.roundScoreFinalTile = undefined
+      this.setup.setupBookActions = undefined
+      this.setup.setupCompetencyTiles = undefined
+      this.setup.setupInnovationTiles = undefined
+      this.setup.setupPalaceTiles = undefined
       this.rounds = []
     }
   },
@@ -48,6 +54,13 @@ export interface State {
 export interface Setup {
   difficultyLevel: DifficultyLevel
   playerSetup: PlayerSetup
+  roundScoreTiles?: number[]
+  roundScoreFinalTile?: number
+  // parameters not relevant for the application, but persisted for back button support in setup screens
+  setupBookActions?: number[]
+  setupCompetencyTiles?: number[]
+  setupInnovationTiles?: number[]
+  setupPalaceTiles?: number[]
 }
 export interface PlayerSetup {
   playerCount: number

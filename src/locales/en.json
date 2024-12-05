@@ -23,13 +23,27 @@
       "hard": "Hard"
     }
   }, 
+  "setupTiles": {
+    "title": "Setup Game Board",
+    "roundScore": {
+      "title": "Round Score Tiles",
+      "intro": "The app uses these round score tiles for Automa scoring and behavior:",
+      "select": "Select",
+      "available": "Available:",
+      "selected": "Selected:",
+      "none": "(none)"
+    },
+    "other": {
+      "title": "Other Tiles",
+      "randomizer": "Book Actions, Innovation Display and Palace Tiles",
+      "notice": "The actual selection of these tiles is not relevant for the application."
+    }
+  },
   "setupGameAutoma": {
     "title": "Automa Setup",
     "generalSetup": "General Setup",
     "generalSetupIntro": "Set up the game as usual, but with the following changes:",
     "noTwoPlayerSpecialRules": "The special rules for a 2-player game (multiplayer rulebook, p. 19) <b>do not</b> apply.",
-    "roundScoreTiles": "Use the double-sided <b>Automa Round Score tiles</b> instead of those from the multiplayer game. Flip the Automa Round Score tile to the side that shows the relevant round with a light marking. As In the base game, the Round Score tile with the Spade on its left side cannot be placed In Round 5 or 6.",
-    "gameEndToken": "Use the <b>Automa Final Round Score tiles</b> instead of those from the multiplayer game. Place a random tile as usual.",
     "palaceTiles": "Place {count} random <b>Palace tiles</b> next to the game board. Place Palace tile #17 (with the red back) next to them.",
     "factionSelection": {
       "title": "Choose your <b>Faction</b> as follows:",
@@ -237,7 +251,8 @@
     "back": "Back",
     "close": "Close",
     "reset": "Reset",
-    "pass": "Pass"
+    "pass": "Pass",
+    "randomize": "Randomize"
   },
   "footer": {
     "credits": "Credits"
