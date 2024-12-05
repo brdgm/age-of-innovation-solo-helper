@@ -9,6 +9,7 @@ import RoundIncome from '@/views/RoundIncome.vue'
 import EndOfRound from '@/views/EndOfRound.vue'
 import RoundTurnPlayer from '@/views/RoundTurnPlayer.vue'
 import RoundTurnBot from '@/views/RoundTurnBot.vue'
+import SetupGameTiles from '@/views/SetupGameTiles.vue'
 
 const LOCALSTORAGE_KEY = `${name}.route`
 
@@ -22,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/setupGame',
     name: 'SetupGame',
     component: SetupGame
+  },
+  {
+    path: '/setupGameTiles',
+    name: 'SetupGameTiles',
+    component: SetupGameTiles
   },
   {
     path: '/setupGameAutoma',

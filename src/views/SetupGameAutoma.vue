@@ -9,7 +9,7 @@
     {{t('action.startGame')}}
   </button>
 
-  <FooterButtons backButtonRouteTo="/setupGame" endGameButtonType="abortGame"/>
+  <FooterButtons backButtonRouteTo="/setupGameTiles" endGameButtonType="abortGame"/>
 </template>
 
 <script lang="ts">
