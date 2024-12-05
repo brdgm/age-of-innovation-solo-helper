@@ -1,16 +1,16 @@
 <template>
-  <p v-html="t('setupTiles.intro')"></p>
-  <ol>
-    <li v-html="t('setupTiles.gameBoard', {playerCount:gameBoardPlayerCount})"></li>
-    <li v-html="t('setupTiles.federationTokens')"></li>
-    <li>
-      <span v-html="t('setupTiles.scoringRoundTiles')"></span>:<br/>
-      <AppIcon v-for="(tile,index) of setup.roundScoreTiles" :key="tile" type="round-score" extension="webp"
-          :name="`${tile}-${index < 3 ? '123' : '456'}`" class="scoringRoundTileIcon"/><br/>
-      <button class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#roundScoreTilesModal">{{t('setupTiles.select')}}</button>
-      <button class="btn btn-sm btn-secondary me-2" @click="randomizeRoundScoreTiles">{{t('action.randomize')}}</button>
-    </li>
-  </ol>
+  <h4>{{t('setupTiles.roundScore.title')}}</h4>
+  <div v-html="t('setupTiles.roundScore.intro')"></div>
+  <div class="roundScoreTiles mb-2">
+    <img src="@/assets/round-score-tile-background.webp" alt="" class="background"/>
+    <AppIcon v-for="(tile,index) of setup.roundScoreTiles" :key="tile" type="round-score" extension="webp"
+        :name="`${tile}-${index < 3 ? '123' : '456'}`" class="roundScoreTileIcon"/><br/>
+    <AppIcon type="round-score-final" extension="webp" :name="`${setup.roundScoreFinalTile}`" class="roundScoreFinalTileIcon overlay"/>
+  </div>
+  <button class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#roundScoreTilesModal">{{t('setupTiles.roundScore.select')}}</button>
+  <button class="btn btn-sm btn-secondary me-2" @click="randomizeRoundScoreTiles">{{t('action.randomize')}}</button>
+
+  <h4 class="mt-3">{{t('setupTiles.other.title')}}</h4>
 
   <div>
     <button class="btn btn-outline-secondary me-2 mb-2" data-bs-toggle="collapse" data-bs-target="#randomizedSetup">
@@ -22,9 +22,6 @@
       <span v-html="t('setupTiles.tileRandomizer.notice')"></span>
       <button class="btn btn-sm btn-secondary ms-2" @click="randomizeOtherTiles">{{t('action.randomize')}}</button>
     </div>
-
-    <h5 v-html="t('setupTiles.tileRandomizer.roundBoosters')"></h5>
-    <AppIcon v-for="id of setup.setupRoundBonusTiles" :key="id" type="round-bonus" :name="`${id}`" extension="webp" class="roundBoosterTile"/>
 
     <h5 v-html="t('setupTiles.tileRandomizer.researchBoard')"></h5>
     <div class="researchBoardWrapper">
@@ -44,22 +41,26 @@
     </div>
   </div>
 
-  <ModalDialog id="roundScoreTilesModal" :title="t('setupTiles.scoringRoundTiles')" :size-lg="true">
+  <ModalDialog id="roundScoreTilesModal" :title="t('setupTiles.roundScore.title')" :size-lg="true">
     <template #body>
-      {{t('setupTiles.available')}}<br/>
+      {{t('setupTiles.roundScore.available')}}<br/>
       <AppIcon v-for="tile of roundScoreTilesAllWithoutSelection" :key="tile" type="round-score" extension="webp" :name="`${tile}-123`"
-          class="scoringRoundTileIcon select" @click="selectScoringRoundTile(tile)"/>
+          class="roundScoreTileIcon select" @click="selectScoringRoundTile(tile)"/><br/>
+      <AppIcon v-for="tile of roundScoreFinalTilesAllWithoutSelection" :key="tile" type="round-score-final" extension="webp" :name="`${tile}`"
+          class="roundScoreFinalTileIcon select" @click="selectScoringRoundFinalTile(tile)"/>
       <hr/>
-      {{t('setupTiles.selected')}}<br/>
+      {{t('setupTiles.roundScore.selected')}}<br/>
       <AppIcon v-for="(tile,index) of roundScoreTilesSelection" :key="tile" type="round-score" extension="webp" :name="`${tile}-${index < 3 ? '123' : '456'}`"
-          class="scoringRoundTileIcon select" @click="deselectScoringRoundTile(tile)"/>
-      <p v-if="roundScoreTilesSelection.length == 0" class="fst-italic">
-        {{t('setupTiles.none')}}
+          class="roundScoreTileIcon select" @click="deselectScoringRoundTile(tile)"/>
+      <AppIcon v-if="roundScoreFinalTileSelection" type="round-score-final" extension="webp" :name="`${roundScoreFinalTileSelection}`" class="roundScoreFinalTileIcon select"
+          @click="roundScoreFinalTileSelection=undefined"/>
+      <p v-if="roundScoreTilesSelection.length == 0 && !roundScoreFinalTileSelection" class="fst-italic">
+        {{t('setupTiles.roundScore.none')}}
       </p>
     </template>
     <template #footer>
-      <button class="btn btn-outline-secondary" @click="roundScoreTilesSelection=[]">{{t('action.reset')}}</button>
-      <button class="btn btn-success" data-bs-dismiss="modal" :disabled="!isValidRoundScoreTiles(roundScoreTilesSelection)" @click="setScoringRoundTileSelection">{{t('setupTiles.select')}}</button>
+      <button class="btn btn-outline-secondary" @click="roundScoreTilesSelection=[];roundScoreFinalTileSelection=undefined;">{{t('action.reset')}}</button>
+      <button class="btn btn-success" data-bs-dismiss="modal" :disabled="!isValidRoundScoreTiles(roundScoreTilesSelection) || !roundScoreFinalTileSelection" @click="setScoringRoundTileSelection">{{t('setupTiles.roundScore.select')}}</button>
       <button class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.cancel')}}</button>
     </template>
   </ModalDialog>
@@ -90,7 +91,6 @@ const INNOVATION_TILES_COUNT_3PLAYER = 8
 const PALACE_TILES_TOTAL = 16
 const PALACE_TILES_COUNT_2PLAYER = 3
 const PALACE_TILES_COUNT_3PLAYER = 4
-const ROUND_BONUS_TILES_TOTAL = 10
 
 export default defineComponent({
   name: 'TilesSetup',
@@ -106,7 +106,6 @@ export default defineComponent({
     const totalPlayerCount = state.setup.playerSetup.botCount + state.setup.playerSetup.playerCount
     const innovationTilesCount = totalPlayerCount == 2 ? INNOVATION_TILES_COUNT_2PLAYER : INNOVATION_TILES_COUNT_3PLAYER
     const palaceTilesCount = totalPlayerCount == 2 ? PALACE_TILES_COUNT_2PLAYER : PALACE_TILES_COUNT_3PLAYER
-    const roundBonusCount = totalPlayerCount + 3
 
     const isValidRoundScoreTiles = function(tiles : number[]) : boolean {      
       return tiles.length == ROUND_SCORE_TILES_COUNT
@@ -130,9 +129,8 @@ export default defineComponent({
     setup.setupCompetencyTiles = setup.setupCompetencyTiles ?? rollDiceMultiDifferentValue(COMPETENCY_TILES_TOTAL, COMPETENCY_TILES_COUNT)
     setup.setupInnovationTiles = setup.setupInnovationTiles ?? rollDiceMultiDifferentValue(INNOVATION_TILES_TOTAL, innovationTilesCount)
     setup.setupPalaceTiles = setup.setupPalaceTiles ?? rollDiceMultiDifferentValue(PALACE_TILES_TOTAL, palaceTilesCount)
-    setup.setupRoundBonusTiles = setup.setupRoundBonusTiles ?? rollDiceMultiDifferentValue(ROUND_BONUS_TILES_TOTAL, roundBonusCount)
 
-    return { t, state, setup, totalPlayerCount, innovationTilesCount, palaceTilesCount, roundBonusCount,
+    return { t, state, setup, totalPlayerCount, innovationTilesCount, palaceTilesCount,
         roundScoreTilesSelection, roundScoreFinalTileSelection,
         isValidRoundScoreTiles, getRandomValidRoundScoreTiles }
   },
@@ -146,7 +144,10 @@ export default defineComponent({
       }
     },
     roundScoreTilesAllWithoutSelection() : number[] {
-      return range(ROUND_SCORE_TILES_TOTAL).filter(tile => !this.roundScoreTilesSelection.includes(tile))
+      return range(1, ROUND_SCORE_TILES_TOTAL+1).filter(tile => !this.roundScoreTilesSelection.includes(tile))
+    },
+    roundScoreFinalTilesAllWithoutSelection() : number[] {
+      return range(1, ROUND_SCORE_FINAL_TILES_TOTAL+1).filter(tile => tile != this.roundScoreFinalTileSelection)
     }
   },
   methods: {
@@ -176,33 +177,42 @@ export default defineComponent({
       this.setup.setupCompetencyTiles = rollDiceMultiDifferentValue(COMPETENCY_TILES_TOTAL, COMPETENCY_TILES_COUNT)
       this.setup.setupInnovationTiles = rollDiceMultiDifferentValue(INNOVATION_TILES_TOTAL, this.innovationTilesCount)
       this.setup.setupPalaceTiles = rollDiceMultiDifferentValue(PALACE_TILES_TOTAL, this.palaceTilesCount)
-      this.setup.setupRoundBonusTiles = rollDiceMultiDifferentValue(ROUND_BONUS_TILES_TOTAL, this.roundBonusCount)
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
-li {
-  margin-top: 0.5rem;
-  li {
-    margin-top: 0rem;
+.roundScoreTiles {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  .background {
+    position: absolute;
+    width: 150px;
+    opacity: 30%;
+    border-radius: 5px;
+    z-index: -100;
   }
 }
-.scoringRoundTileIcon {
-  height: 6rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.roundScoreTileIcon {
+  width: 130px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  object-fit: contain;
   &.select {
     cursor: pointer;
   }
 }
-.scoringFinalTileIcon {
-  height: 4rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.roundScoreFinalTileIcon {
+  width: 65px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  &.overlay {
+    position: absolute;
+    left: 66px;
+    top: 24px;
+  }
   &.select {
     cursor: pointer;
   }

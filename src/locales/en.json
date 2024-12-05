@@ -23,6 +23,20 @@
       "hard": "Hard"
     }
   }, 
+  "setupTiles": {
+    "title": "Setup Game Board",
+    "roundScore": {
+      "title": "Round Score Tiles",
+      "intro": "The app uses these round score tiles for Automa scoring and behavior:",
+      "select": "Select",
+      "available": "Available:",
+      "selected": "Selected:",
+      "none": "(none)"
+    },
+    "other": {
+      "title": "Other Tiles"
+    }
+  },
   "setupGameAutoma": {
     "title": "Automa Setup",
     "generalSetup": "General Setup",
@@ -237,7 +251,8 @@
     "back": "Back",
     "close": "Close",
     "reset": "Reset",
-    "pass": "Pass"
+    "pass": "Pass",
+    "randomize": "Randomize"
   },
   "footer": {
     "credits": "Credits"

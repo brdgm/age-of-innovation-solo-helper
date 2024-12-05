@@ -23,6 +23,20 @@
       "hard": "Schwer"
     }
   }, 
+  "setupTiles": {
+    "title": "Spielbereich vorbereiten",
+    "roundScore": {
+      "title": "Rundenwertungsplättchen",
+      "intro": "Die application verwendet diese Rundenwertungsplättchen für die Automa-Wertung und das Automa-Verhalten:",
+      "select": "Auswählen",
+      "available": "Verfügbar:",
+      "selected": "Ausgewählt:",
+      "none": "(keine)"
+    },
+    "other": {
+      "title": "Andere Plättchen"
+    }
+  },
   "setupGameAutoma": {
     "title": "Automa Spielaufbau",
     "generalSetup": "Allgemeiner Aufbau",
@@ -237,7 +251,8 @@
     "back": "Zurück",
     "close": "Schließen",
     "reset": "Zurücksetzen",
-    "pass": "Passen"
+    "pass": "Passen",
+    "randomize": "Zufällig"
   },
   "footer": {
     "credits": "Credits"

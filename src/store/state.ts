@@ -39,7 +39,6 @@ export const useStateStore = defineStore(`${name}.store`, {
       this.setup.setupCompetencyTiles = undefined
       this.setup.setupInnovationTiles = undefined
       this.setup.setupPalaceTiles = undefined
-      this.setup.setupRoundBonusTiles = undefined
       this.rounds = []
     }
   },
@@ -62,7 +61,6 @@ export interface Setup {
   setupCompetencyTiles?: number[]
   setupInnovationTiles?: number[]
   setupPalaceTiles?: number[]
-  setupRoundBonusTiles?: number[]
 }
 export interface PlayerSetup {
   playerCount: number
