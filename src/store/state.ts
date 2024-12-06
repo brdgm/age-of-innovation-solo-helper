@@ -2,6 +2,7 @@ import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { defineStore } from 'pinia'
 import { name } from '@/../package.json'
+import Terrain from '@/services/enum/Terrain'
 
 export const useStateStore = defineStore(`${name}.store`, {
   state: () => {
@@ -56,6 +57,7 @@ export interface Setup {
   playerSetup: PlayerSetup
   roundScoreTiles?: number[]
   roundScoreFinalTile?: number
+  botTerrain?: Terrain[]
   // parameters not relevant for the application, but persisted for back button support in setup screens
   setupBookActions?: number[]
   setupCompetencyTiles?: number[]

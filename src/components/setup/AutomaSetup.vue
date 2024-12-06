@@ -13,7 +13,22 @@
         <li v-html="t('setupGameAutoma.factionSelection.chooseSet')"></li>
       </ol>
     </li>
-    <li v-html="t('setupGameAutoma.chooseAutomaTerrain')"></li>
+    <li>
+      <span v-html="t('setupGameAutoma.chooseAutomaTerrain')"></span><br/>
+      <ul>
+        <li v-for="(faction,i) in factions" :key="faction">
+          <i>{{t(`botFaction.${faction}`)}}</i>:
+          <div class="terrainSelection">
+            <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
+              <input class="form-check-input" type="radio" :name="`botTerrain${i}`" v-model="botTerrain[i]" :value="terrain" :id="`terrain-${i}-${terrain}`">
+              <label class="form-check-label" :for="`terrain-${i}-${terrain}`">
+                <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
+              </label>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
     <li>
       <span v-html="t('setupGameAutoma.automaComponents.title')"></span>
       <ol type="a">
@@ -80,9 +95,13 @@ import BotFaction from '@/services/enum/BotFaction'
 import { ScienceDisciplineBonusSteps } from '@/services/ScienceDisciplineBonus'
 import ScienceDisciplineBonuses from '@/services/ScienceDisciplineBonuses'
 import { useStateStore } from '@/store/state'
+import Terrain from '@/services/enum/Terrain'
 
 export default defineComponent({
   name: 'AutomaSetup',
+  emits: {
+    botTerrain: (_botTerrain: Terrain[]) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+  },
   components: {
     AppIcon
   },
@@ -90,6 +109,11 @@ export default defineComponent({
     const { t } = useI18n()
     const state = useStateStore()
     return { t, state }
+  },
+  data() {
+    return {
+      botTerrain: [undefined, undefined] as (Terrain|undefined)[]
+    }
   },
   computed: {
     palaceTileCount() : number {
@@ -121,11 +145,23 @@ export default defineComponent({
     },
     isTwoHumanPlayers() : boolean {
       return this.state.setup.playerSetup.playerCount === 2
+    },
+    terrains() : Terrain[] {
+      return Object.values(Terrain)
     }
   },
   methods: {
     getScienceDisciplineBonus(botFaction : BotFaction) : ScienceDisciplineBonusSteps[] {
       return ScienceDisciplineBonuses.get(botFaction)
+    }
+  },
+  watch: {
+    // whenever question changes, this function will run
+    botTerrain: {
+      handler(newValue) {
+        this.$emit('botTerrain', newValue)
+      },
+      deep: true
     }
   }
 })
@@ -143,6 +179,16 @@ li {
   height: 1.5rem;
 }
 .scienceDisciplineIcon {
+  height: 1.75rem;
+  filter: drop-shadow(2px 2px 2px #888);
+}
+.terrainSelection .form-check-inline {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.terrainIcon {
+  margin: 0.25rem;
   height: 1.75rem;
   filter: drop-shadow(2px 2px 2px #888);
 }

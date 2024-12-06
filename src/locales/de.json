@@ -52,7 +52,8 @@
       "chooseSet": "Wähle 1 Set, nimm dir das passende Planungstableau und wähle eine der beiden Gemeinschaften."
     },
     "factionSelectionTwoHumanPlayer": "Wähle deine <b>Gemeinschaft</b> und Rundenbonus nach den üblichen Regeln für ein Spiel mit 3 Spielern.",
-    "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine, und lege die entsprechende Landschaftstyp-Priorisierungskarte (LTP) in Automas Bereich. Automas Heimatlandschaft wird auf der Karte oben und unten sowie im ersten Kreis von links angezeigt.",
+    "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine.",
+    "invalidTerrainSelection": "Bitte wähle eine Heimatlandschaft für Automa aus.",
     "automaComponents": {
       "title": "Verteile Automas Spielsteine wie folgt:",
       "buildings": "Lege alle <b>Gebäude</b> ihrer Farbe in ihren Bereich.",

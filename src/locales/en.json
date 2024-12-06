@@ -52,7 +52,8 @@
       "chooseSet": "Choose a set, take the corresponding Planning display, and select one of the two Factions."
     },
     "factionSelectionTwoHumanPlayer": "Choose your <b>Faction</b> and Round Bonus following the usual rules for a 3-Player game.",
-    "chooseAutomaTerrain": "Choose a <b>Native terrain</b> for Automa different from yours. Give Automa the matching Automa Terrain Priority (ATP) card. The ATP's Terrain type is Indicated by the top and bottom bars and the leftmost circles.",
+    "chooseAutomaTerrain": "Choose a <b>Native terrain</b> for Automa different from yours.",
+    "invalidTerrainSelection": "Please select a terrain for Automa.",
     "automaComponents": {
       "title": "Distribute the Automa components as follows:",
       "buildings": "Place all her <b>buildings</b> in her play area.",

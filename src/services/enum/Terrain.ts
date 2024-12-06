@@ -2,12 +2,12 @@
  * Terrain
  */
 enum Terrain {
-  DESERT = 'desert',
-  FOREST = 'forest',
   LAKE = 'lake',
-  MOUNTAIN = 'mountain',
   PLAINS = 'plains',
+  FOREST = 'forest',
+  WASTELAND = 'wasteland',
   SWAMP = 'swamp',
-  WASTELAND = 'wasteland'
+  DESERT = 'desert',
+  MOUNTAIN = 'mountain'
 }
 export default Terrain
