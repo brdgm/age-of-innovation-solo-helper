@@ -24,7 +24,7 @@ export default function getPriorityTerrains(terrain: Terrain, terrainPriority: T
     case TerrainPriority.B:
       switch (terrain) {
         case Terrain.LAKE: return [Terrain.LAKE, Terrain.FOREST, Terrain.SWAMP, Terrain.MOUNTAIN, Terrain.DESERT, Terrain.PLAINS, Terrain.WASTELAND]
-        case Terrain.PLAINS: return [Terrain.PLAINS,Terrain.SWAMP,Terrain.DESERT,Terrain.LAKE,Terrain.MOUNTAIN,Terrain.WASTELAND,Terrain.FOREST]
+        case Terrain.PLAINS: return [Terrain.PLAINS, Terrain.SWAMP, Terrain.DESERT, Terrain.LAKE, Terrain.MOUNTAIN, Terrain.WASTELAND, Terrain.FOREST]
         case Terrain.FOREST: return [Terrain.FOREST, Terrain.MOUNTAIN, Terrain.LAKE, Terrain.WASTELAND, Terrain.PLAINS, Terrain.SWAMP, Terrain.DESERT]
         case Terrain.WASTELAND: return [Terrain.WASTELAND, Terrain.DESERT, Terrain.MOUNTAIN, Terrain.PLAINS, Terrain.LAKE, Terrain.FOREST, Terrain.SWAMP]
         case Terrain.SWAMP: return [Terrain.SWAMP, Terrain.LAKE, Terrain.PLAINS, Terrain.FOREST, Terrain.WASTELAND, Terrain.DESERT, Terrain.MOUNTAIN]

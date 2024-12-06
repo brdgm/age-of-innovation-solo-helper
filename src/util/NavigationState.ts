@@ -9,6 +9,7 @@ import { MAX_TURN } from '@/util/getTurnOrder'
 import ScienceDiscipline from '@/services/enum/ScienceDiscipline'
 import getRoundScoreTile, { RoundScoreTile } from './getRoundScoreTile'
 import getRoundScoreFinalTile from './getRoundScoreFinalTile'
+import Terrain from '@/services/enum/Terrain'
 
 export default class NavigationState {
 
@@ -21,6 +22,7 @@ export default class NavigationState {
   readonly player : number
   readonly bot : number
   readonly botFaction? : BotFaction
+  readonly botTerrain? : Terrain
   readonly cardDeck? : CardDeck
   readonly passVictoryPoints?: number
   readonly preferredScienceDiscipline?: ScienceDiscipline
@@ -39,6 +41,7 @@ export default class NavigationState {
 
     if (this.bot > 0) {
       this.botFaction = setup.playerSetup.botFaction[this.bot - 1]
+      this.botTerrain = (setup.botTerrain ?? [])[this.bot - 1]
 
       // card deck: draw next card for bot
       this.cardDeck = getCardDeck(state, this.round, this.turn, this.bot)

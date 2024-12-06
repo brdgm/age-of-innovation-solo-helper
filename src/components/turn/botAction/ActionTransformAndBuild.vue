@@ -25,7 +25,10 @@
           </template>
           <template v-else>
             <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></span></li>
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority',{terrainPriority:botAction.terrainPriority})"></li>
+            <li>
+              <span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority',{terrainPriority:botAction.terrainPriority})"></span>
+              <TerrainPriorities v-if="botAction.terrainPriority" :terrainPriority="botAction.terrainPriority" :navigationState="navigationState"/>
+            </li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
@@ -65,6 +68,7 @@ import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/NavigationState'
 import BotFaction from '@/services/enum/BotFaction'
 import Structure from '@/services/enum/Structure'
+import TerrainPriorities from './TerrainPriorities.vue'
 
 export default defineComponent({
   name: 'ActionTransformAndBuild',
@@ -73,7 +77,8 @@ export default defineComponent({
     AppIcon,
     SupportInfo,
     Upgrade,
-    ModalDialog
+    ModalDialog,
+    TerrainPriorities
   },
   setup() {
     const { t } = useI18n()
