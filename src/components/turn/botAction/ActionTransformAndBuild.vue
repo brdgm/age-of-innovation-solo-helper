@@ -17,14 +17,14 @@
             <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
             <li v-if="botAction.terrainPriority">
               <AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span>
-              <TerrainPriorities v-for="terrain of playerTerrains" :terrain="terrain" :terrainPriority="botAction.terrainPriority"/>
+              <TerrainPriorities v-for="terrain of playerTerrains" :key="terrain" :terrain="terrain" :terrainPriority="botAction.terrainPriority"/>
             </li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else-if="isMimics">
             <li v-if="botAction.terrainPriority">
               <AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span>
-              <TerrainPriorities v-for="terrain of playerTerrains" :terrain="terrain" :terrainPriority="botAction.terrainPriority"/>
+              <TerrainPriorities v-for="terrain of playerTerrains" :key="terrain" :terrain="terrain" :terrainPriority="botAction.terrainPriority"/>
             </li>
             <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>

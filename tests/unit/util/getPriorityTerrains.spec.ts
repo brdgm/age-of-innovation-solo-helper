@@ -5,8 +5,8 @@ import TerrainPriority from '@/services/enum/TerrainPriority'
 
 describe('util/getPriorityTerrains', () => {
   it('getPriorityTerrains', () => {
-    for (let terrain of Object.values(Terrain)) {
-      for (let terrainPriority of Object.values(TerrainPriority)) {
+    for (const terrain of Object.values(Terrain)) {
+      for (const terrainPriority of Object.values(TerrainPriority)) {
         expect(getPriorityTerrains(terrain, terrainPriority).length).to.equal(7)
       }
     }
