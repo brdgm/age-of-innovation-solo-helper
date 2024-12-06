@@ -12,7 +12,6 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import AppIcon from '@/components/structure/AppIcon.vue'
-import NavigationState from '@/util/NavigationState'
 import TerrainPriority from '@/services/enum/TerrainPriority'
 import Terrain from '@/services/enum/Terrain'
 import getPriorityTerrains from '@/util/getPriorityTerrains'
@@ -23,19 +22,18 @@ export default defineComponent({
     AppIcon
   },
   props: {
+    terrain: {
+      type: Object as PropType<Terrain>,
+      required: false
+    },
     terrainPriority: {
       type: Object as PropType<TerrainPriority>,
-      required: true
-    },
-    navigationState: {
-      type: NavigationState,
       required: true
     }
   },
   computed: {
     terrains() : Terrain[] {
-      const botTerrain = this.navigationState.botTerrain ?? Terrain.LAKE
-      return getPriorityTerrains(botTerrain, this.terrainPriority)
+      return getPriorityTerrains(this.terrain ?? Terrain.LAKE, this.terrainPriority)
     }
   }
 })

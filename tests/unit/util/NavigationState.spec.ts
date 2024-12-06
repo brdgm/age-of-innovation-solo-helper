@@ -90,7 +90,9 @@ describe('util/NavigationState', () => {
 
   it('botTerrain', () => {
     expect(navigationState({round:'1',turn:'1',bot:'1'}).botTerrain).to.eq(Terrain.DESERT)
+    expect(navigationState({round:'1',turn:'1',bot:'1'}).playerTerrains).to.eql([Terrain.LAKE])
     expect(navigationState({round:'1',turn:'1',bot:'2'}).botTerrain).to.eq(Terrain.MOUNTAIN)
+    expect(navigationState({round:'1',turn:'1',bot:'2'}).playerTerrains).to.eql([Terrain.LAKE])
   })
 })
 

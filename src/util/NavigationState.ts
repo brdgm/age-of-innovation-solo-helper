@@ -10,6 +10,7 @@ import ScienceDiscipline from '@/services/enum/ScienceDiscipline'
 import getRoundScoreTile, { RoundScoreTile } from './getRoundScoreTile'
 import getRoundScoreFinalTile from './getRoundScoreFinalTile'
 import Terrain from '@/services/enum/Terrain'
+import { range } from 'lodash'
 
 export default class NavigationState {
 
@@ -24,6 +25,7 @@ export default class NavigationState {
   readonly bot : number
   readonly botFaction? : BotFaction
   readonly botTerrain? : Terrain
+  readonly playerTerrains? : Terrain[]
   readonly cardDeck? : CardDeck
   readonly passVictoryPoints?: number
   readonly preferredScienceDiscipline?: ScienceDiscipline
@@ -43,6 +45,7 @@ export default class NavigationState {
     if (this.bot > 0) {
       this.botFaction = setup.playerSetup.botFaction[this.bot - 1]
       this.botTerrain = (setup.botTerrain ?? [])[this.bot - 1]
+      this.playerTerrains = range(0, setup.playerSetup.playerCount).map(playerIndex => (setup.playerTerrain ?? [])[playerIndex])
 
       // card deck: draw next card for bot
       this.cardDeck = getCardDeck(state, this.round, this.turn, this.bot)
