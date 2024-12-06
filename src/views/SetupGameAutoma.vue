@@ -41,7 +41,7 @@ export default defineComponent({
   },
   data() {
     return {
-      botTerrain: [] as Terrain[]
+      botTerrain: [] as (Terrain|undefined)[]
     }
   },
   computed: {
@@ -58,7 +58,7 @@ export default defineComponent({
   },
   methods: {
     startGame() : void {
-      this.state.setup.botTerrain = this.botTerrain
+      this.state.setup.botTerrain = this.botTerrain.filter(terrain => terrain !== undefined)
       // prepare first round with initial player order
       const { playerCount, botCount } = this.state.setup.playerSetup
       const playerOrder : PlayerOrder[] = []

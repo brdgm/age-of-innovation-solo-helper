@@ -20,8 +20,8 @@
           <i>{{t(`botFaction.${faction}`)}}</i>:
           <div class="terrainSelection">
             <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
-              <input class="form-check-input" type="radio" :name="`botTerrain${i}`" v-model="botTerrain[i]" :value="terrain" :id="`terrain-${i}-${terrain}`">
-              <label class="form-check-label" :for="`terrain-${i}-${terrain}`">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" :name="`botTerrain${i}`" v-model="botTerrain[i]" :value="terrain">
                 <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
               </label>
             </div>
@@ -100,7 +100,7 @@ import Terrain from '@/services/enum/Terrain'
 export default defineComponent({
   name: 'AutomaSetup',
   emits: {
-    botTerrain: (_botTerrain: Terrain[]) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+    botTerrain: (_botTerrain: (Terrain|undefined)[]) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     AppIcon
@@ -182,14 +182,16 @@ li {
   height: 1.75rem;
   filter: drop-shadow(2px 2px 2px #888);
 }
-.terrainSelection .form-check-inline {
+.terrainSelection .form-check-label {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
+  gap: 0.25rem;
 }
 .terrainIcon {
   margin: 0.25rem;
   height: 1.75rem;
   filter: drop-shadow(2px 2px 2px #888);
+  cursor: pointer;
 }
 </style>
