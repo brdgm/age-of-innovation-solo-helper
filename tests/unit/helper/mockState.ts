@@ -12,7 +12,9 @@ export default function (params?: MockStateParams) : State {
         playerCount: params?.playerCount ?? 1,
         botCount: params?.botCount ?? 1,
         botFaction: params?.botFaction ?? [BotFaction.SIMPLETONS]
-      }
+      },
+      roundScoreTiles: params?.roundScoreTiles,
+      roundScoreFinalTile: params?.roundScoreFinalTile
     },
     rounds: params?.rounds ?? []
   }
@@ -23,5 +25,7 @@ export interface MockStateParams {
   playerCount?: number
   botCount?: number
   botFaction?: BotFaction[]
+  roundScoreTiles?: number[]
+  roundScoreFinalTile?: number
   rounds?: Round[]
 }
