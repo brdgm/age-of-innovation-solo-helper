@@ -43,14 +43,22 @@
   <h4>{{t('setupGameAutoma.initialWorkshop.title')}}</h4>
   <p v-html="t('setupGameAutoma.initialWorkshop.intro')"></p>
   <ol>
-    <li v-html="t('setupGameAutoma.initialWorkshop.player')"></li>
+    <template v-if="isTwoHumanPlayers">
+      <li v-html="t('setupGameAutoma.initialWorkshop.playerMultiple', {player:1})"></li>
+      <li v-html="t('setupGameAutoma.initialWorkshop.playerMultiple', {player:2})"></li>
+    </template>
+    <li v-else v-html="t('setupGameAutoma.initialWorkshop.player')"></li>
     <li>
       <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.marked', {character:randomCard.initialWorkshopMarked})"></span>
     </li>
     <li>
       <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.unmarked', {character:randomCard.initialWorkshopUnmarked})"></span>
     </li>
-    <li v-html="t('setupGameAutoma.initialWorkshop.playerSecond')"></li>
+    <template v-if="isTwoHumanPlayers">
+      <li v-html="t('setupGameAutoma.initialWorkshop.playerSecondMultiple', {player:2})"></li>
+      <li v-html="t('setupGameAutoma.initialWorkshop.playerSecondMultiple', {player:1})"></li>
+    </template>
+    <li v-else v-html="t('setupGameAutoma.initialWorkshop.playerSecond')"></li>
   </ol>
 
   <h4>{{t('setupGameAutoma.bonusCards.title')}}</h4>
