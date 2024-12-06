@@ -36,6 +36,8 @@ export const useStateStore = defineStore(`${name}.store`, {
     resetGame() {
       this.setup.roundScoreTiles = undefined
       this.setup.roundScoreFinalTile = undefined
+      this.setup.playerTerrain = undefined
+      this.setup.botTerrain = undefined
       this.setup.setupBookActions = undefined
       this.setup.setupCompetencyTiles = undefined
       this.setup.setupInnovationTiles = undefined
@@ -57,6 +59,7 @@ export interface Setup {
   playerSetup: PlayerSetup
   roundScoreTiles?: number[]
   roundScoreFinalTile?: number
+  playerTerrain?: Terrain[]
   botTerrain?: Terrain[]
   // parameters not relevant for the application, but persisted for back button support in setup screens
   setupBookActions?: number[]

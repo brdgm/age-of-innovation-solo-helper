@@ -12,6 +12,7 @@
       "title": "Spieler",
       "playerCount": "Menschliche Spieler",
       "playerCountItem": "{count} Spieler",
+      "player": "Spieler {player}",
       "botCount": "Automa",
       "botCountItem": "{count} Automa | {count} Automas (Experimentell)",
       "botFaction": "Automa Gemeinschaft | Automa {bot} Gemeinschaft",
@@ -53,7 +54,7 @@
     },
     "factionSelectionTwoHumanPlayer": "Wähle deine <b>Gemeinschaft</b> und Rundenbonus nach den üblichen Regeln für ein Spiel mit 3 Spielern.",
     "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine.",
-    "invalidTerrainSelection": "Bitte wähle eine Heimatlandschaft für Automa aus.",
+    "invalidTerrainSelection": "Bitte wähle gültige Heimatlandschaften für dich und für Automa aus.",
     "automaComponents": {
       "title": "Verteile Automas Spielsteine wie folgt:",
       "buildings": "Lege alle <b>Gebäude</b> ihrer Farbe in ihren Bereich.",

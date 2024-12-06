@@ -2,7 +2,7 @@
   <h1>{{t('setupGameAutoma.title')}}</h1>
 
   <div class="instructions">
-    <AutomaSetup @botTerrain="value => botTerrain = value"/>
+    <AutomaSetup @playerTerrain="value => playerTerrain = value" @botTerrain="value => botTerrain = value"/>
   </div>
 
   <div class="container-fluid" v-if="!isValidTerrainSelection">
@@ -41,16 +41,20 @@ export default defineComponent({
   },
   data() {
     return {
-      botTerrain: [] as (Terrain|undefined)[]
+      botTerrain: [] as (Terrain|undefined)[],
+      playerTerrain: [] as (Terrain|undefined)[],
     }
   },
   computed: {
     isValidTerrainSelection() : boolean {
-      if (this.botTerrain[0] === undefined) {
+      const { playerCount, botCount } = this.state.setup.playerSetup
+      const allTerrains = [...this.playerTerrain.slice(0, playerCount), ...this.botTerrain.slice(0, botCount)]
+      // ensure no missing terrain
+      if (allTerrains.some(terrain => terrain === undefined)) {
         return false
       }
-      if (this.state.setup.playerSetup.botCount === 2
-          && (this.botTerrain[1] === undefined || this.botTerrain[1] === this.botTerrain[0])) {
+      // ensure no duplicate terrain
+      if (new Set(allTerrains).size !== playerCount + botCount) {
         return false
       }
       return true
@@ -58,6 +62,7 @@ export default defineComponent({
   },
   methods: {
     startGame() : void {
+      this.state.setup.playerTerrain = this.playerTerrain.filter(terrain => terrain !== undefined)
       this.state.setup.botTerrain = this.botTerrain.filter(terrain => terrain !== undefined)
       // prepare first round with initial player order
       const { playerCount, botCount } = this.state.setup.playerSetup

@@ -8,9 +8,11 @@ import { CardDeckPersistence } from '@/store/state'
 import { RouteParams } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
 import ScienceDiscipline from '@/services/enum/ScienceDiscipline'
+import Terrain from '@/services/enum/Terrain'
 
 const state = mockState({playerCount:1, botCount:2,
   roundScoreTiles: [1,4,5,9,11,12], roundScoreFinalTile: 2,
+  playerTerrain: [Terrain.LAKE], botTerrain: [Terrain.DESERT,Terrain.MOUNTAIN],
   rounds:[
     mockRound({round:1, playerOrder:[{player:1},{bot:1},{bot:2}], turns:[
       mockTurn({round:1,turn:1,player:1}),
@@ -80,6 +82,15 @@ describe('util/NavigationState', () => {
   it('roundScoreTile-round6', () => {
     expect(navigationState({round:'6',turn:'1',bot:'1'}).passVictoryPoints).to.eq(6)
     expect(navigationState({round:'6',turn:'1',bot:'1'}).preferredScienceDiscipline).to.eq(ScienceDiscipline.LAW)
+  })
+
+  it('playerTerrain', () => {
+    expect(navigationState({round:'1',turn:'1',player:'1'}).playerTerrain).to.eq(Terrain.LAKE)
+  })
+
+  it('botTerrain', () => {
+    expect(navigationState({round:'1',turn:'1',bot:'1'}).botTerrain).to.eq(Terrain.DESERT)
+    expect(navigationState({round:'1',turn:'1',bot:'2'}).botTerrain).to.eq(Terrain.MOUNTAIN)
   })
 })
 

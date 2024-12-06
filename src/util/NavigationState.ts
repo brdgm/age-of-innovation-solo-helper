@@ -20,6 +20,7 @@ export default class NavigationState {
   readonly turn : number
   readonly turnOrderIndex : number
   readonly player : number
+  readonly playerTerrain? : Terrain
   readonly bot : number
   readonly botFaction? : BotFaction
   readonly botTerrain? : Terrain
@@ -53,6 +54,9 @@ export default class NavigationState {
         this.passVictoryPoints = this.round < 4 ? roundScoreTile.vpRound123 : roundScoreTile.vpRound456
         this.preferredScienceDiscipline = roundScoreTile.scienceDiscipline
       }
+    }
+    else {
+      this.playerTerrain = (setup.playerTerrain ?? [])[this.player - 1]
     }
   }
 
