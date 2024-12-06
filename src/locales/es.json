@@ -35,7 +35,7 @@
       "factionTiles": "Añade 2 losetas de Facción al azar a cada carta de Planificación.",
       "chooseSet": "Coge uno de los conjuntos de carta y losetas. Coge la carta de Planificación y selecciona una de las dos facciones."
     },
-    "chooseAutomaTerrain": "Elige un <b>terreno natal</b> para el Automa diferente al tuyo. Dale al Automa la carta de prioridad de terreno (PTA) correspondiente. El tipo de terreno de esta carta está indicado en las barras superior e inferior, y en los círculos de la parte izquierda.",
+    "chooseAutomaTerrain": "Elige un <b>terreno natal</b> para el Automa diferente al tuyo.",
     "automaComponents": {
       "title": "Distribuye los componentes del Automa como se indica a continuación:",
       "buildings": "Coloca sus <b>edificios</b> en su zona de juego.",

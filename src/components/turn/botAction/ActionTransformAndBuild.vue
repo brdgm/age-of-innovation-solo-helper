@@ -15,17 +15,26 @@
         <ol type="a">
           <template v-if="isKuddlers">
             <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
-            <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
+            <li v-if="botAction.terrainPriority">
+              <AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span>
+              <TerrainPriorities v-for="terrain of playerTerrains" :key="terrain" :terrain="terrain" :terrainPriority="botAction.terrainPriority"/>
+            </li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else-if="isMimics">
-            <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
+            <li v-if="botAction.terrainPriority">
+              <AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span>
+              <TerrainPriorities v-for="terrain of playerTerrains" :key="terrain" :terrain="terrain" :terrainPriority="botAction.terrainPriority"/>
+            </li>
             <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else>
             <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></span></li>
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority',{terrainPriority:botAction.terrainPriority})"></li>
+            <li v-if="botAction.terrainPriority">
+              <span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority',{terrainPriority:botAction.terrainPriority})"></span>
+              <TerrainPriorities :terrain="botTerrain" :terrainPriority="botAction.terrainPriority"/>
+            </li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
@@ -65,6 +74,7 @@ import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/NavigationState'
 import BotFaction from '@/services/enum/BotFaction'
 import Structure from '@/services/enum/Structure'
+import TerrainPriorities from './TerrainPriorities.vue'
 
 export default defineComponent({
   name: 'ActionTransformAndBuild',
@@ -73,12 +83,14 @@ export default defineComponent({
     AppIcon,
     SupportInfo,
     Upgrade,
-    ModalDialog
+    ModalDialog,
+    TerrainPriorities
   },
-  setup() {
+  setup(props) {
     const { t } = useI18n()
     const state = useStateStore()
-    return { t, state }
+    const { botTerrain, playerTerrains } = props.navigationState
+    return { t, state, botTerrain, playerTerrains }
   },
   props: {
     botAction: {
