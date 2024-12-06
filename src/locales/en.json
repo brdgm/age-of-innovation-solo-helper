@@ -66,9 +66,11 @@
       "title": "Placement of the First Workshops",
       "intro": "Automa places her initial Workshops after you place your first Workshop. Use the side of the <b>Initial Workshop Setup card</b> that shows the corresponding side of the game board.",
       "player": "Place your first Workshop.",
+      "playerMultiple": "Human Player {player} places the first Workshop.",
       "marked": "Place an Automa Workshop on the Native terrain space with letter <b>{character}</b>, together with a power token.",
       "unmarked": "Place an Automa Workshop on the Native terrain space with letter <b>{character}</b>.",
-      "playerSecond": "Place your second Workshop."
+      "playerSecond": "Place your second Workshop.",
+      "playerSecondMultiple": "Human Player {player} places the second Workshop."
     },
     "bonusCards": {
       "title": "Round Bonus",

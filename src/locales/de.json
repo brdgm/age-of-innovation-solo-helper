@@ -66,9 +66,11 @@
       "title": "Platzierung der ersten Werkstätten",
       "intro": "Automa setzt ihre beiden Werkstätten ein, nachdem du deine erste Werkstatt eingesetzt hast. Nutze dafür die <b>Aufbaukarte</b>, die zu der Spielplanseite passt.",
       "player": "Setze deine erste Werkstatt ein.",
+      "playerMultiple": "Menschlicher Spieler {player} setzt die erste Werkstatt ein.",
       "marked": "Setze eine Automa-Werkstatt auf das Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
       "unmarked": "Setze eine Automa-Werkstatt auf das Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
-      "playerSecond": "Setze deine zweite Werkstatt ein."  
+      "playerSecond": "Setze deine zweite Werkstatt ein." ,
+      "playerSecondMultiple": "Menschlicher Spieler {player} setzt die zweite Werkstatt ein."
     },
     "bonusCards": {
       "title": "Rundenboni",
