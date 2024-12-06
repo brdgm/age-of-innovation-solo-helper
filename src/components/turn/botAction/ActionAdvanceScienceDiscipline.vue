@@ -11,7 +11,7 @@
       <li v-if="isDruids"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionDruids')"></span></li>
       <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionPowerMongers')"></span></li>
       <li v-html="t('botAction.advanceScienceDiscipline.canAdvance')"></li>
-      <SendScholarTrackSelection :bot-action="botAction"/>
+      <SendScholarTrackSelection :botAction="botAction" :navigationState="navigationState"/>
       <li v-html="t('botAction.advanceScienceDiscipline.execute.title')"></li>
       <ol type="a">
         <li v-if="isDruids" v-html="t('botAction.advanceScienceDiscipline.execute.factionDruids')"></li>
@@ -29,6 +29,7 @@ import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import SendScholarTrackSelection from './SendScholarTrackSelection.vue'
 import BotFaction from '@/services/enum/BotFaction'
+import NavigationState from '@/util/NavigationState'
 
 export default defineComponent({
   name: 'ActionAdvanceScienceDiscipline',
@@ -45,6 +46,10 @@ export default defineComponent({
   props: {
     botAction: {
       type: Object as PropType<BotAction>,
+      required: true
+    },
+    navigationState: {
+      type: NavigationState,
       required: true
     }
   },

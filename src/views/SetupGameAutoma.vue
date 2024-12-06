@@ -32,7 +32,6 @@ export default defineComponent({
   },
   methods: {
     startGame() : void {
-      this.state.resetGame()
       // prepare first round with initial player order
       const { playerCount, botCount } = this.state.setup.playerSetup
       const playerOrder : PlayerOrder[] = []

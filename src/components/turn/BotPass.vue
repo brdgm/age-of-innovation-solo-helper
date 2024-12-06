@@ -3,11 +3,15 @@
   <ol>
     <li>
       <span v-html="t('botPass.scoringTile')"></span>
-      <AppIcon name="scoring-tile-cult-color" class="scoringTile"/>
+      <div class="actionRow">
+        <ActionGainVictoryPoints :botAction="botActionVictoryPoints"/>
+      </div>
     </li>
     <li v-if="isFactionRacelings && isFirstToPass">
       <AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botPass.scoringTileFactionRacelings')"></span>
-      <AppIcon name="scoring-tile-cult-color" class="scoringTile"/>
+      <div class="actionRow">
+        <ActionGainVictoryPoints :botAction="botActionVictoryPoints"/>
+      </div>
     </li>
     <li>
       <span v-html="t('botPass.bonusCard')"></span>
@@ -25,11 +29,15 @@ import NavigationState from '@/util/NavigationState'
 import BonusCardSelection from '@/services/enum/BonusCardSelection'
 import BotFaction from '@/services/enum/BotFaction'
 import { useStateStore } from '@/store/state'
+import BotAction from '@/services/BotAction'
+import Action from '@/services/enum/Action'
+import ActionGainVictoryPoints from './botAction/ActionGainVictoryPoints.vue'
 
 export default defineComponent({
   name: 'BotPass',
   components: {
-    AppIcon
+    AppIcon,
+    ActionGainVictoryPoints
   },
   setup() {
     const { t } = useI18n()
@@ -49,23 +57,30 @@ export default defineComponent({
     isFactionRacelings() : boolean {
       return this.navigationState.botFaction == BotFaction.RACELINGS
     },
-    isFirstToPass(): boolean {
+    isFirstToPass() : boolean {
       const { round, turn, turnOrderIndex } = this.navigationState
       const previousTurns = this.state.rounds.find(item => item.round==round)?.turns
           .filter(item => (item.turn < turn) || (item.turn == turn && item.turnOrderIndex < turnOrderIndex)) ?? []
       return previousTurns.find(item => item.pass) == undefined
+    },
+    botActionVictoryPoints() : BotAction {
+      return {
+        action: Action.GAIN_VICTORY_POINTS,
+        victoryPoints: this.navigationState.passVictoryPoints ?? 0
+      }
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
-.scoringTile {
-  display: block;
-  width: 6rem; 
+.actionRow {
+  margin-left: 3rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-left: 3rem;
+  display: flex;
+  flex-flow: wrap;
+  gap: 0.5rem;
 }
 .bonusCardSelection {
   display: block;
