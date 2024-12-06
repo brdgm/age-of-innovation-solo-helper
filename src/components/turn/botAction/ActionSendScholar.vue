@@ -8,7 +8,7 @@
   <div class="actionCol text-muted small">
     <ol>
       <li v-html="t('botAction.sendScholar.canAdvance')"></li>
-      <SendScholarTrackSelection :bot-action="botAction"/>
+      <SendScholarTrackSelection :botAction="botAction" :navigationState="navigationState"/>
       <li v-html="t('botAction.sendScholar.execute.title')"></li>
       <ol type="a">
         <li v-html="t('botAction.sendScholar.execute.placeScholar')"></li>
@@ -25,6 +25,7 @@ import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import SendScholarTrackSelection from './SendScholarTrackSelection.vue'
+import NavigationState from '@/util/NavigationState'
 
 export default defineComponent({
   name: 'ActionSendScholar',
@@ -41,6 +42,10 @@ export default defineComponent({
   props: {
     botAction: {
       type: Object as PropType<BotAction>,
+      required: true
+    },
+    navigationState: {
+      type: NavigationState,
       required: true
     }
   }

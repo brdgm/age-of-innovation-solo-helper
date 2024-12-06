@@ -6,6 +6,9 @@ import CardDeck from '@/services/CardDeck'
 import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
 import getPreviousTurns from './getPreviousTurns'
 import { MAX_TURN } from '@/util/getTurnOrder'
+import ScienceDiscipline from '@/services/enum/ScienceDiscipline'
+import getRoundScoreTile, { RoundScoreTile } from './getRoundScoreTile'
+import getRoundScoreFinalTile from './getRoundScoreFinalTile'
 
 export default class NavigationState {
 
@@ -19,6 +22,8 @@ export default class NavigationState {
   readonly bot : number
   readonly botFaction? : BotFaction
   readonly cardDeck? : CardDeck
+  readonly passVictoryPoints?: number
+  readonly preferredScienceDiscipline?: ScienceDiscipline
 
   constructor(route: RouteLocation, state: State) {    
     const setup = state.setup
@@ -34,9 +39,17 @@ export default class NavigationState {
 
     if (this.bot > 0) {
       this.botFaction = setup.playerSetup.botFaction[this.bot - 1]
+
+      // card deck: draw next card for bot
       this.cardDeck = getCardDeck(state, this.round, this.turn, this.bot)
-      // draw next card for bot
       this.cardDeck.draw()
+
+      // round score tile
+      const roundScoreTile = getRoundScoreTileForRound(this.round, state)
+      if (roundScoreTile) {
+        this.passVictoryPoints = this.round < 4 ? roundScoreTile.vpRound123 : roundScoreTile.vpRound456
+        this.preferredScienceDiscipline = roundScoreTile.scienceDiscipline
+      }
     }
   }
 
@@ -56,4 +69,20 @@ function getCardDeck(state:State, round:number, turn:number, bot:number) : CardD
     return cardDeck
   }
   return CardDeck.new(state.setup.difficultyLevel)
+}
+
+function getRoundScoreTileForRound(round: number, state: State) : RoundScoreTile|undefined {
+  if (round < 6) {
+    const roundScoreTile = (state.setup.roundScoreTiles ?? [])[round-1]
+    if (roundScoreTile) {
+      return getRoundScoreTile(roundScoreTile)
+    }
+  }
+  else {
+    const roundScoreFinalTile = state.setup.roundScoreFinalTile
+    if (roundScoreFinalTile) {
+      return getRoundScoreFinalTile(roundScoreFinalTile)
+    }
+  }
+  return undefined
 }
