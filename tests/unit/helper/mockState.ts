@@ -17,7 +17,8 @@ export default function (params?: MockStateParams) : State {
       roundScoreTiles: params?.roundScoreTiles,
       roundScoreFinalTile: params?.roundScoreFinalTile,
       playerTerrain: params?.playerTerrain,
-      botTerrain: params?.botTerrain
+      botTerrain: params?.botTerrain,
+      botSymbiontYouthTerrain: params?.botSymbiontYouthTerrain
     },
     rounds: params?.rounds ?? []
   }
@@ -32,5 +33,6 @@ export interface MockStateParams {
   roundScoreFinalTile?: number
   playerTerrain?: Terrain[]
   botTerrain?: Terrain[]
+  botSymbiontYouthTerrain?: Terrain
   rounds?: Round[]
 }
