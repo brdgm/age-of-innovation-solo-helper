@@ -54,6 +54,7 @@
     },
     "factionSelectionTwoHumanPlayer": "Choose your <b>Faction</b> and Round Bonus following the usual rules for a 3-Player game.",
     "chooseAutomaTerrain": "Choose a <b>Native terrain</b> for Automa different from yours.",
+    "symbiontsYouth": "Symbionts Youth",
     "invalidTerrainSelection": "Please select a terrain for you and for Automa.",
     "automaComponents": {
       "title": "Distribute the Automa components as follows:",

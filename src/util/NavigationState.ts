@@ -25,6 +25,7 @@ export default class NavigationState {
   readonly bot : number
   readonly botFaction? : BotFaction
   readonly botTerrain? : Terrain
+  readonly botSymbiontYouthTerrain? : Terrain
   readonly playerTerrains? : Terrain[]
   readonly cardDeck? : CardDeck
   readonly passVictoryPoints?: number
@@ -45,6 +46,7 @@ export default class NavigationState {
     if (this.bot > 0) {
       this.botFaction = setup.playerSetup.botFaction[this.bot - 1]
       this.botTerrain = (setup.botTerrain ?? [])[this.bot - 1]
+      this.botSymbiontYouthTerrain = setup.botSymbiontYouthTerrain
       this.playerTerrains = range(0, setup.playerSetup.playerCount).map(playerIndex => (setup.playerTerrain ?? [])[playerIndex])
 
       // card deck: draw next card for bot

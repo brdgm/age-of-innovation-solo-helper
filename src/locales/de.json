@@ -54,6 +54,7 @@
     },
     "factionSelectionTwoHumanPlayer": "Wähle deine <b>Gemeinschaft</b> und Rundenbonus nach den üblichen Regeln für ein Spiel mit 3 Spielern.",
     "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine.",
+    "symbiontsYouth": "Symbionten Jugend",
     "invalidTerrainSelection": "Bitte wähle gültige Heimatlandschaften für dich und für Automa aus.",
     "automaComponents": {
       "title": "Verteile Automas Spielsteine wie folgt:",

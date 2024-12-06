@@ -41,17 +41,30 @@
     <li>
       <span v-html="t('setupGameAutoma.chooseAutomaTerrain')"></span><br/>
       <ul>
-        <li v-for="(faction,i) in factions" :key="faction">
-          <i>{{t(`botFaction.${faction}`)}}</i>:
-          <div class="terrainSelection">
-            <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" :name="`botTerrain${i}`" v-model="botTerrain[i]" :value="terrain">
-                <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
-              </label>
+        <template v-for="(faction,i) in factions" :key="faction">
+          <li>
+            <i>{{t(`botFaction.${faction}`)}}</i>:
+            <div class="terrainSelection">
+              <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" :name="`botTerrain${i}`" v-model="botTerrain[i]" :value="terrain">
+                  <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
+                </label>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+          <li v-if="isBotFactionSymbionts(faction)">
+            <i>{{t('setupGameAutoma.symbiontsYouth')}}</i>:
+            <div class="terrainSelection">
+              <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="botSymbiontYouthTerrain" v-model="botSymbiontYouthTerrain" :value="terrain">
+                  <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
+                </label>
+              </div>
+            </div>
+          </li>
+        </template>
       </ul>
     </li>
     <li>
@@ -126,7 +139,7 @@ export default defineComponent({
   name: 'AutomaSetup',
   emits: {
     playerTerrain: (_playerTerrain: (Terrain|undefined)[]) => true,  // eslint-disable-line @typescript-eslint/no-unused-vars
-    botTerrain: (_botTerrain: (Terrain|undefined)[]) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+    botTerrain: (_botTerrain: (Terrain|undefined)[], _botSymbiontYouthTerrain?: Terrain) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     AppIcon
@@ -140,7 +153,8 @@ export default defineComponent({
   data() {
     return {
       playerTerrain: [undefined, undefined] as (Terrain|undefined)[],
-      botTerrain: [undefined, undefined] as (Terrain|undefined)[]
+      botTerrain: [undefined, undefined] as (Terrain|undefined)[],
+      botSymbiontYouthTerrain: undefined as Terrain|undefined
     }
   },
   computed: {
@@ -180,6 +194,9 @@ export default defineComponent({
   methods: {
     getScienceDisciplineBonus(botFaction : BotFaction) : ScienceDisciplineBonusSteps[] {
       return ScienceDisciplineBonuses.get(botFaction)
+    },
+    isBotFactionSymbionts(botFaction : BotFaction) : boolean {
+      return botFaction == BotFaction.SYMBIONTS
     }
   },
   watch: {
@@ -191,7 +208,13 @@ export default defineComponent({
     },
     botTerrain: {
       handler(newValue) {
-        this.$emit('botTerrain', newValue)
+        this.$emit('botTerrain', newValue, this.botSymbiontYouthTerrain)
+      },
+      deep: true
+    },
+    botSymbiontYouthTerrain: {
+      handler(newValue) {
+        this.$emit('botTerrain', this.botTerrain, newValue)
       },
       deep: true
     }

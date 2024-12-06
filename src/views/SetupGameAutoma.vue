@@ -2,7 +2,7 @@
   <h1>{{t('setupGameAutoma.title')}}</h1>
 
   <div class="instructions">
-    <AutomaSetup @playerTerrain="value => playerTerrain = value" @botTerrain="value => botTerrain = value"/>
+    <AutomaSetup @playerTerrain="setPlayerTerrain" @botTerrain="setBotTerrain"/>
   </div>
 
   <div class="container-fluid" v-if="!isValidTerrainSelection">
@@ -27,6 +27,7 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import AutomaSetup from '@/components/setup/AutomaSetup.vue'
 import { PlayerOrder, useStateStore } from '@/store/state'
 import Terrain from '@/services/enum/Terrain'
+import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
   name: 'SetupGameAutoma',
@@ -43,11 +44,12 @@ export default defineComponent({
     return {
       botTerrain: [] as (Terrain|undefined)[],
       playerTerrain: [] as (Terrain|undefined)[],
+      botSymbiontYouthTerrain: undefined as Terrain|undefined
     }
   },
   computed: {
     isValidTerrainSelection() : boolean {
-      const { playerCount, botCount } = this.state.setup.playerSetup
+      const { playerCount, botCount, botFaction } = this.state.setup.playerSetup
       const allTerrains = [...this.playerTerrain.slice(0, playerCount), ...this.botTerrain.slice(0, botCount)]
       // ensure no missing terrain
       if (allTerrains.some(terrain => terrain === undefined)) {
@@ -57,6 +59,11 @@ export default defineComponent({
       if (new Set(allTerrains).size !== playerCount + botCount) {
         return false
       }
+      // check symbionts youth terrain
+      if (botFaction.includes(BotFaction.SYMBIONTS)
+          && (allTerrains.includes(this.botSymbiontYouthTerrain) || !this.botSymbiontYouthTerrain)) {
+        return false
+      }
       return true
     }
   },
@@ -64,6 +71,7 @@ export default defineComponent({
     startGame() : void {
       this.state.setup.playerTerrain = this.playerTerrain.filter(terrain => terrain !== undefined)
       this.state.setup.botTerrain = this.botTerrain.filter(terrain => terrain !== undefined)
+      this.state.setup.botSymbiontYouthTerrain = this.botSymbiontYouthTerrain
       // prepare first round with initial player order
       const { playerCount, botCount } = this.state.setup.playerSetup
       const playerOrder : PlayerOrder[] = []
@@ -80,6 +88,13 @@ export default defineComponent({
       })
       // start first round
       this.$router.push('/round/1/income')
+    },
+    setPlayerTerrain(playerTerrain: (Terrain|undefined)[]) : void {
+      this.playerTerrain = playerTerrain
+    },    
+    setBotTerrain(botTerrain: (Terrain|undefined)[], botSymbiontYouthTerrain?: Terrain) : void {
+      this.botTerrain = botTerrain
+      this.botSymbiontYouthTerrain = botSymbiontYouthTerrain
     }
   }
 })
