@@ -9,14 +9,7 @@
       <ul>
         <li v-for="(player,i) in playerCount" :key="player">
           <i>{{t(`setup.players.player`, {player})}}</i>:
-          <div class="terrainSelection">
-            <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" :name="`playerTerrain${i}`" v-model="playerTerrain[i]" :value="terrain">
-                <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
-              </label>
-            </div>
-          </div>
+          <ChooseTerrain v-model="playerTerrain[i]"/>
         </li>
       </ul>
     </li>
@@ -27,14 +20,7 @@
         <li v-html="t('setupGameAutoma.factionSelection.factionTiles')"></li>
         <li>
           <span v-html="t('setupGameAutoma.factionSelection.chooseSet')"></span>
-          <div class="terrainSelection">
-            <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" :name="`playerTerrainSingle`" v-model="playerTerrain[0]" :value="terrain">
-                <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
-              </label>
-            </div>
-          </div>
+          <ChooseTerrain v-model="playerTerrain[0]"/>
         </li>
       </ol>
     </li>
@@ -44,25 +30,11 @@
         <template v-for="(faction,i) in factions" :key="faction">
           <li>
             <i>{{t(`botFaction.${faction}`)}}</i>:
-            <div class="terrainSelection">
-              <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" :name="`botTerrain${i}`" v-model="botTerrain[i]" :value="terrain">
-                  <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
-                </label>
-              </div>
-            </div>
+            <ChooseTerrain v-model="botTerrain[i]"/>
           </li>
           <li v-if="isBotFactionSymbionts(faction)">
             <i>{{t('setupGameAutoma.symbiontsYouth')}}</i>:
-            <div class="terrainSelection">
-              <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="botSymbiontYouthTerrain" v-model="botSymbiontYouthTerrain" :value="terrain">
-                  <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
-                </label>
-              </div>
-            </div>
+            <ChooseTerrain v-model="botSymbiontYouthTerrain"/>
           </li>
         </template>
       </ul>
@@ -134,6 +106,7 @@ import { ScienceDisciplineBonusSteps } from '@/services/ScienceDisciplineBonus'
 import ScienceDisciplineBonuses from '@/services/ScienceDisciplineBonuses'
 import { useStateStore } from '@/store/state'
 import Terrain from '@/services/enum/Terrain'
+import ChooseTerrain from './ChooseTerrain.vue'
 
 export default defineComponent({
   name: 'AutomaSetup',
@@ -142,7 +115,8 @@ export default defineComponent({
     botTerrain: (_botTerrain: (Terrain|undefined)[], _botSymbiontYouthTerrain?: Terrain) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
-    AppIcon
+    AppIcon,
+    ChooseTerrain
   },
   setup() {
     const { t } = useI18n()
@@ -186,9 +160,6 @@ export default defineComponent({
     },
     isTwoHumanPlayers() : boolean {
       return this.playerCount === 2
-    },
-    terrains() : Terrain[] {
-      return Object.values(Terrain)
     }
   },
   methods: {
@@ -215,8 +186,7 @@ export default defineComponent({
     botSymbiontYouthTerrain: {
       handler(newValue) {
         this.$emit('botTerrain', this.botTerrain, newValue)
-      },
-      deep: true
+      }
     }
   }
 })
@@ -236,17 +206,5 @@ li {
 .scienceDisciplineIcon {
   height: 1.75rem;
   filter: drop-shadow(2px 2px 2px #888);
-}
-.terrainSelection .form-check-label {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.25rem;
-}
-.terrainIcon {
-  margin: 0.25rem;
-  height: 1.75rem;
-  filter: drop-shadow(2px 2px 2px #888);
-  cursor: pointer;
 }
 </style>
