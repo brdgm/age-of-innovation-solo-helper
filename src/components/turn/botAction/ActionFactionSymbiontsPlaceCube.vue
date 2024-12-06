@@ -10,7 +10,11 @@
       <li v-html="t('botAction.factionSymbiontsPlaceCube.validSpaces')"></li>
       <li v-html="t('botAction.transformAndBuild.tiebreaker.title')"></li>
       <ol type="a">
-        <li v-html="t('botAction.factionSymbiontsPlaceCube.symbiontYouthATP',{terrainPriority:botAction.terrainPriority})"></li>
+        <li>
+          <span v-html="t('botAction.factionSymbiontsPlaceCube.symbiontYouthATP',{terrainPriority:botAction.terrainPriority})"></span>
+          <TerrainPriorities v-if="navigationState.botSymbiontYouthTerrain && botAction.terrainPriority"
+              :terrain="navigationState.botSymbiontYouthTerrain" :terrainPriority="botAction.terrainPriority"/>
+        </li>
         <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
       </ol>
       <li v-html="t('botAction.transformAndBuild.execute.title')"></li>
@@ -27,13 +31,16 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
+import NavigationState from '@/util/NavigationState'
+import TerrainPriorities from './TerrainPriorities.vue'
 
 export default defineComponent({
   name: 'ActionFactionSymbiontsPlaceCube',
   inheritAttrs: false,
   components: {
     AppIcon,
-    SupportInfo
+    SupportInfo,
+    TerrainPriorities
   },
   setup() {
     const { t } = useI18n()
@@ -42,6 +49,10 @@ export default defineComponent({
   props: {
     botAction: {
       type: Object as PropType<BotAction>,
+      required: true
+    },
+    navigationState: {
+      type: NavigationState,
       required: true
     }
   }

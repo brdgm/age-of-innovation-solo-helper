@@ -12,6 +12,7 @@
       "title": "Spieler",
       "playerCount": "Menschliche Spieler",
       "playerCountItem": "{count} Spieler",
+      "player": "Spieler {player}",
       "botCount": "Automa",
       "botCountItem": "{count} Automa | {count} Automas (Experimentell)",
       "botFaction": "Automa Gemeinschaft | Automa {bot} Gemeinschaft",
@@ -23,13 +24,27 @@
       "hard": "Schwer"
     }
   }, 
+  "setupTiles": {
+    "title": "Spielbereich vorbereiten",
+    "roundScore": {
+      "title": "Rundenwertungsplättchen",
+      "intro": "Die application verwendet diese Rundenwertungsplättchen für die Automa-Wertung und das Automa-Verhalten:",
+      "select": "Auswählen",
+      "available": "Verfügbar:",
+      "selected": "Ausgewählt:",
+      "none": "(keine)"
+    },
+    "other": {
+      "title": "Andere Plättchen",
+      "randomizer": "Buchaktionen, Innovationstableau und Palastplättchen",
+      "notice": "Die konkrete Auswahl von diesen Plättchen ist für die Applikation nicht relevant."
+    }
+  },
   "setupGameAutoma": {
     "title": "Automa Spielaufbau",
     "generalSetup": "Allgemeiner Aufbau",
     "generalSetupIntro": "Baue das Spiel wie gewohnt auf, mit diesen Änderungen:",
     "noTwoPlayerSpecialRules": "Die besonderen Regeln für das Spiel zu zweit (Standardspiel-Regel, Seite 19) werden <b>nicht</b> angewendet.",
-    "roundScoreTiles": "Verwende die <b>Automa-Rundenwertungsplättchen</b> anstelle der Plättchen des Grundspiels. Lege die Plättchen mit der Seite nach oben ab, deren helle Markierung (links) dem Rundenfeld entspricht, auf das du sie legst. Wie im Grundspiel darf das Plättchen mit dem Spaten nicht auf den Feldern für Runde 5 oder 6 liegen.",
-    "gameEndToken": "Verwende die <b>Automa-Zusatzwertungsplättchen</b> für die letzte Runde anstelle der Plättchen des Grundspiels. Lege ein zufälliges dieser Plättchen nach den üblichen Regeln aus.",
     "palaceTiles": "Lege {count} zufällige <b>Palastplättchen</b> neben den Spielplan. Lege das Palastplättchen Nr. 17 (mit der roten Rückseite) daneben.",
     "factionSelection": {
       "title": "Wähle deine <b>Gemeinschaft</b> wie folgt:",
@@ -38,7 +53,9 @@
       "chooseSet": "Wähle 1 Set, nimm dir das passende Planungstableau und wähle eine der beiden Gemeinschaften."
     },
     "factionSelectionTwoHumanPlayer": "Wähle deine <b>Gemeinschaft</b> und Rundenbonus nach den üblichen Regeln für ein Spiel mit 3 Spielern.",
-    "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine, und lege die entsprechende Landschaftstyp-Priorisierungskarte (LTP) in Automas Bereich. Automas Heimatlandschaft wird auf der Karte oben und unten sowie im ersten Kreis von links angezeigt.",
+    "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine.",
+    "symbiontsYouth": "Symbionten Jugend",
+    "invalidTerrainSelection": "Bitte wähle gültige Heimatlandschaften für dich und für Automa aus.",
     "automaComponents": {
       "title": "Verteile Automas Spielsteine wie folgt:",
       "buildings": "Lege alle <b>Gebäude</b> ihrer Farbe in ihren Bereich.",
@@ -52,9 +69,11 @@
       "title": "Platzierung der ersten Werkstätten",
       "intro": "Automa setzt ihre beiden Werkstätten ein, nachdem du deine erste Werkstatt eingesetzt hast. Nutze dafür die <b>Aufbaukarte</b>, die zu der Spielplanseite passt.",
       "player": "Setze deine erste Werkstatt ein.",
+      "playerMultiple": "Menschlicher Spieler {player} setzt die erste Werkstatt ein.",
       "marked": "Setze eine Automa-Werkstatt auf das Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
       "unmarked": "Setze eine Automa-Werkstatt auf das Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
-      "playerSecond": "Setze deine zweite Werkstatt ein."  
+      "playerSecond": "Setze deine zweite Werkstatt ein." ,
+      "playerSecondMultiple": "Menschlicher Spieler {player} setzt die zweite Werkstatt ein."
     },
     "bonusCards": {
       "title": "Rundenboni",
@@ -237,7 +256,8 @@
     "back": "Zurück",
     "close": "Schließen",
     "reset": "Zurücksetzen",
-    "pass": "Passen"
+    "pass": "Passen",
+    "randomize": "Zufällig"
   },
   "footer": {
     "credits": "Credits"

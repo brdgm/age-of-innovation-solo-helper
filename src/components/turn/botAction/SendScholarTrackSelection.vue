@@ -1,6 +1,9 @@
 <template>
   <template v-if="isScoringTileScienceDisciplineSelection">
-    <li v-html="t('botAction.sendScholar.scoringTile.title')"></li>
+    <li>
+      <span v-html="t('botAction.sendScholar.scoringTile.title')"></span><br/>
+      <AppIcon v-if="navigationState.preferredScienceDiscipline" type="science-discipline" :name="navigationState.preferredScienceDiscipline" class="scienceDisciplineIcon"/>
+    </li>
     <li v-html="t('botAction.sendScholar.catchUp.otherwiseTitle')"></li>
   </template>
   <template v-else>
@@ -21,10 +24,15 @@ import BotAction from '@/services/BotAction'
 import ScienceDisciplineSelection from '@/services/enum/ScienceDisciplineSelection'
 import { useStateStore } from '@/store/state'
 import Action from '@/services/enum/Action'
+import NavigationState from '@/util/NavigationState'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
-  name: 'AdvanceScienceDisciplineTrackSelection',
+  name: 'SendScholarTrackSelection',
   inheritAttrs: false,
+  components: {
+    AppIcon
+  },
   setup() {
     const { t } = useI18n()
     const state = useStateStore()
@@ -33,6 +41,10 @@ export default defineComponent({
   props: {
     botAction: {
       type: Object as PropType<BotAction>,
+      required: true
+    },
+    navigationState: {
+      type: NavigationState,
       required: true
     }
   },
@@ -47,3 +59,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.scienceDisciplineIcon {
+  width: 3rem;
+}
+</style>

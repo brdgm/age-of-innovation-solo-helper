@@ -28,8 +28,6 @@
     "generalSetup": "Configuración general",
     "generalSetupIntro": "Despliega el juego como se indica en el reglamento, pero con los siguientes cambios:",
     "noTwoPlayerSpecialRules": "Las reglas especiales de partida a 2 jugadores (reglamento, página 19) <b>no</b> se aplican.",
-    "roundScoreTiles": "Usa las <b>losetas de Puntuación de Ronda del Automa</b>, de doble cara, en vez de las normales. Voltea cada loseta de Puntuación de Ronda del Automa a la cara que muestre la ronda correspondiente en fondo claro. Al igual que en el juego normal, la loseta de Puntuación de Ronda con la pala en el lado izquierdo no se coloca en las rondas 5 o 6.",
-    "gameEndToken": "Usa las <b>losetas de Puntuación Final de Ronda del Automa</b> en lugar de las normales. Coloca una al azar como indica el reglamento.",
     "palaceTiles": "Coloca al azar {count} <b>losetas de Palacio</b> junto al tablero de juego. Coloca la loseta de Palacio 17 (con la trasera en rojo) junto a ellas.",
     "factionSelection": {
       "title": "Elige tu <b>Facción</b> de la siguiente manera:",
@@ -37,7 +35,7 @@
       "factionTiles": "Añade 2 losetas de Facción al azar a cada carta de Planificación.",
       "chooseSet": "Coge uno de los conjuntos de carta y losetas. Coge la carta de Planificación y selecciona una de las dos facciones."
     },
-    "chooseAutomaTerrain": "Elige un <b>terreno natal</b> para el Automa diferente al tuyo. Dale al Automa la carta de prioridad de terreno (PTA) correspondiente. El tipo de terreno de esta carta está indicado en las barras superior e inferior, y en los círculos de la parte izquierda.",
+    "chooseAutomaTerrain": "Elige un <b>terreno natal</b> para el Automa diferente al tuyo.",
     "automaComponents": {
       "title": "Distribuye los componentes del Automa como se indica a continuación:",
       "buildings": "Coloca sus <b>edificios</b> en su zona de juego.",

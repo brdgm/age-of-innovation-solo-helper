@@ -5,9 +5,9 @@
   <DifficultyLevel/>
   <BotBackgroundImage v-if=botFaction :botFaction="botFaction" :opacityPercent="80"/>
 
-  <router-link to="/setupGameAutoma" class="btn btn-primary btn-lg mt-4">
-    {{t('setupGameAutoma.title')}}
-  </router-link>
+  <button class="btn btn-primary btn-lg mt-4" @click="next()">
+    {{t('action.next')}}
+  </button>
 
   <FooterButtons endGameButtonType="abortGame"/>
 </template>
@@ -38,6 +38,12 @@ export default defineComponent({
   computed: {
     botFaction() : BotFaction|undefined {
       return this.state.setup.playerSetup.botFaction[0]
+    }
+  },
+  methods: {
+    next() : void {
+      this.state.resetGame()
+      this.$router.push('/setupGameTiles')
     }
   }
 })
