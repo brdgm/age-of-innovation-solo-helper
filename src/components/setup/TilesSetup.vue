@@ -201,6 +201,7 @@ export default defineComponent({
   position: relative;
   display: flex;
   flex-direction: column-reverse;
+  height: 498px;
   .background {
     position: absolute;
     width: 150px;
@@ -235,6 +236,7 @@ export default defineComponent({
 .tilesContainerWrapper {
   width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 .bookActions {
   position: relative;
