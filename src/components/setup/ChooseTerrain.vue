@@ -13,7 +13,7 @@
 import { defineComponent, PropType } from 'vue'
 import AppIcon from '../structure/AppIcon.vue'
 import Terrain from '@/services/enum/Terrain'
-import { uniqueId } from 'lodash';
+import { uniqueId } from 'lodash'
 
 export default defineComponent({
   name: 'ChooseTerrain',
