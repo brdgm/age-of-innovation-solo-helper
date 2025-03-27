@@ -11,7 +11,7 @@
     "players": {
       "title": "Spieler",
       "playerCount": "Menschliche Spieler",
-      "playerCountItem": "{count} Spieler",
+      "playerCountItem": "{count} Spieler | {count} Spieler",
       "player": "Spieler {player}",
       "botCount": "Automa",
       "botCountItem": "{count} Automa | {count} Automas (Experimentell)",
