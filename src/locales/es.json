@@ -12,6 +12,7 @@
       "title": "Jugador",
       "playerCount": "Jugadores humanos",
       "playerCountItem": "{count} jugador | {count} jugadores",
+      "player": "Jugador {player}",
       "botCount": "Automa",
       "botCountItem": "{count} Automa | {count} Automas (Experimental)",
       "botFaction": "Facción del Automa | Facción del Automa {bot}",
@@ -21,6 +22,22 @@
       "title": "Nivel de dificultad",
       "easy": "Fácil",
       "hard": "Difícil"
+    }
+  },
+  "setupTiles": {
+    "title": "Configuración del tablero",
+    "roundScore": {
+      "title": "Losetas de puntuación de ronda",
+      "intro": "La APP usa estas losetas de puntuación de ronda para el comportamiento y puntuación del Automa:",
+      "select": "Selecciona",
+      "available": "Disponible:",
+      "selected": "Seleccionada:",
+      "none": "(ninguna)"
+    },
+    "other": {
+      "title": "Otras losetas",
+      "randomizer": "Acciones de Libro, Despliegue de Innovación y Losetas de Palacio",
+      "notice": "La selección de estas loseta no es relevante para la APP."
     }
   }, 
   "setupGameAutoma": {
@@ -35,7 +52,10 @@
       "factionTiles": "Añade 2 losetas de Facción al azar a cada carta de Planificación.",
       "chooseSet": "Coge uno de los conjuntos de carta y losetas. Coge la carta de Planificación y selecciona una de las dos facciones."
     },
+    "factionSelectionTwoHumanPlayer": "Elige tu <b>Facción</b> y Bonificación de Ronda siguiendo las reglas habituales para un juego a 3 jugadores.",
     "chooseAutomaTerrain": "Elige un <b>terreno natal</b> para el Automa diferente al tuyo.",
+    "symbiontsYouth": "Juventud de Simbiontes",
+    "invalidTerrainSelection": "Por favor, elige un terreno para tí y para el Automa.",
     "automaComponents": {
       "title": "Distribuye los componentes del Automa como se indica a continuación:",
       "buildings": "Coloca sus <b>edificios</b> en su zona de juego.",
@@ -49,13 +69,16 @@
       "title": "Colocación de los primeros talleres",
       "intro": "El Automa coloca sus talleres iniciales después de que tú coloques tu primer taller. Usa la cara de <b>la carta de colocación inicial de talleres</b> que muestre el lado correspondiente del tablero de juego.",
       "player": "Coloca tu primer taller.",
+      "playerMultiple": "Jugador Humano {player} coloca su primer taller.",
       "marked": "Coloca un taller del Automa en un espacio de su terreno natal con la letra <b>{character}</b>, junto con una ficha de poder.",
       "unmarked": "Coloca un taller del Automa en un espacio de su terreno natal con la letra <b>{character}</b>.",
-      "playerSecond": "Coloca tu segundo taller."
+      "playerSecond": "Coloca tu segundo taller.",
+      "playerSecondMultiple": "Jugador Humano {player} coloca su segundo taller."
     },
     "bonusCards": {
       "title": "Bonificación de ronda",
       "take": "Baraja las {count} losetas de bonificación de ronda y colócalas boca arriba en fila horizontal. Dale al Automa la primera. Luego elige una loseta de bonificación de ronda para ti.",
+      "takeTwoHumanPlayer": "Coge 4 losetas de Bonificación de Ronda al azar y colócalas boca arriba en una línea horizontal. Dale al Automa la primera.",
       "coins": "Coloca una moneda en cada una de las losetas de bonificación de ronda restantes."
     }
   },
@@ -233,7 +256,8 @@
     "back": "Atrás",
     "close": "Cerrar",
     "reset": "Reiniciar",
-    "pass": "Pasar"
+    "pass": "Pasar",
+    "randomize": "Aleatorizar"
   },
   "footer": {
     "credits": "Créditos"
