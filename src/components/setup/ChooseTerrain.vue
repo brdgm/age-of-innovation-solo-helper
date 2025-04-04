@@ -1,7 +1,7 @@
 <template>
   <div class="terrainSelection">
     <div class="form-check form-check-inline" v-for="terrain in terrains" :key="terrain">
-      <label class="form-check-label">
+      <label class="form-check-label" :data-testid="`terrain-${terrain}`">
         <input class="form-check-input" type="radio" :name="inputName" v-model="selectedTerrain" :value="terrain">
         <AppIcon type="terrain" :name="terrain" extension="webp" class="terrainIcon"/>
       </label>
@@ -13,7 +13,7 @@
 import { defineComponent, PropType } from 'vue'
 import AppIcon from '../structure/AppIcon.vue'
 import Terrain from '@/services/enum/Terrain'
-import { uniqueId } from 'lodash';
+import { uniqueId } from 'lodash'
 
 export default defineComponent({
   name: 'ChooseTerrain',

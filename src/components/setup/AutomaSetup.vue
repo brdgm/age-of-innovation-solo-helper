@@ -18,7 +18,7 @@
       <ol type="a">
         <li v-html="t('setupGameAutoma.factionSelection.planningDisplayCards')"></li>
         <li v-html="t('setupGameAutoma.factionSelection.factionTiles')"></li>
-        <li>
+        <li data-testid="terrain-player">
           <span v-html="t('setupGameAutoma.factionSelection.chooseSet')"></span>
           <ChooseTerrain v-model="playerTerrain[0]"/>
         </li>
@@ -28,11 +28,11 @@
       <span v-html="t('setupGameAutoma.chooseAutomaTerrain')"></span><br/>
       <ul>
         <template v-for="(faction,i) in factions" :key="faction">
-          <li>
+          <li data-testid="terrain-bot">
             <i>{{t(`botFaction.${faction}`)}}</i>:
             <ChooseTerrain v-model="botTerrain[i]"/>
           </li>
-          <li v-if="isBotFactionSymbionts(faction)">
+          <li v-if="isBotFactionSymbionts(faction)" data-testid="terrain-bot-symbionts">
             <i>{{t('setupGameAutoma.symbiontsYouth')}}</i>:
             <ChooseTerrain v-model="botSymbiontYouthTerrain"/>
           </li>
