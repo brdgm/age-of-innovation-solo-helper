@@ -122,7 +122,8 @@ export default defineComponent({
     const { t } = useI18n()
     const state = useStateStore()
     const { playerCount, botCount, botFaction } = state.setup.playerSetup
-    return { t, state, playerCount, botCount, botFaction }
+    const totalPlayerCount = playerCount + botCount
+    return { t, state, playerCount, botCount, botFaction, totalPlayerCount }
   },
   data() {
     return {
@@ -133,10 +134,10 @@ export default defineComponent({
   },
   computed: {
     palaceTileCount() : number {
-      return this.playerCount + 1
+      return this.totalPlayerCount
     },
     bonusCardCount() : number {
-      return this.playerCount + this.botCount + 3
+      return this.totalPlayerCount + 3
     },
     randomCard(): Card {
       const allCards = Cards.getAll()
