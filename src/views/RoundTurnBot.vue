@@ -1,6 +1,9 @@
 <template>
   <div class="float-end">{{t('roundTurn.turnInfo', {round, turn})}}</div>
-  <h1>{{t('roundTurn.titleBot', {bot, faction:t('botFaction.'+botFaction)}, botCount)}}</h1>
+  <h1>
+    <AppIcon v-if="navigationState.botTerrain" type="terrain" :name="navigationState.botTerrain" extension="webp" class="terrainIcon"/>
+    {{t('roundTurn.titleBot', {bot, faction:t('botFaction.'+botFaction)}, botCount)}}
+  </h1>
 
   <BotTurn :navigationState="navigationState"/>
   <BotBackgroundImage v-if="botFaction" :botFaction="botFaction"/>
@@ -22,13 +25,15 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import RouteCalculator from '@/services/RouteCalculator'
 import { useStateStore } from '@/store/state'
 import BotBackgroundImage from '@/components/structure/BotBackgroundImage.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'RoundTurnBot',
   components: {
     BotTurn,
     BotBackgroundImage,
-    FooterButtons
+    FooterButtons,
+    AppIcon
   },
   setup() {
     const { t } = useI18n()
@@ -61,3 +66,11 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.terrainIcon {
+  height: 2.25rem;
+  filter: drop-shadow(2px 2px 2px #888);
+  margin-top: -0.5rem;
+}
+</style>
