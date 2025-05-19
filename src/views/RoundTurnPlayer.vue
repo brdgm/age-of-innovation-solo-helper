@@ -1,6 +1,9 @@
 <template>
   <div class="float-end">{{t('roundTurn.turnInfo', {round:round, turn:turn})}}</div>
-  <h1>{{t('roundTurn.titlePlayer', {player}, playerCount)}}</h1>
+  <h1>
+    <AppIcon v-if="navigationState.playerTerrain" type="terrain" :name="navigationState.playerTerrain" extension="webp" class="terrainIcon"/>
+    {{t('roundTurn.titlePlayer', {player}, playerCount)}}
+  </h1>
 
   <p class="mt-4" v-html="t('playerTurn.text')"></p>
 
@@ -35,12 +38,14 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
 import RouteCalculator from '@/services/RouteCalculator'
 import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'RoundTurnPlayer',
   components: {
     FooterButtons,
-    ModalDialog
+    ModalDialog,
+    AppIcon
   },
   setup() {
     const { t } = useI18n()
@@ -78,3 +83,11 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.terrainIcon {
+  height: 2.25rem;
+  filter: drop-shadow(2px 2px 2px #888);
+  margin-top: -0.5rem;
+}
+</style>
