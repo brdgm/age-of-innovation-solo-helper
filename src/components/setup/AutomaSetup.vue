@@ -73,12 +73,16 @@
       <li v-html="t('setupGameAutoma.initialWorkshop.playerMultiple', {player:2})"></li>
     </template>
     <li v-else v-html="t('setupGameAutoma.initialWorkshop.player')"></li>
-    <li>
-      <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.marked', {character:randomCard.initialWorkshopMarked})"></span>
-    </li>
-    <li>
-      <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.unmarked', {character:randomCard.initialWorkshopUnmarked})"></span>
-    </li>
+    <template v-for="(faction,i) in factions" :key="faction">
+      <li>
+        <i>{{t(`botFaction.${faction}`)}}</i>:
+        <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.marked', {character:initialWorkshopPlacements[i].initialWorkshopMarked})"></span>
+      </li>
+      <li>
+        <i>{{t(`botFaction.${faction}`)}}</i>:
+        <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialWorkshop.unmarked', {character:initialWorkshopPlacements[i].initialWorkshopUnmarked})"></span>
+      </li>
+    </template>
     <template v-if="isTwoHumanPlayers">
       <li v-html="t('setupGameAutoma.initialWorkshop.playerSecondMultiple', {player:2})"></li>
       <li v-html="t('setupGameAutoma.initialWorkshop.playerSecondMultiple', {player:1})"></li>
@@ -95,11 +99,8 @@
 </template>
 
 <script lang="ts">
-import Card from '@/services/Card'
-import Cards from '@/services/Cards'
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import rollDice from '@brdgm/brdgm-commons/src/util/random/rollDice'
 import AppIcon from '../structure/AppIcon.vue'
 import BotFaction from '@/services/enum/BotFaction'
 import { ScienceDisciplineBonusSteps } from '@/services/ScienceDisciplineBonus'
@@ -107,6 +108,7 @@ import ScienceDisciplineBonuses from '@/services/ScienceDisciplineBonuses'
 import { useStateStore } from '@/store/state'
 import Terrain from '@/services/enum/Terrain'
 import ChooseTerrain from './ChooseTerrain.vue'
+import getInitialWorkshopPlacements, { InitialWorkshopPlacement } from '@/util/getInitialWorkshopPlacements'
 
 export default defineComponent({
   name: 'AutomaSetup',
@@ -139,10 +141,8 @@ export default defineComponent({
     bonusCardCount() : number {
       return this.totalPlayerCount + 3
     },
-    randomCard(): Card {
-      const allCards = Cards.getAll()
-      const index = rollDice(allCards.length)
-      return allCards[index - 1]
+    initialWorkshopPlacements(): InitialWorkshopPlacement[] {
+      return getInitialWorkshopPlacements(this.botCount)
     },    
     isFactionSymbionts() : boolean {
       return this.botFaction.includes(BotFaction.SYMBIONTS)
