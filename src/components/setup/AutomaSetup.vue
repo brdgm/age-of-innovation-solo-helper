@@ -93,7 +93,7 @@
     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link" :class="{ active: activeTab === 'tab-1-3' }" 
-           @click.prevent="activeTab = 'tab-1-3'" href="#" aria-current="page">1-3</a>
+           @click.prevent="activeTab = 'tab-1-3'" href="#">1-3</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" :class="{ active: activeTab === 'tab-3-5' }" 
@@ -230,9 +230,10 @@ li {
   filter: drop-shadow(2px 2px 2px #888);
 }
 .workshop-setup {
-  width: 400px;
+  width: 420px;
+  max-width: 100%;
   img {
-    width: 400px;
+    width: 100%;
     border-radius: 10px;
     filter: drop-shadow(2px 2px 2px #888);
   }
