@@ -89,6 +89,26 @@
     </template>
     <li v-else v-html="t('setupGameAutoma.initialWorkshop.playerSecond')"></li>
   </ol>
+  <div class="mb-3 workshop-setup">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" :class="{ active: activeTab === 'tab-1-3' }" 
+           @click.prevent="activeTab = 'tab-1-3'" href="#">1-3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" :class="{ active: activeTab === 'tab-3-5' }" 
+           @click.prevent="activeTab = 'tab-3-5'" href="#">3-5</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade" :class="{ 'show active': activeTab === 'tab-1-3' }" id="tab-1-3" role="tabpanel">
+        <img src="@/assets/workshop-setup-1-3.webp" alt="1-3" class="img-fluid"/>
+      </div>
+      <div class="tab-pane fade" :class="{ 'show active': activeTab === 'tab-3-5' }" id="tab-3-5" role="tabpanel">
+        <img src="@/assets/workshop-setup-3-5.webp" alt="3-5" class="img-fluid"/>
+      </div>
+    </div>
+  </div>
 
   <h4>{{t('setupGameAutoma.bonusCards.title')}}</h4>
   <ul>
@@ -129,6 +149,7 @@ export default defineComponent({
   },
   data() {
     return {
+      activeTab: 'tab-1-3',
       playerTerrain: [undefined, undefined] as (Terrain|undefined)[],
       botTerrain: [undefined, undefined] as (Terrain|undefined)[],
       botSymbiontYouthTerrain: undefined as Terrain|undefined
@@ -207,5 +228,14 @@ li {
 .scienceDisciplineIcon {
   height: 1.75rem;
   filter: drop-shadow(2px 2px 2px #888);
+}
+.workshop-setup {
+  width: 420px;
+  max-width: 100%;
+  img {
+    width: 100%;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 2px #888);
+  }
 }
 </style>
