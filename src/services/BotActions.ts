@@ -51,7 +51,7 @@ export default class BotActions {
     }
 
     // apply defaults from support card
-    result.forEach(botAction => {
+    for (const botAction of result) {
       botAction.shipLevel = botAction.shipLevel ?? this._dlParams.shipLevel
       botAction.victoryPointsDifficultyLevel = botAction.victoryPointsDifficultyLevel ?? actionCard.victoryPointsDifficultyLevel
       botAction.victoryPoints = botAction.victoryPoints ?? actionCard.victoryPoints 
@@ -64,7 +64,7 @@ export default class BotActions {
       botAction.directionalSelection = botAction.directionalSelection ?? supportCard.directionalSelection
       botAction.directionalSelectionCount = botAction.directionalSelectionCount ?? supportCard.directionalSelectionCount
       botAction.scienceDisciplineSelection = botAction.scienceDisciplineSelection ?? supportCard.scienceDisciplineSelection
-    })
+    }
 
     // filter out actions not relevant for current round
     return result.filter(botAction => (botAction.action != Action.TAKE_INNOVATION || round >= 3)
