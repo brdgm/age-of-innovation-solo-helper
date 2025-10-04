@@ -13,7 +13,7 @@ export default class CardDeck {
   private static readonly CARD_13 = '13'
 
   private _deck : Card[]
-  private _reserve : Card[]
+  private readonly _reserve : Card[]
   private _discard : Card[]
 
   public constructor(deck : Card[], reserve : Card[], discard : Card[]) {
@@ -78,7 +78,9 @@ export default class CardDeck {
    */
   public prepareForNextRound() : void {
     // discard all remaining cards
-    this._deck.forEach(card => this._discard.push(card))
+    for (const card of this._deck) {
+      this._discard.push(card)
+    }
     this._deck = []
     // pull in a reserve card
     const reserveCard = this._reserve.shift()

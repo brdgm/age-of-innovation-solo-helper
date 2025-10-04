@@ -1,6 +1,6 @@
 import { PlayerOrder, Round, RoundTurn } from '@/store/state'
 
-export default function (params?: MockRoundParams) : Round {
+export default function mockRound(params?: MockRoundParams) : Round {
   const round : Round = {
     round: params?.round ?? 1,
     playerOrder: params?.playerOrder ?? [{bot:1},{player:1}],
@@ -9,13 +9,13 @@ export default function (params?: MockRoundParams) : Round {
   // renumber turnOrderIndex
   let previousTurn = 0
   let turnOrderIndex = 0
-  round.turns.forEach(turn => {
+  for (const turn of round.turns) {
     if (turn.turn != previousTurn) {
       turnOrderIndex = 0
       previousTurn = turn.turn
     }
     turn.turnOrderIndex = turnOrderIndex++
-  })
+  }
   return round
 }
 

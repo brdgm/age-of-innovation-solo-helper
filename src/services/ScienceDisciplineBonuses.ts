@@ -78,7 +78,9 @@ const items = [
 ]
 
 const itemsMap = new Map<BotFaction,ScienceDisciplineBonus>()
-items.forEach(item => itemsMap.set(item.botFaction, item))
+for (const item of items) {
+  itemsMap.set(item.botFaction, item)
+}
 
 export default {
 
