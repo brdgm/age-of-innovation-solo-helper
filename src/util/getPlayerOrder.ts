@@ -12,7 +12,7 @@ export default function getPlayerOrder(state: State, currentRound: number) : Pla
   }
 
   const result : PlayerOrder[] = []
-  round.turns.forEach(turn => {
+  for (const turn of round.turns) {
     if (turn.pass) {
       if (turn.player) {
         result.push({player:turn.player})
@@ -21,14 +21,14 @@ export default function getPlayerOrder(state: State, currentRound: number) : Pla
         result.push({bot:turn.bot})
       }
     }
-  })
+  }
 
   // add from current player order if not all have passed
-  round.playerOrder.forEach(item => {
+  for (const item of round.playerOrder) {
     if (!result.find(resultItem => resultItem.player==item.player && resultItem.bot==item.bot)) {
       result.push(item)
     }
-  })
+  }
 
   return result
 }

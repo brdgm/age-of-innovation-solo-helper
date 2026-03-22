@@ -19,12 +19,12 @@ export default function getPreviousTurns(params:{state: State, round: number, tu
       && item.player==params.player && item.bot==params.bot)
   const previousTurnOrder = currentIndex >= 0 ? turnOrder.slice(0, currentIndex) : turnOrder
   const result : RoundTurn[] = []
-  previousTurnOrder.forEach(item => {
+  for (const item of previousTurnOrder) {
     const matchingTurn = round.turns.find(turn => turn.round==item.round && turn.turn==item.turn
         && turn.player==item.player && turn.bot==item.bot)
     if (matchingTurn) {
       result.push(matchingTurn)
     }
-  })
+  }
   return result.filter(item => item.bot == params.bot && item.player == params.player)
 }
