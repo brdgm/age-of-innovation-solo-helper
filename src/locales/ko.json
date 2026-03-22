@@ -1,0 +1,269 @@
+{
+  "gameTitle": "혁신의 시대",
+  "home": {
+    "title": "혁신의 시대 솔로 헬퍼",
+    "play1": "<a href='https://boardgamegeek.com/boardgame/383179/age-of-innovation' target='_blank' rel='noopener'><b>혁신의 시대</b></a>의 오토마 솔로 모드를 플레이하세요.",
+    "play2": "이 헬퍼 앱은 오토마 카드 덱을 대체하고, 난이도와 오토마 종족 능력을 관리합니다.",
+    "feedback": "토론 및 피드백:"
+  },
+  "setup": {
+    "title": "게임 설정",
+    "players": {
+      "title": "플레이어",
+      "playerCount": "인간 플레이어",
+      "playerCountItem": "플레이어 {count}명 | 플레이어 {count}명",
+      "player": "플레이어 {player}",
+      "botCount": "오토마",
+      "botCountItem": "오토마 {count}개 | 오토마 {count}개 (실험적)",
+      "botFaction": "오토마 종족 | 오토마 {bot} 종족",
+      "twoPlayerBotFaction": "2명이서 플레이할 때는 공식 규칙에 따라 <i>단순족</i>과만 플레이할 수 있습니다."
+    },
+    "difficultyLevel": {
+      "title": "난이도",
+      "easy": "쉬움",
+      "hard": "어려움"
+    }
+  }, 
+  "setupTiles": {
+    "title": "게임 보드 설정",
+    "roundScore": {
+      "title": "라운드 점수 타일",
+      "intro": "앱은 오토마 점수 계산과 행동을 위해 다음 라운드 점수 타일을 사용합니다:",
+      "select": "선택",
+      "available": "사용 가능:",
+      "selected": "선택됨:",
+      "none": "(없음)"
+    },
+    "other": {
+      "title": "기타 타일",
+      "randomizer": "책 행동, 혁신 진열대, 궁전 타일",
+      "notice": "이 타일들의 실제 선택은 앱과 관련이 없습니다."
+    }
+  },
+  "setupGameAutoma": {
+    "title": "오토마 설정",
+    "generalSetup": "일반 설정",
+    "generalSetupIntro": "게임을 평소와 같이 설정하되, 다음과 같이 변경합니다:",
+    "noTwoPlayerSpecialRules": "2인 게임을 위한 특별 규칙(멀티플레이어 규칙서 19페이지)은 <b>적용하지 않습니다</b>.",
+    "palaceTiles": "무작위 <b>궁전 타일</b> {count}개를 게임 보드 옆에 놓습니다. 궁전 타일 #17(빨간 뒷면)을 그 옆에 놓습니다.",
+    "factionSelection": {
+      "title": "다음과 같이 <b>종족</b>을 선택하세요:",
+      "planningDisplayCards": "무작위 계획 진열 카드 3장을 펼쳐 놓습니다.",
+      "factionTiles": "각 계획 진열 카드에 무작위 종족 타일 2개씩을 추가합니다.",
+      "chooseSet": "한 세트를 선택하고, 해당하는 계획 진열을 가져간 다음, 두 종족 중 하나를 선택합니다."
+    },
+    "factionSelectionTwoHumanPlayer": "3인 게임의 일반적인 규칙에 따라 <b>종족</b>과 라운드 보너스를 선택하세요.",
+    "chooseAutomaTerrain": "당신과 다른 오토마의 <b>고유 지형</b>을 선택하세요.",
+    "symbiontsYouth": "공생체족 청년",
+    "invalidTerrainSelection": "당신과 오토마의 지형을 선택해 주세요.",
+    "automaComponents": {
+      "title": "오토마 구성품을 다음과 같이 배치합니다:",
+      "buildings": "오토마의 모든 <b>건물</b>을 오토마의 플레이 영역에 놓습니다.",
+      "scholars": "오토마의 모든 <b>학자</b>를 오토마의 플레이 영역에 놓습니다.",
+      "science": "오토마의 상태 마커 1개를 <b>과학 진열대</b>의 O 표시가 된 각 공간에 놓습니다. 다음 분야를 진전시킵니다:",
+      "stepNone": "없음",
+      "factionSetup": "<i>{faction}</i> <b>오토마 종족 카드</b>의 추가 설정 지침을 따르고 특별 규칙을 숙지하세요.",
+      "scoreTrack": "오토마의 상태 마커 1개를 <b>점수 트랙</b>의 20번 공간에 놓습니다."
+    },
+    "initialWorkshop": {
+      "title": "첫 번째 작업장 배치",
+      "intro": "오토마는 당신이 첫 번째 작업장을 배치한 후에 자신의 초기 작업장을 배치합니다. 게임 보드의 해당 면을 보여주는 <b>초기 작업장 설정 카드</b>의 면을 사용하세요.",
+      "player": "첫 번째 작업장을 배치하세요.",
+      "playerMultiple": "인간 플레이어 {player}가 첫 번째 작업장을 배치합니다.",
+      "marked": "문자 <b>{character}</b>가 표시된 고유 지형 공간에 오토마 작업장을 파워 토큰과 함께 놓습니다.",
+      "unmarked": "문자 <b>{character}</b>가 표시된 고유 지형 공간에 오토마 작업장을 놓습니다.",
+      "playerSecond": "두 번째 작업장을 배치하세요.",
+      "playerSecondMultiple": "인간 플레이어 {player}가 두 번째 작업장을 배치합니다."
+    },
+    "bonusCards": {
+      "title": "라운드 보너스",
+      "take": "라운드 보너스 타일 {count}개를 섞어서 수평으로 한 줄로 앞면이 보이게 놓습니다. 오토마에게 첫 번째 것을 줍니다. 그런 다음 자신의 라운드 보너스 타일을 선택하세요.",
+      "takeTwoHumanPlayer": "무작위 라운드 보너스 타일 4개를 섞어서 수평으로 한 줄로 앞면이 보이게 놓습니다. 오토마에게 첫 번째 것을 줍니다.",
+      "coins": "남은 각 라운드 보너스 타일에 코인 1개씩을 놓습니다."
+    }
+  },
+  "income": {
+    "title": "수입",
+    "turnInfo": "라운드 {round}",
+    "collect": "도구, 코인, 학자, 책, 파워를 획득합니다."
+  },
+  "roundTurn": {
+    "turnInfo": "라운드 {round}, 턴 {turn}",
+    "titlePlayer": "플레이어 | 플레이어 {player}",
+    "titleBot": "오토마: {faction} | 오토마 {bot}: {faction}"
+  },
+  "playerTurn": {
+    "text": "턴을 진행하거나 패스하세요.",
+    "passConfirm": "패스하시겠습니까?",
+    "passInfo": "라운드 보너스 타일 승점을 획득하고(있는 경우) 새로운 라운드 보너스 타일을 가져갑니다.",
+    "passInfoRound6": "라운드 보너스 타일 승점을 획득하되(있는 경우) 새로운 라운드 보너스 타일은 가져가지 <b>않습니다</b>."
+  },
+  "botAction": {
+    "gainVictoryPoints": {
+      "text": "오토마가 승점 {count}점을 획득합니다. | 오토마가 승점 {count}점을 획득합니다."
+    },
+    "transformAndBuild": {
+      "noWorkshop": "남은 작업장 없음",
+      "validSpaces": {
+        "marked": "표시된 건물의 도달 범위 내",
+        "marked-reaching": "표시된 건물의 도달 범위 내 (<a href='#modalBringTogether' data-bs-toggle='modal'>연결</a> 포함)",
+        "unmarked": "표시되지 않은 건축물의 범위 내",
+        "unmarked-reaching": "표시되지 않은 건물의 도달 범위 내 (<a href='#modalBringTogether' data-bs-toggle='modal'>연결</a> 포함)",
+        "factionWanderers": "<b>범위 제한을 무시합니다.</b>"
+      },
+      "tiebreaker": {
+        "title": "육각형 선택:",
+        "factionPowerMongers": "당신에게 <b>가장 많은 파워</b>를 주는 것.",
+        "terrainPriority": "오토마 지형 우선순위 <b>{terrainPriority}</b>.",
+        "terrainPriorityYourTerrainType": "<b>당신의</b> 지형 유형의 ATP 카드와 함께 지형 우선순위 <b>{terrainPriority}</b>.",
+        "structureClosest": "<b>당신의</b> 건물 중 하나에 가장 <b>가까운</b> 육각형.",
+        "directionalSelection": "방향 선택."
+      },
+      "execute": {
+        "title": "실행:",
+        "homeTerrainTile": "오토마 고유 지형 타일을 놓습니다(지형 변환이 필요한 경우).",
+        "workshop": "사용 가능한 오토마 작업장을 놓습니다.",
+        "marked": "새 작업장의 육각형에 파워 토큰을 놓아서 표시합니다."
+      },
+      "bringTogether": {
+        "title": "연결",
+        "text1": "표시된 건물 중 표시되지 않은 건물의 도달 범위 내에 있는 것이 없다면, 유효한 육각형은 <i>표시된 건물과 표시되지 않은 건물</i> 사이의 현재 <i>최단 거리</i>를 줄일 수 있는 것들로만 제한됩니다.",
+        "text2": "거리를 줄일 수 있는 것이 없다면, 이전에 식별된 모든 육각형이 여전히 유효합니다."
+      }
+    },
+    "upgrade": {
+      "tiebreaker": {
+        "title": "건물 선택:",
+        "guild": "당신의 건물에 인접한 오토마 작업장. 그렇지 않으면 오토마가 업그레이드할 수 있는 아무 건물.",
+        "littlePower": "당신에게 가능한 한 적은 파워를 주는 것.",
+        "directionalSelection": "방향 선택."
+      },
+      "execute": {
+        "title": "실행:",
+        "highestPowerStructure": "선택된 건물을 합법적으로 업그레이드할 수 있는 가장 높은 파워 값의 건물로 교체합니다."
+      }
+    },
+    "blockPowerBookAction": {
+      "power": {
+        "gameBoard": "게임 보드에서 가려지지 않은 <b>파워 행동</b> 하나를 차단합니다",
+        "directionalSelection": "방향 선택.",
+        "gameBoardExecute": "실행: 선택된 파워 행동에 X-토큰을 놓습니다. 오토마는 이것으로부터 어떤 혜택도 얻지 않습니다."
+      },
+      "book": {
+        "gameBoard": "게임 보드에서 가려지지 않은 <b>책 행동</b> 하나를 차단합니다",
+        "directionalSelection": "방향 선택.",
+        "gameBoardExecute": "실행: 선택된 책 행동에 X-토큰을 놓습니다. 오토마는 이것으로부터 어떤 혜택도 얻지 않습니다."
+      }
+    },
+    "advanceScienceDiscipline": {
+      "factionDruids": "<b>오토마가 1개 분야에서 2레벨 진전합니다(학자를 놓지 않고)</b>.",
+      "factionPowerMongers": "<b>지속 효과: 당신이 건물을 통해 2 이상의 파워를 얻을 때마다, 오토마가 한 분야에서 1레벨 진전합니다.</b>",
+      "canAdvance": "오토마는 진전할 수 없는 분야를 무시합니다.",
+      "execute": {
+        "title": "실행:",
+        "advance": "선택된 분야에서 오토마의 마커를 1레벨 진전시킵니다.",
+        "factionDruids": "선택된 분야에서 오토마의 마커를 2레벨 진전시킵니다."
+      }
+    },
+    "sendScholar": {
+      "canAdvance": "오토마는 진전할 수 없는 분야를 무시합니다.",
+      "scoringTile": {
+        "title": "현재 <b>라운드 점수 타일</b>의 오토마 아이콘 <b>색깔</b>과 일치하는 분야."
+      },
+      "catchUp": {
+        "title": "<b>추격</b> 선택 사용:",
+        "otherwiseTitle": "그렇지 않으면 추격 선택 사용:",
+        "marketAt0": "오토마의 마커가 0에 있는 분야.",
+        "highestMarker": "오토마의 마커가 당신의 마커에 가장 가까운 분야; 같은 레벨이거나 위 또는 아래에 있을 수 있습니다.",
+        "highestMarkerMultipleHumans": "오토마의 마커가 가장 높은 마커에 가장 가까운 분야; 같은 레벨이거나 다른 마커 위 또는 아래에 있을 수 있습니다.",
+        "directionalSelection": "방향 선택."
+      },
+      "execute": {
+        "title": "실행:",
+        "placeScholar": "선택된 분야 아래의 가장 높은 가치를 가진 학자 공간에 사용 가능한 오토마 학자를 놓고, 해당하는 레벨만큼 오토마의 마커를 진전시킵니다.",
+        "noScholar": "오토마에게 더 이상 사용 가능한 학자가 없거나, 선택된 분야 아래에 빈 학자 공간이 없다면, 학자를 놓지 않고 그 분야에서 오토마의 마커를 1레벨 진전시킵니다."
+      }
+    },
+    "takeInnovation": {
+      "take": "진열대에서 혁신 하나를 가져갑니다(오토마가 3개 미만을 가지고 있는 경우).",
+      "directionalSelection": "방향 선택."
+    },
+    "factionSymbiontsPlaceCube": {
+      "validSpaces": "유효한 공간: 당신의 건물 중 하나에 직접 인접한 모든 지형 공간.",
+      "symbiontYouthATP": "공생체족 <b>청년</b> ATP 카드와 함께 지형 우선순위 <b>{terrainPriority}</b>.",
+      "placeCube": "선택된 지형 공간에 <b>도구</b>를 놓습니다."
+    },
+    "factionBlightTransformFallowLand": {
+      "transform": "<b>휴경지</b> 2개를 <b>황폐지</b>로 변환합니다."
+    }
+  },
+  "botPass": {
+    "title": "오토마가 <i>패스</i>합니다.",
+    "scoringTile": "오토마는 현재 <b>라운드 점수 타일</b>의 오른쪽 하단에 표시된 고정 점수를 획득합니다(<b>한 번만</b>).",
+    "scoringTileFactionRacelings": "경주족: 오토마가 이번 라운드에 먼저 패스했으므로 현재 <b>라운드 점수 타일에서 고정 점수를 <i>다시</i></b> 획득합니다.",
+    "bonusCard": "오토마가 <b>라운드 보너스 타일</b>을 가져갑니다:",
+    "bonusCardGold": "라운드 보너스 타일에 코인이 있다면 일반 공급처로 반환합니다."
+  },
+  "endOfRound": {
+    "title": "라운드 종료",
+    "turnInfo": "라운드 {round}",
+    "scienceBonus": "당신은 <b>과학 보너스</b>를 얻습니다.",
+    "returnActionTokens": "X-토큰을 제거합니다.",
+    "bonusCardsCoin": "남은 세 개의 라운드 보너스 타일 각각에 <b>코인 1개</b>씩 놓습니다.",
+    "removeScoringTile": "현재 라운드 점수 타일을 제거합니다."
+  },
+  "endOfGame": {
+    "title": "게임 종료",
+    "areaScoring": "오토마가 <b>영역 점수</b>로부터 승점을 획득합니다.",
+    "scienceScoring": "오토마가 <b>과학 점수</b>로부터 승점을 획득합니다.",
+    "factionWanderers": "<b>방랑족:</b> 보드 어디든지 있는 자신의 건물마다 승점 2점을 획득합니다.",
+    "factionGognomes": "<b>고그놈족</b>: 고그놈족이 자신의 업적에 대한 승점을 얻었는지 확인하세요.",
+    "resourceScoring": "오토마는 자원 점수로부터 어떤 점수도 얻지 못합니다."
+  },
+  "difficultyLevel": {
+    "1": "오토마린",
+    "2": "오토마",
+    "3": "오토매흐팅",
+    "4": "울토마",
+    "5": "알프트라우마"
+  },
+  "botFaction": {
+    "simpletons": "단순족",
+    "kuddlers": "껴안기족",
+    "druids": "드루이드족",
+    "racelings": "경주족",
+    "wanderers": "방랑족",
+    "mimics": "모방족",
+    "powermongers": "권력족",
+    "symbionts": "공생체족",
+    "blight": "황폐족",
+    "gognomes": "고그놈족"
+  },
+  "notfound": {
+    "title": "찾을 수 없음"
+  },
+  "action": {
+    "playGame": "게임 플레이",
+    "startGame": "게임 시작",
+    "next": "다음",
+    "nextRound": "다음 라운드",
+    "abortGame": "게임 중단",
+    "abortGameConfirm": "진행 중인 게임을 중단합니다 - 확실합니까?",
+    "endGame": "게임 종료",
+    "endGameConfirm": "이 게임을 종료하고 홈 화면으로 돌아갑니다 - 확실합니까?",
+    "cancel": "취소",
+    "backToHome": "홈으로 돌아가기",
+    "back": "뒤로",
+    "close": "닫기",
+    "reset": "재설정",
+    "pass": "패스",
+    "randomize": "무작위"
+  },
+  "footer": {
+    "credits": "크레딧"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "앱 새로고침",
+    "notice": "앱이 업데이트되었습니다 - 최신 버전을 사용하기 위해 새로고침하시겠습니까?"
+  }
+}
