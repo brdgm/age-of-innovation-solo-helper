@@ -28,7 +28,7 @@
     "title": "Spielbereich vorbereiten",
     "roundScore": {
       "title": "Rundenwertungsplättchen",
-      "intro": "Die application verwendet diese Rundenwertungsplättchen für die Automa-Wertung und das Automa-Verhalten:",
+      "intro": "Die Applikation verwendet diese Rundenwertungsplättchen für die Automa-Wertung und das Automa-Verhalten:",
       "select": "Auswählen",
       "available": "Verfügbar:",
       "selected": "Ausgewählt:",
@@ -158,7 +158,7 @@
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Aufsteigen in einer Disziplin: Automa setzt keinen Gelehrten ein und steigt um 2 Stufen auf</b>.",
       "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa in 1 Disziplin um 1 Stufe auf.</b>",
-      "canAdvance": "Automa ignoriert Disziplinen, in der sie nicht aufsteigen kann.",
+      "canAdvance": "Automa ignoriert Disziplinen, in denen sie nicht aufsteigen kann.",
       "execute": {
         "title": "Ausführung:",
         "advance": "Setze Automas Markierungsstein in der gewählten Disziplin 1 Schritt nach oben.",
@@ -166,7 +166,7 @@
       }
     },
     "sendScholar": {
-      "canAdvance": "Automa ignoriert Disziplinen, in der sie nicht aufsteigen kann.",
+      "canAdvance": "Automa ignoriert Disziplinen, in denen sie nicht aufsteigen kann.",
       "scoringTile": {
         "title": "Automa wählt die Disziplin, deren <b>Farbe</b> dem Automa-Symbol auf dem aktuellen <b>Wertungsplättchen</b> entspricht."
       },
@@ -175,7 +175,7 @@
         "otherwiseTitle": "Ansonsten versucht Automa aufzuholen:",
         "marketAt0": "Die Disziplin, in der Automas Markierungsstein auf 0 steht.",
         "highestMarker": "Die Disziplin, in der Automas Markierungsstein den geringsten Abstand zu deinem hat. Automa kann dabei auf gleicher, höherer oder niedrigerer Stufe sein als du.",
-        "highestMarkerMultipleHumans": "Die Disziplin, in der Automas Markierungsstein den kleinsten Abstand zu eurem höchsten Markierungsstein (derselben Disziplin) hat. Automas Markierungsstein kann dabei auf der gleichen, einer höheren oder niedrigeren Stufe stehen als der höchste Markierungstein.",
+        "highestMarkerMultipleHumans": "Die Disziplin, in der Automas Markierungsstein den kleinsten Abstand zu eurem höchsten Markierungsstein (derselben Disziplin) hat. Automas Markierungsstein kann dabei auf der gleichen, einer höheren oder niedrigeren Stufe stehen als der höchste Markierungsstein.",
         "directionalSelection": "Richtungsauswahl."
       },
       "execute": {
@@ -185,7 +185,7 @@
       }
     },
     "takeInnovation": {
-      "take": "Nehme eine Erfindung vom Innovationstableau (wenn Automa noch nicht 3 hat).",
+      "take": "Nimm eine Erfindung vom Innovationstableau (wenn Automa noch nicht 3 hat).",
       "directionalSelection": "Richtungsauswahl."
     },
     "factionSymbiontsPlaceCube": {
@@ -200,7 +200,7 @@
   "botPass": {
     "title": "Automa <i>passt</i>.",
     "scoringTile": "Automa erhält <b>genau einmal</b> die auf dem aktuellen <b>Wertungsplättchen</b> rechts unten angegebenen Punkte.",
-    "scoringTileFactionRacelings": "Sprinter: Automa hat als erste gepasst and erhält die auf dem aktuellen <b>Wertungsplättchen</b> angegebenen Punkte <b><i>nochmals</i></b>.",
+    "scoringTileFactionRacelings": "Sprinter: Automa hat als erste gepasst und erhält die auf dem aktuellen <b>Wertungsplättchen</b> angegebenen Punkte <b><i>nochmals</i></b>.",
     "bonusCard": "Automa nimmt einen <b>Rundenbonus</b>:",
     "bonusCardGold": "Lege alle Geldmünzen darauf zurück in den allgemeinen Vorrat."
   },
