@@ -7,9 +7,9 @@
     <SupportInfo :bot-action="botAction" :directional-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
+    <div v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionPowerMongers')"></span></div>
     <ol>
       <li v-if="isDruids"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionDruids')"></span></li>
-      <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceScienceDiscipline.factionPowerMongers')"></span></li>
       <li v-html="t('botAction.advanceScienceDiscipline.canAdvance')"></li>
       <SendScholarTrackSelection :botAction="botAction" :navigationState="navigationState"/>
       <li v-html="t('botAction.advanceScienceDiscipline.execute.title')"></li>
