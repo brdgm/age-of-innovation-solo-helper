@@ -157,7 +157,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>El Automa avanza 2 niveles en 1 disciplina (sin colocar un erudito)</b>.",
-      "factionPowerMongers": "<b>Beneficio: Cuando ganes 2 o más poder por edificios, el Automa avanzará 1 nivel en una disciplina.</b>",
+      "factionPowerMongers": "<b>Beneficio: Cuando ganes 2 o más poder por edificios, el Automa avanzará 1 nivel en una disciplina:</b>",
       "canAdvance": "El Automa ignorará las disciplinas en las que no pueda avanzar.",
       "execute": {
         "title": "Acción:",

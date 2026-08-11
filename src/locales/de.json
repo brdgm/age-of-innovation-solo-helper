@@ -157,7 +157,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Aufsteigen in einer Disziplin: Automa setzt keinen Gelehrten ein und steigt um 2 Stufen auf</b>.",
-      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa in 1 Disziplin um 1 Stufe auf.</b>",
+      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa in 1 Disziplin um 1 Stufe auf:</b>",
       "canAdvance": "Automa ignoriert Disziplinen, in denen sie nicht aufsteigen kann.",
       "execute": {
         "title": "Ausführung:",

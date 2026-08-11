@@ -157,7 +157,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Automa advances 2 Levels in 1 Discipline (without placing a Scholar)</b>.",
-      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via buildings, Automa advances 1 Level in a Discipline.</b>",
+      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via buildings, Automa advances 1 Level in a Discipline:</b>",
       "canAdvance": "Automa ignores disciplines it cannot advance.",
       "execute": {
         "title": "Execute:",
