@@ -77,7 +77,7 @@
     },
     "bonusCards": {
       "title": "Rundenboni",
-      "take": "Mische die {count} Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links. Wähle dann regulär einen für dich.",
+      "take": "Mische {count} zufällig ausgewählte Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links. Wähle dann regulär einen für dich.",
       "takeTwoHumanPlayer": "Mische 4 zufällig gewählte Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links.",
       "coins": "Legt auf die Rundenboni, die übrig geblieben sind, je 1 Geldmünze."
     }

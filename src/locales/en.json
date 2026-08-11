@@ -77,7 +77,7 @@
     },
     "bonusCards": {
       "title": "Round Bonus",
-      "take": "Shuffle the {count} Round Bonus tiles and place them face-up in a horizontal line. Give Automa the first one. Then choose your own Round Bonus tile.",
+      "take": "Shuffle {count} randomly selected Round Bonus tiles and place them face-up in a horizontal line. Give Automa the first one. Then choose your own Round Bonus tile.",
       "takeTwoHumanPlayer": "Shuffle 4 random Round Bonus tiles and place them face-up in a horizontal line. Give Automa the first one.",
       "coins": "Place 1 Coin on each of the leftover Round Bonus tiles."
     }
