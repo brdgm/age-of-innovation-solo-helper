@@ -157,7 +157,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>오토마가 1개 분야에서 2레벨 진전합니다(학자를 놓지 않고)</b>.",
-      "factionPowerMongers": "<b>지속 효과: 당신이 건물을 통해 2 이상의 파워를 얻을 때마다, 오토마가 한 분야에서 1레벨 진전합니다.</b>",
+      "factionPowerMongers": "<b>지속 효과: 당신이 건물을 통해 2 이상의 파워를 얻을 때마다, 오토마가 한 분야에서 1레벨 진전합니다:</b>",
       "canAdvance": "오토마는 진전할 수 없는 분야를 무시합니다.",
       "execute": {
         "title": "실행:",

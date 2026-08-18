@@ -22,6 +22,10 @@
       "title": "Difficulty Level",
       "easy": "Easy",
       "hard": "Hard"
+    },
+    "expansions": {
+      "title": "Expansions",
+      "future-past": "Future & Past"
     }
   }, 
   "setupTiles": {
@@ -54,7 +58,7 @@
     },
     "factionSelectionTwoHumanPlayer": "Choose your <b>Faction</b> and Round Bonus following the usual rules for a 3-Player game.",
     "chooseAutomaTerrain": "Choose a <b>Native terrain</b> for Automa different from yours.",
-    "symbiontsYouth": "Symbionts Youth",
+    "symbiontsYouth": "Symbionts Youth (randomly pick a terrain that cost you 2 Spades)",
     "invalidTerrainSelection": "Please select a terrain for you and for Automa.",
     "automaComponents": {
       "title": "Distribute the Automa components as follows:",
@@ -77,7 +81,7 @@
     },
     "bonusCards": {
       "title": "Round Bonus",
-      "take": "Shuffle the {count} Round Bonus tiles and place them face-up in a horizontal line. Give Automa the first one. Then choose your own Round Bonus tile.",
+      "take": "Shuffle {count} randomly selected Round Bonus tiles and place them face-up in a horizontal line. Give Automa the first one. Then choose your own Round Bonus tile.",
       "takeTwoHumanPlayer": "Shuffle 4 random Round Bonus tiles and place them face-up in a horizontal line. Give Automa the first one.",
       "coins": "Place 1 Coin on each of the leftover Round Bonus tiles."
     }
@@ -157,7 +161,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Automa advances 2 Levels in 1 Discipline (without placing a Scholar)</b>.",
-      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via buildings, Automa advances 1 Level in a Discipline.</b>",
+      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via buildings, Automa advances 1 Level in a Discipline:</b>",
       "canAdvance": "Automa ignores disciplines it cannot advance.",
       "execute": {
         "title": "Execute:",

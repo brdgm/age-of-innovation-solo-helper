@@ -3,6 +3,8 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { defineStore } from 'pinia'
 import { name } from '@/../package.json'
 import Terrain from '@/services/enum/Terrain'
+import Expansion from '@/services/enum/Expansion'
+import toggleArrayItem from '@brdgm/brdgm-commons/src/util/array/toggleArrayItem'
 
 export const useStateStore = defineStore(`${name}.store`, {
   state: () => {
@@ -33,6 +35,10 @@ export const useStateStore = defineStore(`${name}.store`, {
       round.turns = round.turns.filter(item => (item.turn < roundTurn.turn) || (item.turn == roundTurn.turn && item.turnOrderIndex < roundTurn.turnOrderIndex))
       round.turns.push(roundTurn)
     },
+    setupToggleExpansion(expansion: Expansion) : void {
+      this.setup.expansions ??= []
+      toggleArrayItem(this.setup.expansions, expansion)
+    },
     resetGame() {
       this.setup.roundScoreTiles = undefined
       this.setup.roundScoreFinalTile = undefined
@@ -57,6 +63,7 @@ export interface State {
 }
 export interface Setup {
   difficultyLevel: DifficultyLevel
+  expansions?: Expansion[]
   playerSetup: PlayerSetup
   roundScoreTiles?: number[]
   roundScoreFinalTile?: number
@@ -64,10 +71,10 @@ export interface Setup {
   botTerrain?: Terrain[]
   botSymbiontYouthTerrain?: Terrain
   // parameters not relevant for the application, but persisted for back button support in setup screens
-  setupBookActions?: number[]
-  setupCompetencyTiles?: number[]
-  setupInnovationTiles?: number[]
-  setupPalaceTiles?: number[]
+  setupBookActions?: string[]
+  setupCompetencyTiles?: string[]
+  setupInnovationTiles?: string[]
+  setupPalaceTiles?: string[]
 }
 export interface PlayerSetup {
   playerCount: number

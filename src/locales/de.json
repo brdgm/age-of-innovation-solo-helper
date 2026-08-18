@@ -22,6 +22,10 @@
       "title": "Schwierigkeitsgrad",
       "easy": "Leicht",
       "hard": "Schwer"
+    },
+    "expansions": {
+      "title": "Erweiterungen",
+      "future-past": "Zukunft & Vergangenheit"
     }
   }, 
   "setupTiles": {
@@ -54,7 +58,7 @@
     },
     "factionSelectionTwoHumanPlayer": "Wähle deine <b>Gemeinschaft</b> und Rundenbonus nach den üblichen Regeln für ein Spiel mit 3 Spielern.",
     "chooseAutomaTerrain": "Wähle eine <b>Heimatlandschaft</b> für Automa, die anders ist als deine.",
-    "symbiontsYouth": "Symbionten Jugend",
+    "symbiontsYouth": "Symbionten Jugend (wähle eine zufällige Landschaft, die dich 2 Spaten kostet)",
     "invalidTerrainSelection": "Bitte wähle gültige Heimatlandschaften für dich und für Automa aus.",
     "automaComponents": {
       "title": "Verteile Automas Spielsteine wie folgt:",
@@ -77,7 +81,7 @@
     },
     "bonusCards": {
       "title": "Rundenboni",
-      "take": "Mische die {count} Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links. Wähle dann regulär einen für dich.",
+      "take": "Mische {count} zufällig ausgewählte Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links. Wähle dann regulär einen für dich.",
       "takeTwoHumanPlayer": "Mische 4 zufällig gewählte Rundenboni und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält den Rundenbonus ganz links.",
       "coins": "Legt auf die Rundenboni, die übrig geblieben sind, je 1 Geldmünze."
     }
@@ -157,7 +161,7 @@
     },
     "advanceScienceDiscipline": {
       "factionDruids": "<b>Aufsteigen in einer Disziplin: Automa setzt keinen Gelehrten ein und steigt um 2 Stufen auf</b>.",
-      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa in 1 Disziplin um 1 Stufe auf.</b>",
+      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa in 1 Disziplin um 1 Stufe auf:</b>",
       "canAdvance": "Automa ignoriert Disziplinen, in denen sie nicht aufsteigen kann.",
       "execute": {
         "title": "Ausführung:",
