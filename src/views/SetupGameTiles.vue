@@ -1,7 +1,8 @@
 <template>
   <h1>{{t('setupTiles.title')}}</h1>
 
-  <TilesSetup/>
+  <RoundScoreTilesSetup/>
+  <OtherTilesSetup/>
 
   <router-link to="/setupGameAutoma" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
@@ -14,12 +15,14 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
-import TilesSetup from '@/components/setup/TilesSetup.vue'
+import RoundScoreTilesSetup from '@/components/setup/RoundScoreTilesSetup.vue'
+import OtherTilesSetup from '@/components/setup/OtherTilesSetup.vue'
 
 export default defineComponent({
   name: 'SetupGameTiles',
   components: {
-    TilesSetup,
+    RoundScoreTilesSetup,
+    OtherTilesSetup,
     FooterButtons
   },
   setup() {
