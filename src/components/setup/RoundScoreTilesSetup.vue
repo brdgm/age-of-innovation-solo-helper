@@ -50,6 +50,12 @@ const ROUND_SCORE_TILES_TOTAL = 12
 const ROUND_SCORE_TILES_COUNT = 6
 const ROUND_SCORE_FINAL_TILES_TOTAL = 4
 
+function isValidRoundScoreTiles(tiles : number[]) : boolean {
+  return tiles.length == ROUND_SCORE_TILES_COUNT
+      // round 5, 6 must not have a spade action
+      && !(getRoundScoreTile(tiles[4]).hasSpade || getRoundScoreTile(tiles[5]).hasSpade)
+}
+
 export default defineComponent({
   name: 'RoundScoreTilesSetup',
   components: {
@@ -61,11 +67,6 @@ export default defineComponent({
     const state = useStateStore()
     const { setup } = state
 
-    const isValidRoundScoreTiles = function(tiles : number[]) : boolean {      
-      return tiles.length == ROUND_SCORE_TILES_COUNT
-          // round 5, 6 must not have a spade action
-          && !(getRoundScoreTile(tiles[4]).hasSpade || getRoundScoreTile(tiles[5]).hasSpade)
-    }
     const getRandomValidRoundScoreTiles = function() : number[] {
       const result = rollDiceMultiDifferentValue(ROUND_SCORE_TILES_TOTAL, ROUND_SCORE_TILES_COUNT)
       if (!isValidRoundScoreTiles(result)) {
