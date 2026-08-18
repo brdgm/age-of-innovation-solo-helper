@@ -2,14 +2,14 @@
   <h4 class="mt-3">{{t('setupTiles.other.title')}}</h4>
 
   <div>
-    <button class="btn btn-outline-secondary me-2 mb-2" data-bs-toggle="collapse" data-bs-target="#randomizedSetup">
+    <button type="button" class="btn btn-outline-secondary me-2 mb-2" data-bs-toggle="collapse" data-bs-target="#randomizedSetup">
       {{t('setupTiles.other.randomizer')}} &#x25BC;      
     </button>
   </div>
   <div class="collapse mt-2" id="randomizedSetup">
     <div class="alert alert-secondary fst-italic">
       <span v-html="t('setupTiles.other.notice')"></span>
-      <button class="btn btn-sm btn-secondary ms-2" @click="randomizeOtherTiles">{{t('action.randomize')}}</button>
+      <button type="button" class="btn btn-sm btn-secondary ms-2" @click="randomizeOtherTiles">{{t('action.randomize')}}</button>
     </div>
 
     <div class="tilesContainerWrapper">

@@ -6,7 +6,7 @@
   <ExpansionsSetup/>
   <BotBackgroundImage v-if=botFaction :botFaction="botFaction" :opacityPercent="80"/>
 
-  <button class="btn btn-primary btn-lg mt-4" @click="next()">
+  <button type="button" class="btn btn-primary btn-lg mt-4" @click="next()">
     {{t('action.next')}}
   </button>
 

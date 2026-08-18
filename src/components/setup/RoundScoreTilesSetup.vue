@@ -7,8 +7,8 @@
         :name="`${tile}-${index < 3 ? '123' : '456'}`" class="roundScoreTileIcon"/><br/>
     <AppIcon type="round-score-final" extension="webp" :name="`${setup.roundScoreFinalTile}`" class="roundScoreFinalTileIcon overlay"/>
   </div>
-  <button class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#roundScoreTilesModal">{{t('setupTiles.roundScore.select')}}</button>
-  <button class="btn btn-sm btn-secondary me-2" @click="randomizeRoundScoreTiles">{{t('action.randomize')}}</button>
+  <button type="button" class="btn btn-sm btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#roundScoreTilesModal">{{t('setupTiles.roundScore.select')}}</button>
+  <button type="button" class="btn btn-sm btn-secondary me-2" @click="randomizeRoundScoreTiles">{{t('action.randomize')}}</button>
 
   <ModalDialog id="roundScoreTilesModal" :title="t('setupTiles.roundScore.title')" :size-lg="true">
     <template #body>
@@ -28,9 +28,9 @@
       </p>
     </template>
     <template #footer>
-      <button class="btn btn-outline-secondary" @click="roundScoreTilesSelection=[];roundScoreFinalTileSelection=undefined;">{{t('action.reset')}}</button>
-      <button class="btn btn-success" data-bs-dismiss="modal" :disabled="!isValidRoundScoreTiles(roundScoreTilesSelection) || !roundScoreFinalTileSelection" @click="setScoringRoundTileSelection">{{t('setupTiles.roundScore.select')}}</button>
-      <button class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.cancel')}}</button>
+      <button type="button" class="btn btn-outline-secondary" @click="roundScoreTilesSelection=[];roundScoreFinalTileSelection=undefined;">{{t('action.reset')}}</button>
+      <button type="button" class="btn btn-success" data-bs-dismiss="modal" :disabled="!isValidRoundScoreTiles(roundScoreTilesSelection) || !roundScoreFinalTileSelection" @click="setScoringRoundTileSelection">{{t('setupTiles.roundScore.select')}}</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.cancel')}}</button>
     </template>
   </ModalDialog>
 </template>
