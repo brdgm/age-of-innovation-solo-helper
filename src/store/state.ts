@@ -71,10 +71,10 @@ export interface Setup {
   botTerrain?: Terrain[]
   botSymbiontYouthTerrain?: Terrain
   // parameters not relevant for the application, but persisted for back button support in setup screens
-  setupBookActions?: number[]
-  setupCompetencyTiles?: number[]
-  setupInnovationTiles?: number[]
-  setupPalaceTiles?: number[]
+  setupBookActions?: string[]
+  setupCompetencyTiles?: string[]
+  setupInnovationTiles?: string[]
+  setupPalaceTiles?: string[]
 }
 export interface PlayerSetup {
   playerCount: number

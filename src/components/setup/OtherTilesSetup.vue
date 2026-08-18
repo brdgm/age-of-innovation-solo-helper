@@ -51,17 +51,36 @@ import { useI18n } from 'vue-i18n'
 import rollDiceMultiDifferentValue from '@brdgm/brdgm-commons/src/util/random/rollDiceMultiDifferentValue'
 import AppIcon from '../structure/AppIcon.vue'
 import { useStateStore } from '@/store/state'
+import Expansion from '@/services/enum/Expansion'
 
 const BOOK_ACTIONS_TOTAL = 6
+const BOOK_ACTIONS_EXPANSION_FUTURE_PAST = ['fp-7', 'fp-8', 'fp-9']
 const BOOK_ACTIONS_COUNT = 3
 const COMPETENCY_TILES_TOTAL = 12
+const COMPETENCY_TILES_EXPANSION_FUTURE_PAST = ['fp-13', 'fp-14', 'fp-15', 'fp-16', 'fp-17']
 const COMPETENCY_TILES_COUNT = 12
 const INNOVATION_TILES_TOTAL = 18
+const INNOVATION_TILES_EXPANSION_FUTURE_PAST = ['fp-19', 'fp-20', 'fp-21']
 const INNOVATION_TILES_COUNT_2PLAYER = 6
 const INNOVATION_TILES_COUNT_3PLAYER = 8
 const PALACE_TILES_TOTAL = 16
+const PALACE_TILES_EXPANSION_FUTURE_PAST = ['fp-18', 'fp-19', 'fp-20']
 const PALACE_TILES_COUNT_2PLAYER = 2
 const PALACE_TILES_COUNT_3PLAYER = 3
+
+/**
+ * Picks random tiles from the base pool (1..baseTotal), adding the expansion tiles to the pool when enabled.
+ */
+function randomTiles(baseTotal: number, expansionTiles: string[], count: number, withExpansion: boolean) : string[] {
+  const pool : string[] = []
+  for (let i = 1; i <= baseTotal; i++) {
+    pool.push(`${i}`)
+  }
+  if (withExpansion) {
+    pool.push(...expansionTiles)
+  }
+  return rollDiceMultiDifferentValue(pool.length, count).map(index => pool[index - 1])
+}
 
 export default defineComponent({
   name: 'OtherTilesSetup',
@@ -76,20 +95,21 @@ export default defineComponent({
     const totalPlayerCount = state.setup.playerSetup.botCount + state.setup.playerSetup.playerCount
     const innovationTilesCount = totalPlayerCount == 2 ? INNOVATION_TILES_COUNT_2PLAYER : INNOVATION_TILES_COUNT_3PLAYER
     const palaceTilesCount = totalPlayerCount == 2 ? PALACE_TILES_COUNT_2PLAYER : PALACE_TILES_COUNT_3PLAYER
+    const withExpansion = (setup.expansions ?? []).includes(Expansion.FUTURE_PAST)
 
-    setup.setupBookActions = setup.setupBookActions ?? rollDiceMultiDifferentValue(BOOK_ACTIONS_TOTAL, BOOK_ACTIONS_COUNT)
-    setup.setupCompetencyTiles = setup.setupCompetencyTiles ?? rollDiceMultiDifferentValue(COMPETENCY_TILES_TOTAL, COMPETENCY_TILES_COUNT)
-    setup.setupInnovationTiles = setup.setupInnovationTiles ?? rollDiceMultiDifferentValue(INNOVATION_TILES_TOTAL, innovationTilesCount)
-    setup.setupPalaceTiles = setup.setupPalaceTiles ?? rollDiceMultiDifferentValue(PALACE_TILES_TOTAL, palaceTilesCount)
+    setup.setupBookActions = setup.setupBookActions ?? randomTiles(BOOK_ACTIONS_TOTAL, BOOK_ACTIONS_EXPANSION_FUTURE_PAST, BOOK_ACTIONS_COUNT, withExpansion)
+    setup.setupCompetencyTiles = setup.setupCompetencyTiles ?? randomTiles(COMPETENCY_TILES_TOTAL, COMPETENCY_TILES_EXPANSION_FUTURE_PAST, COMPETENCY_TILES_COUNT, withExpansion)
+    setup.setupInnovationTiles = setup.setupInnovationTiles ?? randomTiles(INNOVATION_TILES_TOTAL, INNOVATION_TILES_EXPANSION_FUTURE_PAST, innovationTilesCount, withExpansion)
+    setup.setupPalaceTiles = setup.setupPalaceTiles ?? randomTiles(PALACE_TILES_TOTAL, PALACE_TILES_EXPANSION_FUTURE_PAST, palaceTilesCount, withExpansion)
 
-    return { t, state, setup, totalPlayerCount, innovationTilesCount, palaceTilesCount }
+    return { t, state, setup, totalPlayerCount, innovationTilesCount, palaceTilesCount, withExpansion }
   },
   methods: {
     randomizeOtherTiles() : void {
-      this.setup.setupBookActions = rollDiceMultiDifferentValue(BOOK_ACTIONS_TOTAL, BOOK_ACTIONS_COUNT)
-      this.setup.setupCompetencyTiles = rollDiceMultiDifferentValue(COMPETENCY_TILES_TOTAL, COMPETENCY_TILES_COUNT)
-      this.setup.setupInnovationTiles = rollDiceMultiDifferentValue(INNOVATION_TILES_TOTAL, this.innovationTilesCount)
-      this.setup.setupPalaceTiles = rollDiceMultiDifferentValue(PALACE_TILES_TOTAL, this.palaceTilesCount)
+      this.setup.setupBookActions = randomTiles(BOOK_ACTIONS_TOTAL, BOOK_ACTIONS_EXPANSION_FUTURE_PAST, BOOK_ACTIONS_COUNT, this.withExpansion)
+      this.setup.setupCompetencyTiles = randomTiles(COMPETENCY_TILES_TOTAL, COMPETENCY_TILES_EXPANSION_FUTURE_PAST, COMPETENCY_TILES_COUNT, this.withExpansion)
+      this.setup.setupInnovationTiles = randomTiles(INNOVATION_TILES_TOTAL, INNOVATION_TILES_EXPANSION_FUTURE_PAST, this.innovationTilesCount, this.withExpansion)
+      this.setup.setupPalaceTiles = randomTiles(PALACE_TILES_TOTAL, PALACE_TILES_EXPANSION_FUTURE_PAST, this.palaceTilesCount, this.withExpansion)
     }
   }
 })
