@@ -22,6 +22,10 @@
       "title": "Difficulty Level",
       "easy": "Easy",
       "hard": "Hard"
+    },
+    "expansions": {
+      "title": "Expansions",
+      "future-past": "Future & Past"
     }
   }, 
   "setupTiles": {

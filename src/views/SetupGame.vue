@@ -3,6 +3,7 @@
 
   <PlayersSetup/>
   <DifficultyLevel/>
+  <ExpansionsSetup/>
   <BotBackgroundImage v-if=botFaction :botFaction="botFaction" :opacityPercent="80"/>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
@@ -21,12 +22,14 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import BotBackgroundImage from '@/components/structure/BotBackgroundImage.vue'
 import BotFaction from '@/services/enum/BotFaction'
 import { useStateStore } from '@/store/state'
+import ExpansionsSetup from '@/components/setup/ExpansionsSetup.vue'
 
 export default defineComponent({
   name: 'SetupGame',
   components: {
     PlayersSetup,
     DifficultyLevel,
+    ExpansionsSetup,
     BotBackgroundImage,
     FooterButtons
   },

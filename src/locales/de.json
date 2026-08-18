@@ -22,6 +22,10 @@
       "title": "Schwierigkeitsgrad",
       "easy": "Leicht",
       "hard": "Schwer"
+    },
+    "expansions": {
+      "title": "Erweiterungen",
+      "future-past": "Zukunft & Vergangenheit"
     }
   }, 
   "setupTiles": {
