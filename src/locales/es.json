@@ -92,6 +92,10 @@
     "titlePlayer": "Jugador | Jugador {player}",
     "titleBot": "Automa: {faction} | Automa {bot}: {faction}"
   },
+  "cardInfo": {
+    "actionCard": "Carta de acción",
+    "supportCard": "Carta de apoyo"
+  },
   "playerTurn": {
     "text": "Por favor, juega tu turno, o pasa.",
     "passConfirm": "¿Quieres pasar?",
