@@ -96,6 +96,10 @@
     "titlePlayer": "Spieler | Spieler {player}",
     "titleBot": "Automa: {faction} | Automa {bot}: {faction}"
   },
+  "cardInfo": {
+    "actionCard": "Aktionskarte",
+    "supportCard": "Unterstützungskarte"
+  },
   "playerTurn": {
     "text": "Bitte führe deinen Zug durch - oder passe.",
     "passConfirm": "Möchtest du passen?",

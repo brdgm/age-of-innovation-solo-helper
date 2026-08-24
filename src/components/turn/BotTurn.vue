@@ -1,7 +1,12 @@
 <template>
-  <div class="fixed-bottom text-muted cardDebugInfo">
-    {{cardDeck.actionCard?.id}} / {{cardDeck.supportCard?.id}}
-  </div>
+  <template v-if="cardDeck.actionCard && cardDeck.supportCard">
+    <div class="fixed-bottom text-muted cardDebugInfo">
+      <span class="cardDebugInfoClickable" data-bs-toggle="modal" data-bs-target="#cardInfoModal">
+        {{cardDeck.actionCard.id}} / {{cardDeck.supportCard.id}}
+      </span>
+    </div>
+    <CardInfoModal :action-card="cardDeck.actionCard" :support-card="cardDeck.supportCard"/>
+  </template>
 
   <template v-if="isPass">
     <BotPass :navigationState="navigationState"/>
@@ -35,6 +40,7 @@ import ActionUpgrade from './botAction/ActionUpgrade.vue'
 import ActionFactionSymbiontsPlaceCube from './botAction/ActionFactionSymbiontsPlaceCube.vue'
 import ActionFactionBlightTransformFallowLand from './botAction/ActionFactionBlightTransformFallowLand.vue'
 import BotPass from './BotPass.vue'
+import CardInfoModal from './CardInfoModal.vue'
 import { useStateStore } from '@/store/state'
 
 export default defineComponent({
@@ -49,7 +55,8 @@ export default defineComponent({
     ActionUpgrade,
     ActionFactionSymbiontsPlaceCube,
     ActionFactionBlightTransformFallowLand,
-    BotPass
+    BotPass,
+    CardInfoModal
   },
   setup() {
     const { t } = useI18n()
@@ -102,10 +109,14 @@ export default defineComponent({
   }
 }
 .cardDebugInfo {
-  margin-bottom: 2rem;
-  padding-right: 0.5rem;
+  margin-bottom: 1.5rem;
   font-size: 0.6rem;
   background-color: transparent;
   text-align: right;
+  .cardDebugInfoClickable {
+    display: inline-block;
+    padding: 0.75rem;
+    cursor: pointer;
+  }
 }
 </style>
